@@ -7695,6 +7695,12 @@
         "handle": "mvanhorn",
         "name": "Matt Van Horn"
       },
+      "contributors": [
+        {
+          "handle": "prashantkamani",
+          "name": "Prashant Kamani"
+        }
+      ],
       "mcp": {
         "binary": "espn-pp-mcp",
         "transports": [
@@ -9764,6 +9770,46 @@
         "auth_type": "api_key",
         "env_vars": [
           "GAINSIGHT_ACCESS_KEY_AUTH"
+        ],
+        "mcp_ready": "full",
+        "spec_format": "openapi3"
+      }
+    },
+    {
+      "name": "game-goat",
+      "category": "media-and-entertainment",
+      "api": "Rawg Video Games",
+      "description": "Look up any game and find what to play next - RAWG search, ratings, franchise order, tag-matched recommendations with remake-aware title resolution, plus IsThereAnyDeal historical price tracking and currency-localised storefront prices, built for agents.",
+      "search_terms": [
+        "game-goat",
+        "Rawg Video Games",
+        "game-goat-pp-cli",
+        "Look up any game and find what to play next - RAWG search, ratings, franchise order, tag-matched recommendations with remake-aware title resolution, plus IsThereAnyDeal historical price tracking and currency-localised storefront prices, built for agents.",
+        "Similar Games",
+        "similar",
+        "Games like <title>: the seed's own studio first, then its defining gameplay tag (roguelite, metroidvania) found by tag-neighborhood co-occurrence, then a confidence-floored genre join. Every row carries its tier and a reason.",
+        "Retention Verdict",
+        "retention",
+        "Community completion and drop verdict for one game from RAWG added_by_status counts (needs RAWG_API_KEY)."
+      ],
+      "path": "library/media-and-entertainment/game-goat",
+      "printer": "bleighk",
+      "printer_name": "Brad Knight",
+      "creator": {
+        "handle": "bleighk",
+        "name": "Brad Knight"
+      },
+      "mcp": {
+        "binary": "game-goat-pp-mcp",
+        "transports": [
+          "stdio",
+          "http"
+        ],
+        "tool_count": 30,
+        "public_tool_count": 0,
+        "auth_type": "api_key",
+        "env_vars": [
+          "RAWG_API_KEY"
         ],
         "mcp_ready": "full",
         "spec_format": "openapi3"
@@ -26506,6 +26552,12 @@
         "List mailing lists and bulk senders by volume and how much of their mail you never read."
       ],
       "path": "library/productivity/thunderbird",
+      "release": {
+        "cli_name": "thunderbird-pp-cli",
+        "version": "2026.9.1",
+        "released_at": "2026-09-27T08:56:41Z",
+        "source_commit": "c9d4b12cd6e914fde5cd577337fdb4895e5be0a2"
+      },
       "printer": "Bri1003",
       "printer_name": "Edoardo Manco",
       "creator": {
