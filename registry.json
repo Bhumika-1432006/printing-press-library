@@ -7685,9 +7685,9 @@
       "path": "library/media-and-entertainment/espn",
       "release": {
         "cli_name": "espn-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.9.2",
+        "released_at": "2026-09-28T08:51:58Z",
+        "source_commit": "972c7157b145a3a2e4420e5347375ac68be5d7ca"
       },
       "printer": "mvanhorn",
       "printer_name": "Matt Van Horn",
@@ -12755,6 +12755,52 @@
       }
     },
     {
+      "name": "ikyu",
+      "category": "travel",
+      "api": "Ikyu Accommodation",
+      "description": "Search Ikyu hotels and ryokan with dated room prices and cancellation details.",
+      "search_terms": [
+        "ikyu",
+        "Ikyu Accommodation",
+        "ikyu-pp-cli",
+        "Search Ikyu hotels and ryokan with dated room prices and cancellation details.",
+        "Offer equivalence",
+        "stay compare",
+        "Compare exact offers with explicit compatible groups, differences and unknowns.",
+        "Date alternatives",
+        "stay dates",
+        "Inspect bounded date alternatives for one selected room and plan.",
+        "Room fit",
+        "stay rooms",
+        "Find rooms with source-backed space and bath attributes; keep missing evidence visible.",
+        "Price explanation",
+        "stay offer",
+        "Separate source prices, points scenarios, coupons and eligibility for an exact offer.",
+        "Shortlist readiness",
+        "stay search",
+        "Return compact dated property candidates with pagination, freshness and detail gaps."
+      ],
+      "path": "library/travel/ikyu",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "ikyu-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 1,
+        "public_tool_count": 1,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
       "name": "immich",
       "category": "media-and-entertainment",
       "api": "Immich",
@@ -13393,6 +13439,50 @@
         "transports": [
           "stdio",
           "http"
+        ],
+        "tool_count": 1,
+        "public_tool_count": 1,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
+      "name": "jalan",
+      "category": "travel",
+      "api": "Jalan",
+      "description": "Find Japan stays and understand the exact room and plan.",
+      "search_terms": [
+        "jalan",
+        "jalan-pp-cli",
+        "Find Japan stays and understand the exact room and plan.",
+        "Bath evidence",
+        "stay plan",
+        "Inspect separate bath facts without inferring room facilities from property amenities.",
+        "Quote interpretation",
+        "Separate quoted cash price, conditional coupons, earned points and extra fees.",
+        "Bounded alternatives",
+        "stay compare",
+        "Compare a few dates or exact plans under equal party conditions.",
+        "Traceable facts",
+        "stay property",
+        "Preserve Japanese facts, explicit unknowns and source evidence.",
+        "Bilingual destinations",
+        "stay locations",
+        "Resolve supported Japanese and English destination aliases explicitly."
+      ],
+      "path": "library/travel/jalan",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "jalan-pp-mcp",
+        "transports": [
+          "stdio"
         ],
         "tool_count": 1,
         "public_tool_count": 1,
@@ -16469,6 +16559,51 @@
         ],
         "tool_count": 5,
         "public_tool_count": 5,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
+      "name": "navitime",
+      "category": "travel",
+      "api": "NAVITIME",
+      "description": "Check Japan journeys with dated routes, explicit fares and source-backed pass constraints.",
+      "search_terms": [
+        "navitime",
+        "navitime-pp-cli",
+        "Check Japan journeys with dated routes, explicit fares and source-backed pass constraints.",
+        "Ambiguity-safe resolution",
+        "places search",
+        "Return bilingual candidates without silently choosing a station.",
+        "Dated service windows",
+        "routes search",
+        "Check dated departures, deadlines and first/last services.",
+        "Fare and overnight audit",
+        "routes show",
+        "Expand a stored route with full dates and fare assumptions.",
+        "Alternative comparison",
+        "routes compare",
+        "Compare the returned journeys by time, fare, walking and transfers.",
+        "Source pass constraints",
+        "passes list",
+        "Discover advertised passes and their verification status."
+      ],
+      "path": "library/travel/navitime",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "navitime-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 7,
+        "public_tool_count": 7,
         "auth_type": "none",
         "env_vars": [],
         "mcp_ready": "full",
@@ -21119,6 +21254,50 @@
         ],
         "mcp_ready": "full",
         "spec_format": "openapi3"
+      }
+    },
+    {
+      "name": "rakuten-travel",
+      "category": "travel",
+      "api": "Rakuten Travel",
+      "description": "Inspect real Japan room offers with explicit dates, party and price units.",
+      "search_terms": [
+        "rakuten-travel",
+        "Rakuten Travel",
+        "rakuten-travel-pp-cli",
+        "Inspect real Japan room offers with explicit dates, party and price units.",
+        "Date alternatives",
+        "compare",
+        "Compare explicit hotel/date cells with fixed occupancy and a strict request budget.",
+        "Whole-stay quote evidence",
+        "offers search",
+        "Read source-labelled whole-stay room totals without extrapolating first-night prices.",
+        "Child-aware occupancy",
+        "Keep every child category and per-room party input intact.",
+        "Policy and fee inspection",
+        "offers show",
+        "Inspect property notes and safely associated cancellation terms for a shortlisted offer.",
+        "Exact offer handoff",
+        "Keep hotel, plan and room IDs attached to a canonical dated source link."
+      ],
+      "path": "library/travel/rakuten-travel",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "rakuten-travel-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 6,
+        "public_tool_count": 6,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
       }
     },
     {
@@ -25925,6 +26104,51 @@
       }
     },
     {
+      "name": "tabelog",
+      "category": "food-and-dining",
+      "api": "Tabelog",
+      "description": "Find Japan restaurants and bars, then keep a factual trip shortlist.",
+      "search_terms": [
+        "tabelog",
+        "tabelog-pp-cli",
+        "Find Japan restaurants and bars, then keep a factual trip shortlist.",
+        "Offline factual comparison",
+        "lists compare",
+        "Compare saved restaurants, meal budgets and personal notes without network requests.",
+        "Bounded refresh with fact changes",
+        "lists refresh",
+        "Update selected saved restaurants and see changed facts while keeping personal notes.",
+        "Trip notebook with personal notes",
+        "lists add",
+        "Keep fetched restaurants and personal notes in a named trip list that can be resumed offline.",
+        "Saved alternatives with explicit constraints",
+        "lists alternatives",
+        "Find saved substitutes matching a candidate's verified area, category and optional meal budget.",
+        "Missing-evidence and freshness audit",
+        "lists audit",
+        "See which saved candidates have unfetched, unknown or old facts before requesting more details."
+      ],
+      "path": "library/food-and-dining/tabelog",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "tabelog-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 4,
+        "public_tool_count": 4,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
       "name": "table-reservation-goat",
       "category": "food-and-dining",
       "api": "Table Reservation GOAT",
@@ -25981,6 +26205,50 @@
         ],
         "tool_count": 12,
         "public_tool_count": 12,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
+      "name": "tablecheck",
+      "category": "food-and-dining",
+      "api": "TableCheck",
+      "description": "Find Japan restaurants, inspect courses, and check a bounded shortlist before booking.",
+      "search_terms": [
+        "tablecheck",
+        "tablecheck-pp-cli",
+        "Find Japan restaurants, inspect courses, and check a bounded shortlist before booking.",
+        "Bounded trip scan",
+        "availability scan",
+        "Check a bounded restaurant shortlist across trip dates with partial results.",
+        "Evidence status",
+        "availability check",
+        "Report party-specific venue slots without upgrading search summaries or course listings into booking guarantees.",
+        "Course cost and conditions",
+        "courses get",
+        "Preserve exact prices, Japanese names, fine print and unknown charges.",
+        "Visible freshness",
+        "Keep cache age attached to every availability observation and refresh explicitly.",
+        "Canonical handoff",
+        "booking-url",
+        "Return the correct TableCheck booking page with validated date, time and party."
+      ],
+      "path": "library/food-and-dining/tablecheck",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "tablecheck-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 5,
+        "public_tool_count": 5,
         "auth_type": "none",
         "env_vars": [],
         "mcp_ready": "full",
@@ -26231,6 +26499,47 @@
         ],
         "tool_count": 7,
         "public_tool_count": 7,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
+      "name": "tenki",
+      "category": "travel",
+      "api": "tenki.jp",
+      "description": "Choose Japan sightseeing dates with traceable weather and seasonal evidence.",
+      "search_terms": [
+        "tenki",
+        "tenki.jp",
+        "tenki-pp-cli",
+        "Choose Japan sightseeing dates with traceable weather and seasonal evidence.",
+        "Criteria matrix",
+        "compare",
+        "Compare selected Japan destinations and dates against explicit weather thresholds.",
+        "Activity window",
+        "Evaluate a specific JST outing window with complete hourly evidence.",
+        "Seasonal weather pairing",
+        "Pair seasonal spot status with its actual forecast municipality.",
+        "Evidence coverage",
+        "Explain missing, stale, unsupported or mismatched evidence before recommending."
+      ],
+      "path": "library/travel/tenki",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "tenki-pp-mcp",
+        "transports": [
+          "stdio",
+          "http"
+        ],
+        "tool_count": 1,
+        "public_tool_count": 1,
         "auth_type": "none",
         "env_vars": [],
         "mcp_ready": "full",
@@ -28347,6 +28656,39 @@
         ],
         "mcp_ready": "full",
         "spec_format": "openapi3"
+      }
+    },
+    {
+      "name": "walkerplus",
+      "category": "travel",
+      "api": "Walkerplus",
+      "description": "Discover Japan events for a trip with source-backed dates and schedule confidence.",
+      "search_terms": [
+        "walkerplus",
+        "walkerplus-pp-cli",
+        "Discover Japan events for a trip with source-backed dates and schedule confidence.",
+        "Trip shortlist",
+        "shortlist",
+        "Find exact-edition trip candidates with schedule confidence, constraints and explainable ranking."
+      ],
+      "path": "library/travel/walkerplus",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "walkerplus-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 2,
+        "public_tool_count": 2,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
       }
     },
     {
