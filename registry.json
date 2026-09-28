@@ -9793,6 +9793,12 @@
         "Community completion and drop verdict for one game from RAWG added_by_status counts (needs RAWG_API_KEY)."
       ],
       "path": "library/media-and-entertainment/game-goat",
+      "release": {
+        "cli_name": "game-goat-pp-cli",
+        "version": "2026.9.1",
+        "released_at": "2026-09-28T08:53:15Z",
+        "source_commit": "ef535cbb1e579222ac067efc8f54489855716b64"
+      },
       "printer": "bleighk",
       "printer_name": "Brad Knight",
       "creator": {
@@ -12781,6 +12787,12 @@
         "Return compact dated property candidates with pagination, freshness and detail gaps."
       ],
       "path": "library/travel/ikyu",
+      "release": {
+        "cli_name": "ikyu-pp-cli",
+        "version": "2026.9.1",
+        "released_at": "2026-09-28T08:53:15Z",
+        "source_commit": "782fb44cd83fbe52963197a0348a62ec4d9858e4"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -13473,6 +13485,12 @@
         "Resolve supported Japanese and English destination aliases explicitly."
       ],
       "path": "library/travel/jalan",
+      "release": {
+        "cli_name": "jalan-pp-cli",
+        "version": "2026.9.1",
+        "released_at": "2026-09-28T08:53:15Z",
+        "source_commit": "6900cdf161955c3233f13352d9c450d8663c19c9"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -16591,6 +16609,12 @@
         "Discover advertised passes and their verification status."
       ],
       "path": "library/travel/navitime",
+      "release": {
+        "cli_name": "navitime-pp-cli",
+        "version": "2026.9.1",
+        "released_at": "2026-09-28T08:53:15Z",
+        "source_commit": "ae237370da34bfde207fc97507061da0b9633783"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -21281,6 +21305,12 @@
         "Keep hotel, plan and room IDs attached to a canonical dated source link."
       ],
       "path": "library/travel/rakuten-travel",
+      "release": {
+        "cli_name": "rakuten-travel-pp-cli",
+        "version": "2026.9.1",
+        "released_at": "2026-09-28T08:53:15Z",
+        "source_commit": "267368943d938f9005b5b564ec8e793143752a11"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -23614,6 +23644,54 @@
         "auth_type": "bearer_token",
         "env_vars": [
           "SENTRY_AUTH_TOKEN"
+        ],
+        "mcp_ready": "full",
+        "spec_format": "openapi3"
+      }
+    },
+    {
+      "name": "serply",
+      "category": "ai",
+      "api": "Serply",
+      "description": "Live Google, News, Scholar, Maps and Bing results, plus rank checks, SERP diffs and cited research briefs.",
+      "search_terms": [
+        "serply",
+        "serply-pp-cli",
+        "Live Google, News, Scholar, Maps and Bing results, plus rank checks, SERP diffs and cited research briefs.",
+        "Domain rank check",
+        "rank",
+        "See the position of a domain for a query, optionally from a specific country, in one call.",
+        "SERP change diff",
+        "serp diff",
+        "See which URLs entered, left, or moved in a results page since the last time you ran the same query.",
+        "Cited research brief",
+        "research",
+        "Get one deduplicated, numbered source list for a topic from web, news and scholar results at once."
+      ],
+      "path": "library/ai/serply",
+      "printer": "googio",
+      "printer_name": "googio",
+      "creator": {
+        "handle": "googio",
+        "name": "googio"
+      },
+      "contributors": [
+        {
+          "handle": "tmchow",
+          "name": "Trevin Chow"
+        }
+      ],
+      "mcp": {
+        "binary": "serply-pp-mcp",
+        "transports": [
+          "stdio",
+          "http"
+        ],
+        "tool_count": 9,
+        "public_tool_count": 0,
+        "auth_type": "api_key",
+        "env_vars": [
+          "SERPLY_API_KEY"
         ],
         "mcp_ready": "full",
         "spec_format": "openapi3"
@@ -26129,6 +26207,12 @@
         "See which saved candidates have unfetched, unknown or old facts before requesting more details."
       ],
       "path": "library/food-and-dining/tabelog",
+      "release": {
+        "cli_name": "tabelog-pp-cli",
+        "version": "2026.9.1",
+        "released_at": "2026-09-28T08:53:15Z",
+        "source_commit": "296146acca4b580779f04a8d72c8cedb2e882d5e"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -26236,6 +26320,12 @@
         "Return the correct TableCheck booking page with validated date, time and party."
       ],
       "path": "library/food-and-dining/tablecheck",
+      "release": {
+        "cli_name": "tablecheck-pp-cli",
+        "version": "2026.9.1",
+        "released_at": "2026-09-28T08:53:15Z",
+        "source_commit": "f9625b466d9e40f1c285891add8aa578bedbbe7e"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -26526,6 +26616,12 @@
         "Explain missing, stale, unsupported or mismatched evidence before recommending."
       ],
       "path": "library/travel/tenki",
+      "release": {
+        "cli_name": "tenki-pp-cli",
+        "version": "2026.9.1",
+        "released_at": "2026-09-28T08:53:15Z",
+        "source_commit": "20559088535e8444477f83d91332d115bbe4e51f"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -28672,6 +28768,12 @@
         "Find exact-edition trip candidates with schedule confidence, constraints and explainable ranking."
       ],
       "path": "library/travel/walkerplus",
+      "release": {
+        "cli_name": "walkerplus-pp-cli",
+        "version": "2026.9.1",
+        "released_at": "2026-09-28T08:53:15Z",
+        "source_commit": "d8dca182087cf0902856e8548955671f9300ea4b"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
