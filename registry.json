@@ -13167,7 +13167,13 @@
       "creator": {
         "handle": "alkhamis-80",
         "name": "Mohammed Al Khamis"
-      }
+      },
+      "contributors": [
+        {
+          "handle": "bobeglz",
+          "name": "bobeglz"
+        }
+      ]
     },
     {
       "name": "intercom",
@@ -23669,6 +23675,12 @@
         "Get one deduplicated, numbered source list for a topic from web, news and scholar results at once."
       ],
       "path": "library/ai/serply",
+      "release": {
+        "cli_name": "serply-pp-cli",
+        "version": "2026.9.1",
+        "released_at": "2026-09-28T09:26:19Z",
+        "source_commit": "ebe06e3c81756408fe67aafab9c5f8dbd67f6663"
+      },
       "printer": "googio",
       "printer_name": "googio",
       "creator": {
