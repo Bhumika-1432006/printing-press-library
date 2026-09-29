@@ -261,6 +261,12 @@
         "Get a compact booking-handoff packet with known conditions and unresolved questions."
       ],
       "path": "library/travel/activity-japan",
+      "release": {
+        "cli_name": "activity-japan-pp-cli",
+        "version": "2026.9.1",
+        "released_at": "2026-09-29T08:58:34Z",
+        "source_commit": "d0edacd7dc171ec48812e16b4b46cf3f885eed54"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -5182,9 +5188,9 @@
       "path": "library/productivity/concur",
       "release": {
         "cli_name": "concur-pp-cli",
-        "version": "2026.9.5",
-        "released_at": "2026-09-25T08:55:37Z",
-        "source_commit": "d146281990a1d3048110e1b81e71637b4a3fb080"
+        "version": "2026.9.6",
+        "released_at": "2026-09-29T08:58:34Z",
+        "source_commit": "0535c25884c0ecf87494274c9c9f155955237871"
       },
       "printer": "enlewof",
       "printer_name": "Allen Lew",
@@ -16001,6 +16007,10 @@
         {
           "handle": "tmchow",
           "name": "Trevin Chow"
+        },
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
         }
       ],
       "mcp": {
