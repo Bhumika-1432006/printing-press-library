@@ -8988,9 +8988,9 @@
       "path": "library/travel/flight-goat",
       "release": {
         "cli_name": "flight-goat-pp-cli",
-        "version": "2026.9.3",
-        "released_at": "2026-09-24T08:55:18Z",
-        "source_commit": "3aa4c42dc3a04f211f242c71afc34cc43e277f31"
+        "version": "2026.9.4",
+        "released_at": "2026-09-30T08:53:43Z",
+        "source_commit": "314c143ac10b850ba6dd13d3b5492ffc44ef1368"
       },
       "printer": "mvanhorn",
       "printer_name": "Matt Van Horn",
@@ -15698,9 +15698,9 @@
       "path": "library/marketing/meta-ads",
       "release": {
         "cli_name": "meta-ads-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.9.2",
+        "released_at": "2026-09-30T08:53:43Z",
+        "source_commit": "1dbcedf406d6c0f099dbd0e87705b54587cfa87e"
       },
       "printer": "sdhilip200",
       "printer_name": "Dhilip Subramanian",
@@ -15993,9 +15993,9 @@
       "path": "library/productivity/mobbin",
       "release": {
         "cli_name": "mobbin-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.9.2",
+        "released_at": "2026-09-29T20:11:58Z",
+        "source_commit": "69720c0acec69db8678c5f97a62efbf9a951bffa"
       },
       "printer": "darinkishore",
       "printer_name": "Darin Kishore",
@@ -20452,6 +20452,54 @@
         "public_tool_count": 8,
         "auth_type": "none",
         "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "openapi3"
+      }
+    },
+    {
+      "name": "postmark",
+      "category": "productivity",
+      "api": "Postmark",
+      "description": "One account token for every Postmark server, and a local archive that outlasts Postmark's 45-day retention.",
+      "search_terms": [
+        "postmark",
+        "postmark-pp-cli",
+        "One account token for every Postmark server, and a local archive that outlasts Postmark's 45-day retention.",
+        "Send-volume pulse",
+        "pulse",
+        "Compares each server, stream, or tag with its own recent weeks and flags any that stopped sending, dropped off, or spiked in bounces or spam, across every server on the account token.",
+        "Idempotent send",
+        "email send-once",
+        "Sends an email at most once per key within a window (15 minutes by default), so an agent or script that retries after an error cannot deliver a second copy. Previews until you add --send.",
+        "Recipient-domain report",
+        "recipient-domains",
+        "Groups sends, bounces by type, complaints, suppressions, and opens by the recipient's mailbox domain across every synced server, so one provider's problem stands out. Run sync first.",
+        "Template CI gate",
+        "templates check",
+        "Validates every template and layout on a server or in a pulled folder, and exits non-zero on render errors, missing test-model keys, or broken layout links.",
+        "New-project server bootstrap",
+        "servers bootstrap",
+        "Creates a new project's Postmark server with its message streams, webhooks, sending-domain DNS records, and templates copied from another server. Prints the plan until you add --apply."
+      ],
+      "path": "library/productivity/postmark",
+      "printer": "cathrynlavery",
+      "printer_name": "Cathryn Lavery",
+      "creator": {
+        "handle": "cathrynlavery",
+        "name": "Cathryn Lavery"
+      },
+      "mcp": {
+        "binary": "postmark-pp-mcp",
+        "transports": [
+          "stdio",
+          "http"
+        ],
+        "tool_count": 88,
+        "public_tool_count": 0,
+        "auth_type": "api_key",
+        "env_vars": [
+          "POSTMARK_SERVER_TOKEN"
+        ],
         "mcp_ready": "full",
         "spec_format": "openapi3"
       }
@@ -27028,9 +27076,9 @@
       "path": "library/productivity/thunderbird",
       "release": {
         "cli_name": "thunderbird-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-27T08:56:41Z",
-        "source_commit": "c9d4b12cd6e914fde5cd577337fdb4895e5be0a2"
+        "version": "2026.9.2",
+        "released_at": "2026-09-30T08:52:03Z",
+        "source_commit": "62602fe63afd71e0877792f086a9aa6439cf6aa5"
       },
       "printer": "Bri1003",
       "printer_name": "Edoardo Manco",
