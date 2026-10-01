@@ -2,6 +2,10 @@
 
 This file is maintained by printing-press-library release automation. Do not hand-edit release sections in normal PRs.
 
+## 2026.10.4 - 2026-10-01
+
+- Fix Retraction Checker watch checkpoint and pagination (#2152).
+
 ## 2026.10.3 - 2026-10-01
 
 - fix(retraction-checker): distinguish concerns and update direction (#2149).
