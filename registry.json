@@ -9643,6 +9643,12 @@
         "handle": "enlewof",
         "name": "Allen Lew"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "forkable-pp-mcp",
         "transports": [
@@ -22849,9 +22855,9 @@
       "path": "library/travel/ridewithgps",
       "release": {
         "cli_name": "ridewithgps-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T23:24:21Z",
+        "source_commit": "03bf8224c900642111695d63f8f0b637203100ef"
       },
       "printer": "stellato",
       "printer_name": "Greg Stellato",
@@ -26841,9 +26847,9 @@
       "path": "library/devices/synology",
       "release": {
         "cli_name": "synology-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T23:22:57Z",
+        "source_commit": "6830efb126bf595de465ffb27c7e3b35522c7989"
       },
       "printer": "smoochy",
       "printer_name": "smoochy",
