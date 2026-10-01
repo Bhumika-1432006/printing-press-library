@@ -210,6 +210,7 @@ func variantsExecute(cmd *cobra.Command, c *client.Client, project wavespeedProj
 				for _, d := range res.Downloads {
 					oc.Files = append(oc.Files, d.Path)
 				}
+				noteDownloadFailure(&oc, res)
 				if res.Failed {
 					oc.Err = fmt.Sprintf("prediction failed with status %q", res.Status)
 				}
@@ -219,7 +220,7 @@ func variantsExecute(cmd *cobra.Command, c *client.Client, project wavespeedProj
 			if vf.maxCost > 0 && spent >= vf.maxCost {
 				aborted = true
 			}
-			if oc.Err != "" {
+			if oc.Err != "" || oc.DownloadFailed {
 				anyFailed = true
 			}
 			results[i] = oc
@@ -246,11 +247,17 @@ func variantsExecute(cmd *cobra.Command, c *client.Client, project wavespeedProj
 	for i := range results {
 		env.Results = append(env.Results, map[string]any{"variant": i, "vary": vary, "outcome": results[i]})
 	}
+	for i := range results {
+		if results[i].DownloadFailed {
+			env.Warnings = append(env.Warnings, results[i].Warning)
+		}
+	}
 	if anyFailed {
 		env.PartialFailure = true
-		env.RecommendedAction = "one or more variants failed; surviving variants are recorded and available to compare"
-	} else {
-		env.RecommendedAction = "compare variants and pick one to scale via pack"
+		env.RecommendedAction = "one or more variants failed or were not saved locally; surviving variants are recorded and available to compare"
+		_ = emitEnvelope(cmd.OutOrStdout(), env)
+		return partialFailureErr(fmt.Errorf("variants incomplete: one or more variants failed or were not downloaded"))
 	}
+	env.RecommendedAction = "compare variants and pick one to scale via pack"
 	return emitEnvelope(cmd.OutOrStdout(), env)
 }

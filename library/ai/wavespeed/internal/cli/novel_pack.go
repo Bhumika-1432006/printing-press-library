@@ -52,6 +52,24 @@ type shotOutcome struct {
 	Skipped     bool     `json:"skipped,omitempty"`
 	Warning     string   `json:"warning,omitempty"`
 	Err         string   `json:"error,omitempty"`
+	// DownloadFailed marks a prediction that completed (and was billed) but
+	// whose output could not be saved locally. It is not a failed generation:
+	// the output URL is in Warning and the result is still recorded.
+	DownloadFailed bool `json:"download_failed,omitempty"`
+}
+
+// noteDownloadFailure records a post-completion download failure as a
+// warning on the outcome, keeping it distinct from a failed prediction.
+func noteDownloadFailure(oc *shotOutcome, res submitResult) {
+	msg := downloadFailureMessage(res)
+	if msg == "" {
+		return
+	}
+	oc.DownloadFailed = true
+	if oc.Warning != "" {
+		oc.Warning += "; "
+	}
+	oc.Warning += msg
 }
 
 // platformManifest is the contract a downstream social-posting tool consumes.
@@ -303,7 +321,7 @@ func packExecute(cmd *cobra.Command, c *client.Client, project wavespeedProjectC
 			if oc.Err != "" && pf.onFailure == "abort" {
 				aborted = true
 				failure = true
-			} else if oc.Err != "" {
+			} else if oc.Err != "" || oc.DownloadFailed {
 				failure = true
 			}
 			outcomes[i] = oc
@@ -405,6 +423,7 @@ func produceShot(ctx context.Context, c *client.Client, pf packFlags, slug strin
 		oc.Dimensions = dims
 		oc.Warning = warn
 	}
+	noteDownloadFailure(&oc, res)
 	return oc
 }
 
@@ -454,7 +473,9 @@ func writePlatformManifests(pf packFlags, slug string, shots []Shot, outcomes []
 	order := []string{}
 	for i := range outcomes {
 		oc := outcomes[i]
-		if oc.Skipped || oc.Err != "" || len(oc.Files) == 0 {
+		// A shot with any missing output is not post-ready, even if some of
+		// its files downloaded; its URLs stay in the envelope warnings.
+		if oc.Skipped || oc.Err != "" || oc.DownloadFailed || len(oc.Files) == 0 {
 			continue
 		}
 		p := shots[i].Platform
@@ -462,6 +483,17 @@ func writePlatformManifests(pf packFlags, slug string, shots []Shot, outcomes []
 			order = append(order, p)
 		}
 		byPlatform[p] = append(byPlatform[p], entry{shot: shots[i], oc: oc})
+	}
+
+	// A platform targeted by this run that produced no post-ready shot must
+	// not keep a manifest from an earlier run in the same directory; a
+	// posting tool would treat those old assets as the current pack.
+	for i := range shots {
+		p := shots[i].Platform
+		if _, ready := byPlatform[p]; ready {
+			continue
+		}
+		_ = os.Remove(filepath.Join(pf.outDir, slug, dirSafe(p), "manifest.json"))
 	}
 
 	written := []string{}
