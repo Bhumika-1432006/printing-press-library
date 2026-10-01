@@ -1816,6 +1816,12 @@
         "handle": "aborruso",
         "name": "aborruso"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "aol-puglia-pp-mcp",
         "transports": [
@@ -6359,9 +6365,9 @@
       "path": "library/productivity/devonthink",
       "release": {
         "cli_name": "devonthink-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T23:51:26Z",
+        "source_commit": "42d91d0b94597c93672b8c2c0b03614ebdc77d81"
       },
       "printer": "Rowdy",
       "printer_name": "Johns",
