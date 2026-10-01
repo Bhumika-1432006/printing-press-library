@@ -25074,9 +25074,9 @@
       "path": "library/productivity/slack",
       "release": {
         "cli_name": "slack-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T22:10:34Z",
+        "source_commit": "e42e4e1415c9f41a013f780ca2c4bdfddbd378fd"
       },
       "printer": "mvanhorn",
       "printer_name": "Matt Van Horn",
@@ -28849,6 +28849,12 @@
         "handle": "phoenix-server",
         "name": "Ricardo Cabral"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "unifi-pp-mcp",
         "transports": [
