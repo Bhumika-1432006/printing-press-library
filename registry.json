@@ -15826,9 +15826,9 @@
       "path": "library/media-and-entertainment/medium-reader",
       "release": {
         "cli_name": "medium-reader-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T20:40:42Z",
+        "source_commit": "f8fbecf588078daa5be82bfdd155dfba46ea3e40"
       },
       "printer": "maxswinguy",
       "printer_name": "Maxime Delavergne",
@@ -19588,6 +19588,12 @@
         "handle": "qazmataz",
         "name": "qazmataz"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "pbs-pp-mcp",
         "transports": [
