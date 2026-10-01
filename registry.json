@@ -15136,6 +15136,10 @@
         {
           "handle": "rob-coco",
           "name": "Rob Coco"
+        },
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
         }
       ],
       "mcp": {
@@ -19578,9 +19582,9 @@
       "path": "library/other/pbs",
       "release": {
         "cli_name": "pbs-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T20:44:56Z",
+        "source_commit": "3631a9d6bcfd8d939fb826da4de756f8cbb2a91d"
       },
       "printer": "qazmataz",
       "printer_name": "qazmataz",
