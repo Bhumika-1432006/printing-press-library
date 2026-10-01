@@ -15114,9 +15114,9 @@
       "path": "library/project-management/linear",
       "release": {
         "cli_name": "linear-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-14T10:40:46Z",
-        "source_commit": "69ca0e26f066cf834ad3d413840ff8cdbfab44e6"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T20:48:29Z",
+        "source_commit": "c70665078f7ddb63ac1aa3c403c20264f3fc157b"
       },
       "printer": "mvanhorn",
       "printer_name": "Matt Van Horn",
@@ -25289,6 +25289,10 @@
         {
           "handle": "mvanhorn",
           "name": "Matt Van Horn"
+        },
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
         }
       ]
     },
