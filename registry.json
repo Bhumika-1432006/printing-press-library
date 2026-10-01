@@ -18979,6 +18979,10 @@
         {
           "handle": "tmchow",
           "name": "Trevin Chow"
+        },
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
         }
       ],
       "mcp": {
@@ -22692,9 +22696,9 @@
       "path": "library/other/retraction-checker",
       "release": {
         "cli_name": "retraction-checker-pp-cli",
-        "version": "2026.10.2",
-        "released_at": "2026-10-01T22:05:26Z",
-        "source_commit": "5bc491139a7940c81cd4d564f048d5e58d1ae836"
+        "version": "2026.10.4",
+        "released_at": "2026-10-01T22:18:13Z",
+        "source_commit": "3dd5f1439f6ff106ef5dfd96fdf0fe6524d3c480"
       },
       "printer": "laci141",
       "printer_name": "laci141",
@@ -25074,9 +25078,9 @@
       "path": "library/productivity/slack",
       "release": {
         "cli_name": "slack-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-01T22:10:34Z",
-        "source_commit": "e42e4e1415c9f41a013f780ca2c4bdfddbd378fd"
+        "version": "2026.10.3",
+        "released_at": "2026-10-01T22:25:50Z",
+        "source_commit": "fc79f15a56bc1cca920a8613eeff20b24873f7ac"
       },
       "printer": "mvanhorn",
       "printer_name": "Matt Van Horn",
@@ -28839,9 +28843,9 @@
       "path": "library/devices/unifi",
       "release": {
         "cli_name": "unifi-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-16T09:10:37Z",
-        "source_commit": "fe77f6282b234da51fff26dec5ae56c6d5fb9d0e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T22:11:32Z",
+        "source_commit": "c998371972d55a52b32964beac8e53d6257e35c6"
       },
       "printer": "phoenix-server",
       "printer_name": "Ricardo Cabral",
@@ -30769,9 +30773,9 @@
       "path": "library/social-and-messaging/x-twitter",
       "release": {
         "cli_name": "x-twitter-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-01T22:03:40Z",
-        "source_commit": "e1a6190c03782765f4a03cf2b436eb1cf096077e"
+        "version": "2026.10.3",
+        "released_at": "2026-10-01T22:30:14Z",
+        "source_commit": "300e1587f6bcae0a38c1aebe0f206c0d85882cf2"
       },
       "printer": "cathrynlavery",
       "printer_name": "Cathryn Lavery",
