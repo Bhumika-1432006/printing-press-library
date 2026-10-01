@@ -55,20 +55,8 @@ func newConversationsHistoryCmd(flags *rootFlags) *cobra.Command {
 			if cmd.Flags().Changed("channel") && cmd.Flags().Changed("user") {
 				return fmt.Errorf("--channel and --user are mutually exclusive; provide one or the other")
 			}
-			if flags.dryRun && (flagUser != "" || slackIsDMChannel(flagChannel)) {
-				return printJSONFiltered(cmd.OutOrStdout(), map[string]any{
-					"dry_run":          true,
-					"method":           "GET",
-					"path":             "/conversations.history",
-					"channel":          flagChannel,
-					"user":             flagUser,
-					"existing_dm_only": true,
-				}, flags)
-			}
-			path := "/conversations.history"
-			c, err := flags.newClient()
-			if err != nil {
-				return err
+			if (flagUser != "" || slackIsDMChannel(flagChannel)) && flags.dataSource == "local" {
+				return unsupportedDataSourceError("live", "local")
 			}
 			params := map[string]string{}
 			if flagLimit != 0 {
@@ -83,7 +71,22 @@ func newConversationsHistoryCmd(flags *rootFlags) *cobra.Command {
 			if flagLatest != "" {
 				params["latest"] = formatCLIParamValue(flagLatest)
 			}
-
+			if flags.dryRun && (flagUser != "" || slackIsDMChannel(flagChannel)) {
+				return printJSONFiltered(cmd.OutOrStdout(), map[string]any{
+					"dry_run":          true,
+					"method":           "GET",
+					"path":             "/conversations.history",
+					"channel":          flagChannel,
+					"user":             flagUser,
+					"query":            params,
+					"existing_dm_only": true,
+				}, flags)
+			}
+			path := "/conversations.history"
+			c, err := flags.newClient()
+			if err != nil {
+				return err
+			}
 			if flagUser != "" {
 				data, histErr := slackHistoryFetchDM(cmd.Context(), c, "", flagUser, params)
 				if histErr != nil {
@@ -92,17 +95,20 @@ func newConversationsHistoryCmd(flags *rootFlags) *cobra.Command {
 				data = truncateJSONArray(data, flagLimit)
 				return printConversationsHistory(cmd, flags, data, DataProvenance{Source: "live"})
 			}
-			if slackIsDMChannel(flagChannel) && os.Getenv("SLACK_USER_TOKEN") != "" {
-				data, histErr := slackHistoryFetchDM(cmd.Context(), c, flagChannel, "", params)
-				if histErr != nil {
-					return classifyAPIError(histErr, flags)
+			params["channel"] = formatCLIParamValue(flagChannel)
+			data, prov, err := resolveReadWithStrategyAndResponsePath(cmd.Context(), c, flags, "auto", "conversations", false, path, params, nil, "", cmd.ErrOrStderr())
+			if err == nil && slackIsDMChannel(flagChannel) {
+				err = checkSlackAPIError(data)
+			}
+			if err != nil && slackIsDMChannel(flagChannel) && os.Getenv("SLACK_USER_TOKEN") != "" && strings.Contains(err.Error(), "channel_not_found") {
+				botErr := err
+				data, err = slackHistoryFetchDM(cmd.Context(), c, flagChannel, "", params)
+				if err != nil {
+					return classifyAPIError(fmt.Errorf("bot history failed: %v; user-token fallback failed: %w", botErr, err), flags)
 				}
 				data = truncateJSONArray(data, flagLimit)
 				return printConversationsHistory(cmd, flags, data, DataProvenance{Source: "live"})
 			}
-
-			params["channel"] = formatCLIParamValue(flagChannel)
-			data, prov, err := resolveReadWithStrategyAndResponsePath(cmd.Context(), c, flags, "auto", "conversations", false, path, params, nil, "", cmd.ErrOrStderr())
 			if err != nil {
 				return classifyAPIError(err, flags)
 			}
@@ -138,15 +144,21 @@ func slackHistoryFetchDM(ctx context.Context, c *client.Client, channel, userID 
 
 	if userID == "" && strings.Contains(err.Error(), "channel_not_found") {
 		peer, peerErr := slackPeerForIM(ctx, c, channel)
-		if peerErr == nil && peer != "" {
-			if opened, openErr := slackResolveDMChannel(ctx, c, peer); openErr == nil {
-				if retryData, retryErr := slackHistoryEnvelope(ctx, c, opened, params); retryErr == nil {
-					return slackEnvelopeMessages(retryData)
-				}
-			}
+		if peerErr != nil {
+			return nil, fmt.Errorf("%w; existing DM peer lookup failed: %v", err, peerErr)
 		}
-		return nil, fmt.Errorf("%w\nhint: IM channel ids from 'conversations list --types im' may need to be resolved before reading history."+
-			"\n      Use --user USER_ID to look up an existing DM without creating one.", err)
+		if peer == "" {
+			return nil, fmt.Errorf("%w; existing DM peer lookup returned no user ID\nhint: use --user USER_ID to look up an existing DM without creating one", err)
+		}
+		opened, openErr := slackResolveDMChannel(ctx, c, peer)
+		if openErr != nil {
+			return nil, fmt.Errorf("%w; existing DM resolution failed: %v", err, openErr)
+		}
+		retryData, retryErr := slackHistoryEnvelope(ctx, c, opened, params)
+		if retryErr != nil {
+			return nil, fmt.Errorf("%w; resolved DM history failed: %v", err, retryErr)
+		}
+		return slackEnvelopeMessages(retryData)
 	}
 	return nil, err
 }

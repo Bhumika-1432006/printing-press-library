@@ -167,7 +167,7 @@ content they cover.
 - `slack-pp-cli conversations archive` — Archive a channel
 - `slack-pp-cli conversations create` — Create a new channel
 - `slack-pp-cli conversations get` — Get information about a channel
-- `slack-pp-cli conversations history` — Fetch channel history with `--channel ID`, or read an existing DM with `--user USER_ID` and `SLACK_USER_TOKEN`. DM lookup does not create a conversation.
+- `slack-pp-cli conversations history` — Fetch channel history with `--channel ID`, or read an existing DM with `--user USER_ID` and `SLACK_USER_TOKEN`. DM lookup does not create a conversation and needs live access; `--data-source local` is rejected for D-prefixed channels and `--user`.
 - `slack-pp-cli conversations invite` — Invite users to a channel
 - `slack-pp-cli conversations list` — List all channels in the workspace
 - `slack-pp-cli conversations mark` — Mark a channel as read up to a specific message

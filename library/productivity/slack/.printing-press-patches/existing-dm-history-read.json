@@ -11,5 +11,5 @@
     "internal/cli/conversations_history_dm_test.go",
     "internal/cli/slack_dm_helpers.go"
   ],
-  "validated_outcome": "Synthetic tests check existing-DM lookup with prevent_creation, user-token history, bot-token fallback, mutually exclusive flags, and dry-run without a request."
+  "validated_outcome": "Synthetic tests check existing-DM lookup with prevent_creation, bot-token-first reads, user-token fallback, local-source rejection, retry errors, mutually exclusive flags, and dry-run filters without a request."
 }
