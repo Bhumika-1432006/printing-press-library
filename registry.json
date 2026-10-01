@@ -1451,6 +1451,12 @@
         "handle": "Avanderheyde",
         "name": "Alderik"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "amc-theatres-pp-mcp",
         "transports": [
@@ -7047,9 +7053,9 @@
       "path": "library/education/dreaming",
       "release": {
         "cli_name": "dreaming-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:43:26Z",
+        "source_commit": "93b95a19b21cea7ea30276f92a829ffe88a882f4"
       },
       "printer": "paulbockewitz",
       "printer_name": "Paul Bockewitz",
@@ -12724,9 +12730,9 @@
       "path": "library/productivity/human-goat",
       "release": {
         "cli_name": "human-goat-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-19T15:59:49Z",
-        "source_commit": "047a77b5a56a1b1e65189f16b1a2542d62b42628"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:44:18Z",
+        "source_commit": "8b87fada6bf7787c4f017070278d17ffb65c56b5"
       },
       "printer": "mvanhorn",
       "printer_name": "Matt Van Horn",
