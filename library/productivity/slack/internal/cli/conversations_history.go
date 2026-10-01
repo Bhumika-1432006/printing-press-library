@@ -100,7 +100,8 @@ func newConversationsHistoryCmd(flags *rootFlags) *cobra.Command {
 			if err == nil && slackIsDMChannel(flagChannel) {
 				err = checkSlackAPIError(data)
 			}
-			if err != nil && slackIsDMChannel(flagChannel) && os.Getenv("SLACK_USER_TOKEN") != "" && strings.Contains(err.Error(), "channel_not_found") {
+			if err != nil && slackIsDMChannel(flagChannel) && os.Getenv("SLACK_USER_TOKEN") != "" &&
+				(strings.Contains(err.Error(), "channel_not_found") || strings.Contains(err.Error(), "missing Slack scope:")) {
 				botErr := err
 				data, err = slackHistoryFetchDM(cmd.Context(), c, flagChannel, "", params)
 				if err != nil {

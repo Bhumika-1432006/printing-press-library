@@ -229,6 +229,43 @@ func TestConversationsHistoryDMFallsBackAfterBotChannelNotFound(t *testing.T) {
 	}
 }
 
+func TestConversationsHistoryDMFallsBackAfterBotMissingScope(t *testing.T) {
+	var auths []string
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/conversations.history" || r.URL.Query().Get("channel") != "D456" {
+			t.Errorf("unexpected request %s?%s", r.URL.Path, r.URL.RawQuery)
+		}
+		auth := r.Header.Get("Authorization")
+		auths = append(auths, auth)
+		w.Header().Set("Content-Type", "application/json")
+		if auth == "Bearer xoxb-bot-token-placeholder" {
+			_, _ = w.Write([]byte(`{"ok":false,"error":"missing_scope","needed":"im:history"}`))
+			return
+		}
+		_, _ = w.Write([]byte(`{"ok":true,"messages":[{"ts":"1","text":"hello"}]}`))
+	}))
+	t.Cleanup(server.Close)
+	t.Setenv("SLACK_BASE_URL", server.URL)
+	t.Setenv("SLACK_BOT_TOKEN", "xoxb-bot-token-placeholder")
+	t.Setenv("SLACK_USER_TOKEN", "xoxp-user-token-placeholder")
+	t.Setenv("SLACK_DATA_DIR", t.TempDir())
+
+	cmd := newConversationsHistoryCmd(&rootFlags{asJSON: true})
+	var stdout bytes.Buffer
+	cmd.SetOut(&stdout)
+	cmd.SetErr(&bytes.Buffer{})
+	cmd.SetArgs([]string{"--channel", "D456"})
+	if err := cmd.Execute(); err != nil {
+		t.Fatal(err)
+	}
+	if len(auths) != 2 || auths[0] != "Bearer xoxb-bot-token-placeholder" || auths[1] != "Bearer xoxp-user-token-placeholder" {
+		t.Fatalf("auth order = %v, want bot then user", auths)
+	}
+	if !strings.Contains(stdout.String(), "hello") {
+		t.Fatalf("history output = %q, want user-token DM result", stdout.String())
+	}
+}
+
 func TestConversationsHistoryDMReportsRetryScopeError(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")

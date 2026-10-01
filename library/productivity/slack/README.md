@@ -378,7 +378,7 @@ Read channel history, list channels, manage channel membership
 - **`slack-pp-cli conversations archive`** - Archive a channel
 - **`slack-pp-cli conversations create`** - Create a new channel
 - **`slack-pp-cli conversations get`** - Get information about a channel
-- **`slack-pp-cli conversations history`** - Fetch channel history with `--channel ID`, or read an existing DM with `--user USER_ID` and `SLACK_USER_TOKEN`. DM lookup does not create a conversation. A bot token reads an accessible D-prefixed channel first; a user token resolves it only if the bot gets `channel_not_found`. DM lookup needs live access, so `--data-source local` is rejected.
+- **`slack-pp-cli conversations history`** - Fetch channel history with `--channel ID`, or read an existing DM with `--user USER_ID` and `SLACK_USER_TOKEN`. DM lookup does not create a conversation. A bot token reads an accessible D-prefixed channel first; a user token retries if the bot cannot find the channel or lacks its history scope. DM lookup needs live access, so `--data-source local` is rejected.
 - **`slack-pp-cli conversations invite`** - Invite users to a channel
 - **`slack-pp-cli conversations list`** - List all channels in the workspace
 - **`slack-pp-cli conversations mark`** - Mark a channel as read up to a specific message
