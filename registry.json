@@ -1441,9 +1441,9 @@
       "path": "library/media-and-entertainment/amc-theatres",
       "release": {
         "cli_name": "amc-theatres-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:45:18Z",
+        "source_commit": "516a497291e5340505f44677e08556ec6545f569"
       },
       "printer": "Avanderheyde",
       "printer_name": "Alderik",
@@ -1451,6 +1451,12 @@
         "handle": "Avanderheyde",
         "name": "Alderik"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "amc-theatres-pp-mcp",
         "transports": [
@@ -5007,9 +5013,9 @@
       "path": "library/cloud/cloudflare",
       "release": {
         "cli_name": "cloudflare-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-01T02:58:45Z",
-        "source_commit": "b9919bcc7c214bad576f361557ba39739090f277"
+        "version": "2026.10.2",
+        "released_at": "2026-10-01T22:09:24Z",
+        "source_commit": "802b7744c60606bb83945cedecadf8121d92fcd2"
       },
       "printer": "cathrynlavery",
       "printer_name": "Cathryn Lavery",
@@ -7047,9 +7053,9 @@
       "path": "library/education/dreaming",
       "release": {
         "cli_name": "dreaming-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:43:26Z",
+        "source_commit": "93b95a19b21cea7ea30276f92a829ffe88a882f4"
       },
       "printer": "paulbockewitz",
       "printer_name": "Paul Bockewitz",
@@ -7057,6 +7063,12 @@
         "handle": "paulbockewitz",
         "name": "Paul Bockewitz"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "dreaming-pp-mcp",
         "transports": [
@@ -7608,9 +7620,9 @@
       "path": "library/ai/elevenlabs",
       "release": {
         "cli_name": "elevenlabs-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-01T02:58:45Z",
-        "source_commit": "b9919bcc7c214bad576f361557ba39739090f277"
+        "version": "2026.10.2",
+        "released_at": "2026-10-01T22:07:06Z",
+        "source_commit": "6a0986ee96fae7da43148e2606670a0294d19c5b"
       },
       "printer": "cathrynlavery",
       "printer_name": "Cathryn Lavery",
@@ -9113,9 +9125,9 @@
       "path": "library/ai/fish-audio",
       "release": {
         "cli_name": "fish-audio-pp-cli",
-        "version": "2026.10.3",
-        "released_at": "2026-10-01T21:23:58Z",
-        "source_commit": "1f1290f3b38a47092e550bf30862413397ed6c4f"
+        "version": "2026.10.5",
+        "released_at": "2026-10-01T21:50:39Z",
+        "source_commit": "33f732fef8aff4b50856a7dcb0cf3b30c90b3e48"
       },
       "printer": "jongouveia",
       "printer_name": "Jon Gouveia",
@@ -9174,9 +9186,9 @@
       "path": "library/travel/flight-goat",
       "release": {
         "cli_name": "flight-goat-pp-cli",
-        "version": "2026.9.4",
-        "released_at": "2026-09-30T08:53:43Z",
-        "source_commit": "314c143ac10b850ba6dd13d3b5492ffc44ef1368"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:49:09Z",
+        "source_commit": "653e24fa44b47dea577b74d0a29d913036ce6707"
       },
       "printer": "mvanhorn",
       "printer_name": "Matt Van Horn",
@@ -9204,6 +9216,10 @@
         {
           "handle": "patricksrail",
           "name": "Patrick Srail"
+        },
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
         }
       ],
       "mcp": {
@@ -11582,9 +11598,9 @@
       "path": "library/productivity/granola",
       "release": {
         "cli_name": "granola-pp-cli",
-        "version": "2026.9.3",
-        "released_at": "2026-09-21T00:23:16Z",
-        "source_commit": "7f8548e7329a9a1732fcd075b64e5e0d1d14c799"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:59:12Z",
+        "source_commit": "ca3ca3412fe6c03df3513dc66adacf20e8f8f4c6"
       },
       "printer": "dstevens",
       "printer_name": "Damien Stevens",
@@ -11604,6 +11620,10 @@
         {
           "handle": "giuseppebisemi",
           "name": "Giuseppe Bisemi"
+        },
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
         }
       ],
       "mcp": {
@@ -12718,9 +12738,9 @@
       "path": "library/productivity/human-goat",
       "release": {
         "cli_name": "human-goat-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-19T15:59:49Z",
-        "source_commit": "047a77b5a56a1b1e65189f16b1a2542d62b42628"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:44:18Z",
+        "source_commit": "8b87fada6bf7787c4f017070278d17ffb65c56b5"
       },
       "printer": "mvanhorn",
       "printer_name": "Matt Van Horn",
@@ -12728,6 +12748,12 @@
         "handle": "mvanhorn",
         "name": "Matt Van Horn"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "human-goat-pp-mcp",
         "transports": [
@@ -19491,9 +19517,9 @@
         "Index to tracking funds",
         "index funds <index>",
         "See every ETF and index fund that tracks a given NSE index in one call.",
-        "Tracking fidelity report",
+        "Tracking cost and metrics report",
         "index tracking <index>",
-        "Rank every fund tracking an index by cost and NAV fidelity against the index level.",
+        "Rank trackers by disclosed expense ratio and show provider-reported tracking metrics.",
         "Cheapest tracker finder",
         "index cheapest-tracker <index>",
         "Find the lowest-cost fund tracking a given index.",
@@ -19511,14 +19537,14 @@
         "See a fund's raw API response with cryptic field codes resolved to human-readable names.",
         "Fund vs index compare",
         "compare <schemeId> <index>",
-        "See a single fund's NAV/AUM/expense next to its benchmark index's level and top constituents, side by side."
+        "See a fund's NAV/AUM/expense next to a requested index, with benchmark validation status."
       ],
       "path": "library/other/passive-indices",
       "release": {
         "cli_name": "passive-indices-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:42:14Z",
+        "source_commit": "fa36401f7d7ac64380b977ee407e20140f7f82e5"
       },
       "printer": "lavs9",
       "printer_name": "Mayank Lavania",
@@ -19526,6 +19552,12 @@
         "handle": "lavs9",
         "name": "Mayank Lavania"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "passive-indices-pp-mcp",
         "transports": [
@@ -22660,9 +22692,9 @@
       "path": "library/other/retraction-checker",
       "release": {
         "cli_name": "retraction-checker-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.2",
+        "released_at": "2026-10-01T22:05:26Z",
+        "source_commit": "5bc491139a7940c81cd4d564f048d5e58d1ae836"
       },
       "printer": "laci141",
       "printer_name": "laci141",
@@ -24976,9 +25008,9 @@
       "path": "library/media-and-entertainment/skool",
       "release": {
         "cli_name": "skool-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:56:03Z",
+        "source_commit": "42929c8eb99b103a83acfb74078c53ad71316e35"
       },
       "printer": "quoxientzero",
       "printer_name": "Zain Haseeb",
@@ -24990,6 +25022,10 @@
         {
           "handle": "tmchow",
           "name": "Trevin Chow"
+        },
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
         }
       ],
       "mcp": {
@@ -25052,6 +25088,10 @@
         {
           "handle": "ChrisGutierrezNet",
           "name": "Chris G. | AI Automation"
+        },
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
         }
       ],
       "mcp": {
@@ -25964,9 +26004,9 @@
       "path": "library/payments/stripe",
       "release": {
         "cli_name": "stripe-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T22:00:45Z",
+        "source_commit": "57d26520af98a82407865a6c09925db76d216652"
       },
       "printer": "crodorg",
       "printer_name": "Chris Rodriguez",
@@ -30723,9 +30763,9 @@
       "path": "library/social-and-messaging/x-twitter",
       "release": {
         "cli_name": "x-twitter-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T22:03:40Z",
+        "source_commit": "e1a6190c03782765f4a03cf2b436eb1cf096077e"
       },
       "printer": "cathrynlavery",
       "printer_name": "Cathryn Lavery",
