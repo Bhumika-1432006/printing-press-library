@@ -148,6 +148,8 @@ slack-pp-cli catchup --since 24h
 
 ```
 
+The conversation sync defaults to public and private channels, which avoids asking a bot token for DM scopes it may lack. An explicit sync parameter can change the channel types.
+
 ## Unique Features
 
 These capabilities aren't available in any other tool for this API.
@@ -338,6 +340,7 @@ Create, edit, share, and delete Slack canvases
 
 Requires the `canvases:write` and `canvases:read` scopes, plus `files:read` for
 `canvases read`.
+Verifier-mode canvas writes report a no-op rather than a successful change.
 
 Slack publishes no get-canvas-content endpoint, so `read` resolves the canvas's
 backing file through `files.info` and downloads `url_private_download`. Content
