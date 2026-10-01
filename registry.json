@@ -2620,6 +2620,12 @@
         "handle": "Drummerms",
         "name": "drummerms"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "averusa-pp-mcp",
         "transports": [
