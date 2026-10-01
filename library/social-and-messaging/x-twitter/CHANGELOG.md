@@ -2,6 +2,10 @@
 
 This file is maintained by printing-press-library release automation. Do not hand-edit release sections in normal PRs.
 
+## 2026.10.2 - 2026-10-01
+
+- feat(x-twitter): rank recent posts by engagement (#2160).
+
 ## 2026.10.1 - 2026-10-01
 
 - fix(x-twitter): explain unsupported article image uploads (#2159).
