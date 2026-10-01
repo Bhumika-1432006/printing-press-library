@@ -14468,6 +14468,12 @@
         "handle": "SomSamantray",
         "name": "Som Samantray"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "keenable-pp-mcp",
         "transports": [
@@ -17649,9 +17655,9 @@
       "path": "library/food-and-dining/nutrition",
       "release": {
         "cli_name": "nutrition-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T23:01:20Z",
+        "source_commit": "0f3672842415b46f682513ae20bd05f2670b082b"
       },
       "printer": "mvanhorn",
       "printer_name": "Matt Van Horn",
