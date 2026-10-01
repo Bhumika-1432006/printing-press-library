@@ -22859,6 +22859,12 @@
         "handle": "stellato",
         "name": "Greg Stellato"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "ridewithgps-pp-mcp",
         "transports": [
