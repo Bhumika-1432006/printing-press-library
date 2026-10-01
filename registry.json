@@ -11505,7 +11505,13 @@
       "creator": {
         "handle": "sdhilip200",
         "name": "Dhilip Subramanian"
-      }
+      },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ]
     },
     {
       "name": "granola",
@@ -11775,6 +11781,12 @@
         "handle": "veltri-23",
         "name": "Hunter Veltri"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "greenhouse-pp-mcp",
         "transports": [
@@ -23819,9 +23831,9 @@
       "path": "library/productivity/seek",
       "release": {
         "cli_name": "seek-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T20:31:26Z",
+        "source_commit": "f210aa742396dd22400784ff412ebfb6321b761d"
       },
       "printer": "polsiola-dot",
       "printer_name": "Paul Siola",
