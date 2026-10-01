@@ -15836,6 +15836,12 @@
         "handle": "maxswinguy",
         "name": "Maxime Delavergne"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "medium-reader-pp-mcp",
         "transports": [
