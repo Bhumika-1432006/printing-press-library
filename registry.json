@@ -2381,6 +2381,12 @@
         "Resolve region/category IDs with explicit refresh control."
       ],
       "path": "library/travel/asoview",
+      "release": {
+        "cli_name": "asoview-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T08:52:18Z",
+        "source_commit": "fed31b0ef9b6d79ffd950da4bcb608685bafdf86"
+      },
       "printer": "zjsng-trav",
       "printer_name": "zjsng",
       "creator": {
@@ -7406,6 +7412,12 @@
         "inventory list"
       ],
       "path": "library/travel/ecbo-cloak",
+      "release": {
+        "cli_name": "ecbo-cloak-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T08:52:18Z",
+        "source_commit": "10f1053cb025f86718ed9b722b1089989cd218c1"
+      },
       "printer": "zjsng-trav",
       "printer_name": "zjsng",
       "creator": {
@@ -13874,6 +13886,12 @@
         "Validate first-party source catalogs before atomic local replacement."
       ],
       "path": "library/travel/jma",
+      "release": {
+        "cli_name": "jma-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T08:52:18Z",
+        "source_commit": "edad5f528dd41f5e60e1ab3cba92afc7091d63a2"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -17182,6 +17200,12 @@
         "Reuse parsed source facts with timestamps and explicit offline/stale provenance."
       ],
       "path": "library/travel/nifty-onsen",
+      "release": {
+        "cli_name": "nifty-onsen-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T08:52:18Z",
+        "source_commit": "af00bd2d3afe7830bcad0124a205e4b9c4499fd7"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -17910,6 +17934,12 @@
         "Explicitly refresh bounded summary pages and inspect or search local inventory coverage."
       ],
       "path": "library/travel/omakase",
+      "release": {
+        "cli_name": "omakase-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T08:52:18Z",
+        "source_commit": "fd8fef08c0465f74277c0638ac217d3c3a807736"
+      },
       "printer": "zjsng-trav",
       "printer_name": "zjsng",
       "creator": {
@@ -20210,6 +20240,12 @@
         "Combines public course and session identity checks with a read-only first-party handoff."
       ],
       "path": "library/travel/pocket-concierge",
+      "release": {
+        "cli_name": "pocket-concierge-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T08:52:18Z",
+        "source_commit": "a4aec9fbcc88cb236f59965e145b046ff42084bc"
+      },
       "printer": "zjsng-trav",
       "printer_name": "zjsng",
       "creator": {
@@ -27775,6 +27811,12 @@
         "Project fields and expose cache/source freshness."
       ],
       "path": "library/travel/tokyo-art-beat",
+      "release": {
+        "cli_name": "tokyo-art-beat-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T08:52:18Z",
+        "source_commit": "821910adda463d22b8f79e681c7e4680a419744a"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -30561,6 +30603,50 @@
         "transports": [
           "stdio",
           "http"
+        ],
+        "tool_count": 11,
+        "public_tool_count": 11,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
+      "name": "yamap",
+      "category": "travel",
+      "api": "YAMAP",
+      "description": "Discover Japan hikes with compact source facts and dated contributor evidence.",
+      "search_terms": [
+        "yamap",
+        "yamap-pp-cli",
+        "Discover Japan hikes with compact source facts and dated contributor evidence.",
+        "Recent reports",
+        "reports recent",
+        "Find recorded activity evidence by trip date in a bounded scan",
+        "Contributor observations",
+        "reports observations",
+        "Read bounded contributor observations with trip dates and source links",
+        "Route versus trip",
+        "routes compare",
+        "Compare planned metrics with recorded metrics without assuming track equivalence",
+        "Map coverage",
+        "maps coverage",
+        "Inspect map area bounds and limits of map coverage",
+        "Inventory status",
+        "Inspect cached request inventory and freshness without a crawl"
+      ],
+      "path": "library/travel/yamap",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "yamap-pp-mcp",
+        "transports": [
+          "stdio"
         ],
         "tool_count": 11,
         "public_tool_count": 11,
