@@ -12734,6 +12734,12 @@
         "handle": "mvanhorn",
         "name": "Matt Van Horn"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "human-goat-pp-mcp",
         "transports": [
@@ -19522,9 +19528,9 @@
       "path": "library/other/passive-indices",
       "release": {
         "cli_name": "passive-indices-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:42:14Z",
+        "source_commit": "fa36401f7d7ac64380b977ee407e20140f7f82e5"
       },
       "printer": "lavs9",
       "printer_name": "Mayank Lavania",
