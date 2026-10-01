@@ -1286,6 +1286,12 @@
         "handle": "qazmataz",
         "name": "qazmataz"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "amazon-jobs-pp-mcp",
         "transports": [
@@ -28676,9 +28682,9 @@
       "path": "library/travel/uk-train-goat",
       "release": {
         "cli_name": "uk-train-goat-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T20:52:19Z",
+        "source_commit": "75c51afcf4a71594673b88ad2299a6603046a008"
       },
       "printer": "ahujasachin92",
       "printer_name": "Sachin Ahuja",
