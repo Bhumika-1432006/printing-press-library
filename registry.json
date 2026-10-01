@@ -1727,9 +1727,9 @@
       "path": "library/food-and-dining/anylist",
       "release": {
         "cli_name": "anylist-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-01T09:07:10Z",
-        "source_commit": "4c3bc306f9f4f4a63f9e6a4ead2f313160cd020f"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T20:21:20Z",
+        "source_commit": "e45694c266280c6daad0291562155315c44b73c7"
       },
       "printer": "jeeves",
       "printer_name": "Jeeves",
@@ -9507,6 +9507,12 @@
       },
       "printer": "jrimmer",
       "printer_name": "jrimmer",
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "forgejo-pp-mcp",
         "transports": [
@@ -26172,9 +26178,9 @@
       "path": "library/developer-tools/supabase",
       "release": {
         "cli_name": "supabase-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T20:21:20Z",
+        "source_commit": "e45694c266280c6daad0291562155315c44b73c7"
       },
       "printer": "giacaglia",
       "printer_name": "Giuliano Giacaglia",
