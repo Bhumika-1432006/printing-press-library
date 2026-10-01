@@ -23829,6 +23829,12 @@
         "handle": "polsiola-dot",
         "name": "Paul Siola"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "seek-pp-mcp",
         "transports": [
