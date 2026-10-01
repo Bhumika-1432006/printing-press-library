@@ -2680,9 +2680,9 @@
       "path": "library/other/axs",
       "release": {
         "cli_name": "axs-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:14:25Z",
+        "source_commit": "88b42442e5b980174f228c9bb0a2e7d654b9aae7"
       },
       "printer": "stellato",
       "printer_name": "Greg Stellato",
@@ -24466,6 +24466,12 @@
         "handle": "abe238",
         "name": "Abe Diaz (@abe238)"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "shelters-pp-mcp",
         "transports": [
