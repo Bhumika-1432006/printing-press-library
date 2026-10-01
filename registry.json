@@ -2610,9 +2610,9 @@
       "path": "library/devices/averusa",
       "release": {
         "cli_name": "averusa-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T20:34:06Z",
+        "source_commit": "49f0b93b4c1ab93bccf4a9582b0c99969b2f5727"
       },
       "printer": "Drummerms",
       "printer_name": "drummerms",
@@ -11502,9 +11502,9 @@
       "path": "library/other/govspend",
       "release": {
         "cli_name": "govspend-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-02T09:23:11Z",
-        "source_commit": "2fdbf64b90399a6d9e0d9ba2e200c73696160811"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T20:33:09Z",
+        "source_commit": "5652d877a40c8b37b54cf2a1cde96ff072c5d89b"
       },
       "printer": "sdhilip200",
       "printer_name": "Dhilip Subramanian",
@@ -11777,9 +11777,9 @@
       "path": "library/other/greenhouse",
       "release": {
         "cli_name": "greenhouse-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T20:33:09Z",
+        "source_commit": "5652d877a40c8b37b54cf2a1cde96ff072c5d89b"
       },
       "printer": "veltri-23",
       "printer_name": "Hunter Veltri",
@@ -21865,9 +21865,9 @@
       "path": "library/developer-tools/rapidapi",
       "release": {
         "cli_name": "rapidapi-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T20:35:58Z",
+        "source_commit": "94ee73fd80c7e724df1fedfde460335404dab13b"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
@@ -21875,6 +21875,12 @@
         "handle": "SomSamantray",
         "name": "Som Samantray"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "rapidapi-pp-mcp",
         "transports": [
