@@ -9125,9 +9125,9 @@
       "path": "library/ai/fish-audio",
       "release": {
         "cli_name": "fish-audio-pp-cli",
-        "version": "2026.10.4",
-        "released_at": "2026-10-01T21:40:43Z",
-        "source_commit": "ede3e87e30f119031c872986033e5d9b7d3e31b2"
+        "version": "2026.10.5",
+        "released_at": "2026-10-01T21:50:39Z",
+        "source_commit": "33f732fef8aff4b50856a7dcb0cf3b30c90b3e48"
       },
       "printer": "jongouveia",
       "printer_name": "Jon Gouveia",
@@ -9186,9 +9186,9 @@
       "path": "library/travel/flight-goat",
       "release": {
         "cli_name": "flight-goat-pp-cli",
-        "version": "2026.9.4",
-        "released_at": "2026-09-30T08:53:43Z",
-        "source_commit": "314c143ac10b850ba6dd13d3b5492ffc44ef1368"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:49:09Z",
+        "source_commit": "653e24fa44b47dea577b74d0a29d913036ce6707"
       },
       "printer": "mvanhorn",
       "printer_name": "Matt Van Horn",
@@ -25018,6 +25018,10 @@
         {
           "handle": "tmchow",
           "name": "Trevin Chow"
+        },
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
         }
       ],
       "mcp": {
