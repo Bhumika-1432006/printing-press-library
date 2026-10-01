@@ -26801,6 +26801,70 @@
       }
     },
     {
+      "name": "tailscale",
+      "category": "cloud",
+      "api": "Tailscale",
+      "description": "Tailscale admin from the terminal, with safe route and policy edits an agent can plan before it writes.",
+      "search_terms": [
+        "tailscale",
+        "tailscale-pp-cli",
+        "Tailscale admin from the terminal, with safe route and policy edits an agent can plan before it writes.",
+        "API access token (tskey-api-...) from the admin console Keys page, or set TAILSCALE_OAUTH_CLIENT_ID and TAILSCALE_OAUTH_CLIENT_SECRET for a scoped OAuth client.",
+        "Route approval that keeps other routes",
+        "routes approve",
+        "Approve a subnet route or exit node on one device without dropping the routes it already has.",
+        "Route unapproval that keeps other routes",
+        "routes unapprove",
+        "Remove approval for one route or the exit-node pair while leaving every other approved route in place.",
+        "Safe policy entry insert",
+        "policy add-entry",
+        "Append one nodeAttrs, grants, acls, or ssh entry to the policy file with comments preserved, a local backup, validation, a diff, and a concurrency check.",
+        "Policy rollback",
+        "policy restore",
+        "Roll the policy file back to a local backup after validating it and showing the diff.",
+        "Tailnet route board",
+        "routes overview",
+        "See approved, pending, and stale routes and exit-node state for every device in one table.",
+        "Fleet key-expiry report",
+        "devices expiry",
+        "List every device by days until its key expires and flag the ones inside a window.",
+        "Machine share audit",
+        "shares audit",
+        "List every machine-share invite across the tailnet with who accepted it and which invites are still redeemable.",
+        "Machine share revoke",
+        "shares revoke",
+        "Revoke machine-share invites by ID or by device and acceptor, with a plan before any delete.",
+        "Reachability preview",
+        "access check",
+        "Show which policy rules let a user reach a device and port, against the live policy or a candidate file.",
+        "Device dossier",
+        "devices inspect",
+        "Get one device's identity, routes, key expiry, shares, and recent changes in a single record."
+      ],
+      "path": "library/cloud/tailscale",
+      "printer": "cathrynlavery",
+      "printer_name": "Cathryn Lavery",
+      "creator": {
+        "handle": "cathrynlavery",
+        "name": "Cathryn Lavery"
+      },
+      "mcp": {
+        "binary": "tailscale-pp-mcp",
+        "transports": [
+          "stdio",
+          "http"
+        ],
+        "tool_count": 92,
+        "public_tool_count": 0,
+        "auth_type": "bearer_token",
+        "env_vars": [
+          "TAILSCALE_API_KEY"
+        ],
+        "mcp_ready": "full",
+        "spec_format": "openapi3"
+      }
+    },
+    {
       "name": "techmeme",
       "category": "productivity",
       "api": "Techmeme",
@@ -29733,6 +29797,12 @@
         "Preserve source names, URLs and coordinates before forecast selection"
       ],
       "path": "library/travel/weathernews",
+      "release": {
+        "cli_name": "weathernews-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T09:36:17Z",
+        "source_commit": "c245b2b170125b1e195b686dd2b9af3a0227adc7"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
