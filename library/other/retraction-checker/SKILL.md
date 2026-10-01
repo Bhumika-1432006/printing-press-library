@@ -18,6 +18,9 @@ metadata:
 
 # Retraction Checker — Printing Press CLI
 
+Created by [@laci141](https://github.com/laci141) (laci141).
+Contributors: [@cathrynlavery](https://github.com/cathrynlavery) (Cathryn Lavery).
+
 ## Prerequisites: Install the CLI
 
 This skill drives the `retraction-checker-pp-cli` binary. **You must verify the CLI is installed before invoking any command from this skill.** If it is missing, install it first:
@@ -268,6 +271,8 @@ Parse `$ARGUMENTS`:
    claude mcp add retraction-checker-pp-mcp -- retraction-checker-pp-mcp
    ```
 3. Verify: `claude mcp list`
+
+The default MCP transport is stdio. For local HTTP, run `retraction-checker-pp-mcp --transport http`; its default bind is `127.0.0.1:7777`. The server refuses hostnames and non-loopback addresses because it has no remote HTTP authentication.
 
 ## Direct Use
 
