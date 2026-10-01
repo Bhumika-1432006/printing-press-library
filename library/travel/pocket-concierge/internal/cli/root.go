@@ -12,7 +12,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var version = "0.1.0"
+var version = "2026.10.1"
 
 type rootFlags struct {
 	lang, cacheDir, selectFields                              string
