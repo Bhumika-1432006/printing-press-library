@@ -2690,6 +2690,12 @@
         "handle": "stellato",
         "name": "Greg Stellato"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "axs-pp-mcp",
         "transports": [
@@ -14972,9 +14978,9 @@
       "path": "library/job-boards/lever",
       "release": {
         "cli_name": "lever-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:13:11Z",
+        "source_commit": "b21cf4f5b927715e27385b52a5e816e290f66e46"
       },
       "printer": "veltri-23",
       "printer_name": "Hunter Veltri",
