@@ -29708,6 +29708,58 @@
       }
     },
     {
+      "name": "weathernews",
+      "category": "travel",
+      "api": "Weathernews",
+      "description": "Japan weather and seasonal travel evidence with explicit dates, freshness and coverage.",
+      "search_terms": [
+        "weathernews",
+        "weathernews-pp-cli",
+        "Japan weather and seasonal travel evidence with explicit dates, freshness and coverage.",
+        "Seasonal inventory",
+        "season search",
+        "Bounded literal Japanese seasonal search with lazy details",
+        "Seasonal detail",
+        "season show",
+        "Separate observation, forecast, norm, season year and ended state",
+        "Weather criteria",
+        "weather compare",
+        "Compare caller daily thresholds across bounded exact coordinates",
+        "Seasonal criteria",
+        "season compare",
+        "Compare caller date proximity to published peak predictions",
+        "Exact place identities",
+        "places resolve",
+        "Preserve source names, URLs and coordinates before forecast selection"
+      ],
+      "path": "library/travel/weathernews",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "contributors": [
+        {
+          "handle": "tmchow",
+          "name": "Trevin Chow"
+        }
+      ],
+      "mcp": {
+        "binary": "weathernews-pp-mcp",
+        "transports": [
+          "stdio",
+          "http"
+        ],
+        "tool_count": 2,
+        "public_tool_count": 2,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
       "name": "weaviate-collections",
       "category": "developer-tools",
       "api": "Weaviate Collections",
@@ -30637,6 +30689,12 @@
         "Inspect cached request inventory and freshness without a crawl"
       ],
       "path": "library/travel/yamap",
+      "release": {
+        "cli_name": "yamap-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T09:06:08Z",
+        "source_commit": "cf2cf02507c903b8a08e60bcdaada6be8a57d311"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
