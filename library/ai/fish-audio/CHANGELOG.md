@@ -2,6 +2,10 @@
 
 This file is maintained by printing-press-library release automation. Do not hand-edit release sections in normal PRs.
 
+## 2026.10.4 - 2026-10-01
+
+- fix(fish-audio): preserve JSONL values and reject ASR import (#2138).
+
 ## 2026.10.3 - 2026-10-01
 
 - fix(fish-audio): publish render output atomically (#2139).
