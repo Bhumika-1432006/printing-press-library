@@ -25279,9 +25279,9 @@
       "path": "library/media-and-entertainment/soccer-goat",
       "release": {
         "cli_name": "soccer-goat-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T20:50:11Z",
+        "source_commit": "82e1782eaf13848292d6c6d2c50004cf32699706"
       },
       "printer": "mvanhorn",
       "printer_name": "Matt Van Horn",
@@ -28686,6 +28686,12 @@
         "handle": "ahujasachin92",
         "name": "Sachin Ahuja"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "uk-train-goat-pp-mcp",
         "transports": [
