@@ -7,6 +7,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"path/filepath"
+	"strings"
 	"testing"
 )
 
@@ -38,6 +39,10 @@ func TestAuthStatusAgentNoCredentialsIsStructuredBlockedJSON(t *testing.T) {
 	}
 	if out["error"] != "no credentials configured" {
 		t.Fatalf("error = %#v, want no credentials configured", out["error"])
+	}
+	hint, ok := out["hint"].(string)
+	if !ok || !strings.Contains(hint, "cloudflare-pp-cli auth setup") {
+		t.Fatalf("hint = %#v, want auth setup instructions", out["hint"])
 	}
 }
 
