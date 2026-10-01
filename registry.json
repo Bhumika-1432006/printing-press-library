@@ -1276,9 +1276,9 @@
       "path": "library/productivity/amazon-jobs",
       "release": {
         "cli_name": "amazon-jobs-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:03:56Z",
+        "source_commit": "668000d5b532567fdabc257883e55b10b03b12d6"
       },
       "printer": "qazmataz",
       "printer_name": "qazmataz",
@@ -14689,7 +14689,13 @@
       "creator": {
         "handle": "keithah",
         "name": "Keith"
-      }
+      },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ]
     },
     {
       "name": "kvmctl",
