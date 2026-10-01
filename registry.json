@@ -5373,6 +5373,12 @@
         "handle": "ptaramona",
         "name": "Conduyt"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "conduyt-crm-pp-mcp",
         "transports": [
@@ -18965,9 +18971,9 @@
       "path": "library/food-and-dining/ordertogo",
       "release": {
         "cli_name": "ordertogo-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T22:45:57Z",
+        "source_commit": "ab5416bac3b83579a5d18a9332141b2660c4ff24"
       },
       "printer": "mvanhorn",
       "printer_name": "Matt Van Horn",
