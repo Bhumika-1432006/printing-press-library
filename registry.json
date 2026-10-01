@@ -1057,9 +1057,9 @@
       "path": "library/developer-tools/algolia",
       "release": {
         "cli_name": "algolia-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:34:10Z",
+        "source_commit": "eaefbf921018ca69d09a8176edb2c53a45b01ca2"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
@@ -6643,9 +6643,9 @@
       "path": "library/productivity/discord",
       "release": {
         "cli_name": "discord-pp-cli",
-        "version": "2026.10.2",
-        "released_at": "2026-10-01T20:26:20Z",
-        "source_commit": "2ac68f80ae94c0663b3b35be1d430f5fe5876bc9"
+        "version": "2026.10.3",
+        "released_at": "2026-10-01T21:32:35Z",
+        "source_commit": "7f8f9f367dd51773f29312495b0519ea6d419da6"
       },
       "printer": "mvanhorn",
       "printer_name": "Hunter Veltri",
@@ -12482,9 +12482,9 @@
       "path": "library/travel/hotel-goat",
       "release": {
         "cli_name": "hotel-goat-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:34:10Z",
+        "source_commit": "8ac68945d8f74e9a6cacbf4217ef85059b908fae"
       },
       "printer": "kothari-nikunj",
       "printer_name": "kothari-nikunj",
@@ -18764,9 +18764,9 @@
       "path": "library/ai/openrouter-image",
       "release": {
         "cli_name": "openrouter-image-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:34:10Z",
+        "source_commit": "d7da5a1775ef8589f3090f2b8770df894aa12d79"
       },
       "printer": "neal-kyle",
       "printer_name": "Kyle Neal",
@@ -22670,6 +22670,12 @@
         "handle": "laci141",
         "name": "laci141"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "retraction-checker-pp-mcp",
         "transports": [
