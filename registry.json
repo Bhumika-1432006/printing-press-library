@@ -8254,9 +8254,9 @@
       "path": "library/ai/exa",
       "release": {
         "cli_name": "exa-pp-cli",
-        "version": "2026.10.2",
-        "released_at": "2026-10-01T20:26:20Z",
-        "source_commit": "2ac68f80ae94c0663b3b35be1d430f5fe5876bc9"
+        "version": "2026.10.3",
+        "released_at": "2026-10-01T21:21:13Z",
+        "source_commit": "61783d26b5690321e9ca910060c66788041d378c"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
@@ -9107,9 +9107,9 @@
       "path": "library/ai/fish-audio",
       "release": {
         "cli_name": "fish-audio-pp-cli",
-        "version": "2026.10.2",
-        "released_at": "2026-10-01T20:26:20Z",
-        "source_commit": "2ac68f80ae94c0663b3b35be1d430f5fe5876bc9"
+        "version": "2026.10.3",
+        "released_at": "2026-10-01T21:23:58Z",
+        "source_commit": "1f1290f3b38a47092e550bf30862413397ed6c4f"
       },
       "printer": "jongouveia",
       "printer_name": "Jon Gouveia",
@@ -11652,7 +11652,13 @@
       "creator": {
         "handle": "laci141",
         "name": "laci141"
-      }
+      },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ]
     },
     {
       "name": "gravitus",
@@ -24456,9 +24462,9 @@
       "path": "library/other/shelters",
       "release": {
         "cli_name": "shelters-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:16:39Z",
+        "source_commit": "c88b573aa45137fd599700ccbb225abc6d1add50"
       },
       "printer": "abe238",
       "printer_name": "Abe Diaz (@abe238)",
