@@ -2356,6 +2356,51 @@
       }
     },
     {
+      "name": "asoview",
+      "category": "travel",
+      "api": "Asoview",
+      "description": "Discover and compare Japan leisure tickets with explicit price units, terms and public dated availability.",
+      "search_terms": [
+        "asoview",
+        "asoview-pp-cli",
+        "Discover and compare Japan leisure tickets with explicit price units, terms and public dated availability.",
+        "Compare terms",
+        "compare",
+        "Compare a bounded shortlist and preserve missing values.",
+        "Bounded relevance",
+        "discover",
+        "Filter Japanese names without claiming a global keyword index.",
+        "Dated stock",
+        "availability",
+        "Inspect public stock for a date and quantity.",
+        "Dated bands",
+        "options",
+        "Read exact date-specific price units and age labels.",
+        "Reference inventory",
+        "inventory",
+        "Resolve region/category IDs with explicit refresh control."
+      ],
+      "path": "library/travel/asoview",
+      "printer": "zjsng-trav",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng-trav",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "asoview-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 2,
+        "public_tool_count": 2,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
       "name": "atlas-obscura",
       "category": "travel",
       "api": "Atlas Obscura",
@@ -7340,6 +7385,47 @@
       }
     },
     {
+      "name": "ecbo-cloak",
+      "category": "travel",
+      "api": "ecbo cloak",
+      "description": "Discover Japan luggage storage and inspect read-only source offers.",
+      "search_terms": [
+        "ecbo-cloak",
+        "ecbo cloak",
+        "ecbo-cloak-pp-cli",
+        "Discover Japan luggage storage and inspect read-only source offers.",
+        "Nearby discovery",
+        "facilities near",
+        "Facility identity/hours/restrictions",
+        "facilities get",
+        "Source date/time/count price and validity",
+        "offer inspect",
+        "Explicit bounded inventory refresh",
+        "inventory refresh",
+        "Offline inventory/query",
+        "inventory list"
+      ],
+      "path": "library/travel/ecbo-cloak",
+      "printer": "zjsng-trav",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng-trav",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "ecbo-cloak-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 4,
+        "public_tool_count": 4,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
       "name": "edgar",
       "category": "other",
       "api": "EDGAR",
@@ -7673,6 +7759,12 @@
         "Inspect separate performance and sale-round identities, exact JST windows and lottery deadlines while keeping unknown inventory and overseas access explicit."
       ],
       "path": "library/media-and-entertainment/eplus",
+      "release": {
+        "cli_name": "eplus-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T08:51:19Z",
+        "source_commit": "654c0e12c0b128552e7db69acea12fb7d035d9b7"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -13756,6 +13848,53 @@
       }
     },
     {
+      "name": "jma",
+      "category": "travel",
+      "api": "Japan Meteorological Agency",
+      "description": "Resolve JMA areas and inspect official forecasts, warnings and uncertain typhoon tracks.",
+      "search_terms": [
+        "jma",
+        "Japan Meteorological Agency",
+        "jma-pp-cli",
+        "Resolve JMA areas and inspect official forecasts, warnings and uncertain typhoon tracks.",
+        "Explicit source resolution",
+        "areas resolve",
+        "Resolve source IDs and reject ambiguous destination names.",
+        "Warning completeness",
+        "warnings get",
+        "Separate applicable no-warning, not-applicable, lifted and incomplete source records.",
+        "Coherent cyclone detail",
+        "typhoons get",
+        "Join matching JMA issued/valid-time geometry and intensity documents.",
+        "Lazy cyclone discovery",
+        "typhoons list",
+        "Discover current source cyclone IDs without detail requests.",
+        "Auditable inventory refresh",
+        "inventory refresh",
+        "Validate first-party source catalogs before atomic local replacement."
+      ],
+      "path": "library/travel/jma",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "jma-pp-mcp",
+        "transports": [
+          "stdio",
+          "http"
+        ],
+        "tool_count": 9,
+        "public_tool_count": 9,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
       "name": "jobber",
       "category": "sales-and-crm",
       "api": "Jobber",
@@ -17746,6 +17885,52 @@
       }
     },
     {
+      "name": "omakase",
+      "category": "travel",
+      "api": "OMAKASE",
+      "description": "Discover premium Japanese restaurants with source courses, release rules and honest availability states.",
+      "search_terms": [
+        "omakase",
+        "omakase-pp-cli",
+        "Discover premium Japanese restaurants with source courses, release rules and honest availability states.",
+        "Course price/fee inspection",
+        "courses",
+        "Inspect public course price floors, units, service charges, reservation fee and cancellation caveats.",
+        "Release schedule inspection",
+        "release",
+        "Read source release timing in JST; distinguish scheduled, irregular and undetermined releases from seats.",
+        "Date/party availability boundary",
+        "availability",
+        "Inspect a planning date and party with unknown exact seats and query_evaluated false when public access is gated.",
+        "Restaurant comparison",
+        "compare",
+        "Compare public terms for two to five restaurant IDs with explicit per-ID failures.",
+        "Local summary inventory",
+        "inventory",
+        "Explicitly refresh bounded summary pages and inspect or search local inventory coverage."
+      ],
+      "path": "library/travel/omakase",
+      "printer": "zjsng-trav",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng-trav",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "omakase-pp-mcp",
+        "transports": [
+          "stdio",
+          "http"
+        ],
+        "tool_count": 2,
+        "public_tool_count": 2,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
       "name": "oneword-domains",
       "category": "developer-tools",
       "api": "One Word Domains",
@@ -19999,6 +20184,37 @@
         ],
         "mcp_ready": "full",
         "spec_format": "openapi3"
+      }
+    },
+    {
+      "name": "pocket-concierge",
+      "category": "travel",
+      "api": "Pocket Concierge",
+      "description": "Discover fine dining with sourced courses, session identity and safe booking handoff.",
+      "search_terms": [
+        "pocket-concierge",
+        "Pocket Concierge",
+        "pocket-concierge-pp-cli",
+        "Discover fine dining with sourced courses, session identity and safe booking handoff.",
+        "Bilingual source identity",
+        "restaurants search",
+        "Match first-party English and Japanese restaurant identities by source ID with bounded native filters.",
+        "Joins language variants by source ID rather than guessing translations.",
+        "Fee conflict preservation",
+        "courses list",
+        "Keep per-guest and per-group JPY prices and conflicting course and restaurant fee statements without inventing a payable total.",
+        "Keeps both source contexts visible rather than flattening fees into a misleading sum.",
+        "Validated canonical handoff",
+        "booking handoff",
+        "Validate course and session ownership and party bounds before returning the canonical restaurant link.",
+        "Combines public course and session identity checks with a read-only first-party handoff."
+      ],
+      "path": "library/travel/pocket-concierge",
+      "printer": "zjsng-trav",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng-trav",
+        "name": "zjsng"
       }
     },
     {
