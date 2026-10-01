@@ -14680,9 +14680,9 @@
       "path": "library/monitoring/kuma",
       "release": {
         "cli_name": "kuma-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-01T09:10:07Z",
-        "source_commit": "78c5c4c057194cbb2ae266b188a7859c442ec05b"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:04:57Z",
+        "source_commit": "4bab09a5027a4a28141df6e41d5b4ab980dab5dc"
       },
       "printer": "keithah",
       "printer_name": "Keith",
@@ -14982,6 +14982,12 @@
         "handle": "veltri-23",
         "name": "Hunter Veltri"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "lever-pp-mcp",
         "transports": [
