@@ -1737,6 +1737,12 @@
         "handle": "jeeves",
         "name": "Jeeves"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "anylist-pp-mcp",
         "transports": [
@@ -26180,6 +26186,10 @@
         {
           "handle": "evanedgeworth",
           "name": "Evan Edgeworth"
+        },
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
         }
       ],
       "mcp": {
@@ -29714,9 +29724,9 @@
       "path": "library/ai/wavespeed",
       "release": {
         "cli_name": "wavespeed-pp-cli",
-        "version": "2026.10.2",
-        "released_at": "2026-10-01T01:40:02Z",
-        "source_commit": "0d7c1f6800b1c41f6071fb7c5eb6281393d55c7b"
+        "version": "2026.10.3",
+        "released_at": "2026-10-01T19:31:20Z",
+        "source_commit": "63a2b0c73e0b71d11d53b4507a1a85ef25ca6313"
       },
       "printer": "cathrynlavery",
       "printer_name": "Cathryn Lavery",
