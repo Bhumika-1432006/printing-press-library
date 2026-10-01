@@ -2,17 +2,17 @@
   "schema_version": 1,
   "slug": "retraction-checker",
   "cli_name": "retraction-checker-pp-cli",
-  "version": "2026.10.2",
-  "released_at": "2026-10-01T22:05:26Z",
-  "source_commit": "5bc491139a7940c81cd4d564f048d5e58d1ae836",
+  "version": "2026.10.3",
+  "released_at": "2026-10-01T22:12:54Z",
+  "source_commit": "741cfc44c169bd564924520d952c044bc477ff3c",
   "printing_press_version": "4.25.0",
   "run_id": "20260702-090842-5bac53b7",
   "changes": [
     {
-      "title": "fix(retraction-checker): read Crossref message items and DOI",
-      "pr": 2150,
-      "url": "https://github.com/mvanhorn/printing-press-library/pull/2150",
-      "commit": "5bc491139a7940c81cd4d564f048d5e58d1ae836"
+      "title": "fix(retraction-checker): distinguish concerns and update direction",
+      "pr": 2149,
+      "url": "https://github.com/mvanhorn/printing-press-library/pull/2149",
+      "commit": "741cfc44c169bd564924520d952c044bc477ff3c"
     }
   ]
 }
