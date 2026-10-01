@@ -6368,7 +6368,13 @@
       "creator": {
         "handle": "Rowdy",
         "name": "Johns"
-      }
+      },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ]
     },
     {
       "name": "dice-fm",
@@ -14791,9 +14797,9 @@
       "path": "library/devices/kvmctl",
       "release": {
         "cli_name": "kvmctl-pp-cli",
-        "version": "2026.9.3",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T23:49:45Z",
+        "source_commit": "934ed9ce46053917612f27b57724f50f0b6e9528"
       },
       "printer": "keithah",
       "printer_name": "Keith Herrington",
