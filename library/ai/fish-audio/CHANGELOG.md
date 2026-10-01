@@ -2,6 +2,10 @@
 
 This file is maintained by printing-press-library release automation. Do not hand-edit release sections in normal PRs.
 
+## 2026.10.5 - 2026-10-01
+
+- fix(fish-audio): retain partial batch recovery details (#2140).
+
 ## 2026.10.4 - 2026-10-01
 
 - fix(fish-audio): preserve JSONL values and reject ASR import (#2138).

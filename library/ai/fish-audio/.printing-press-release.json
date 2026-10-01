@@ -2,17 +2,17 @@
   "schema_version": 1,
   "slug": "fish-audio",
   "cli_name": "fish-audio-pp-cli",
-  "version": "2026.10.4",
-  "released_at": "2026-10-01T21:40:43Z",
-  "source_commit": "ede3e87e30f119031c872986033e5d9b7d3e31b2",
+  "version": "2026.10.5",
+  "released_at": "2026-10-01T21:50:39Z",
+  "source_commit": "33f732fef8aff4b50856a7dcb0cf3b30c90b3e48",
   "printing_press_version": "4.31.1",
   "run_id": "20260828-094138-3dcac761",
   "changes": [
     {
-      "title": "fix(fish-audio): preserve JSONL values and reject ASR import",
-      "pr": 2138,
-      "url": "https://github.com/mvanhorn/printing-press-library/pull/2138",
-      "commit": "ede3e87e30f119031c872986033e5d9b7d3e31b2"
+      "title": "fix(fish-audio): retain partial batch recovery details",
+      "pr": 2140,
+      "url": "https://github.com/mvanhorn/printing-press-library/pull/2140",
+      "commit": "33f732fef8aff4b50856a7dcb0cf3b30c90b3e48"
     }
   ]
 }
