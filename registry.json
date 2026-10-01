@@ -6619,9 +6619,9 @@
       "path": "library/productivity/discord",
       "release": {
         "cli_name": "discord-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-01T02:58:45Z",
-        "source_commit": "b9919bcc7c214bad576f361557ba39739090f277"
+        "version": "2026.10.2",
+        "released_at": "2026-10-01T20:26:20Z",
+        "source_commit": "2ac68f80ae94c0663b3b35be1d430f5fe5876bc9"
       },
       "printer": "mvanhorn",
       "printer_name": "Hunter Veltri",
@@ -8236,9 +8236,9 @@
       "path": "library/ai/exa",
       "release": {
         "cli_name": "exa-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-01T02:58:45Z",
-        "source_commit": "b9919bcc7c214bad576f361557ba39739090f277"
+        "version": "2026.10.2",
+        "released_at": "2026-10-01T20:26:20Z",
+        "source_commit": "2ac68f80ae94c0663b3b35be1d430f5fe5876bc9"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
@@ -9089,9 +9089,9 @@
       "path": "library/ai/fish-audio",
       "release": {
         "cli_name": "fish-audio-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-01T02:58:45Z",
-        "source_commit": "b9919bcc7c214bad576f361557ba39739090f277"
+        "version": "2026.10.2",
+        "released_at": "2026-10-01T20:26:20Z",
+        "source_commit": "2ac68f80ae94c0663b3b35be1d430f5fe5876bc9"
       },
       "printer": "jongouveia",
       "printer_name": "Jon Gouveia",
@@ -13420,9 +13420,9 @@
       "path": "library/sales-and-crm/intercom",
       "release": {
         "cli_name": "intercom-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-01T02:58:45Z",
-        "source_commit": "b9919bcc7c214bad576f361557ba39739090f277"
+        "version": "2026.10.2",
+        "released_at": "2026-10-01T20:26:20Z",
+        "source_commit": "2ac68f80ae94c0663b3b35be1d430f5fe5876bc9"
       },
       "printer": "rob-coco",
       "printer_name": "Rob Zehner",
@@ -18247,9 +18247,9 @@
       "path": "library/marketing/openai-ads",
       "release": {
         "cli_name": "openai-ads-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-01T02:58:45Z",
-        "source_commit": "b9919bcc7c214bad576f361557ba39739090f277"
+        "version": "2026.10.2",
+        "released_at": "2026-10-01T20:26:20Z",
+        "source_commit": "2ac68f80ae94c0663b3b35be1d430f5fe5876bc9"
       },
       "printer": "bobeglz",
       "printer_name": "bobe",
@@ -30414,9 +30414,9 @@
       "path": "library/productivity/workspace-admin",
       "release": {
         "cli_name": "workspace-admin-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T20:28:02Z",
+        "source_commit": "0346fa2e230449b465018aaea6e60321c16580d3"
       },
       "printer": "RyanGravetteIDLA",
       "printer_name": "RyanGravetteIDLA",
@@ -30424,6 +30424,12 @@
         "handle": "RyanGravetteIDLA",
         "name": "RyanGravetteIDLA"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "workspace-admin-pp-mcp",
         "transports": [
