@@ -4009,9 +4009,9 @@
       "path": "library/cloud/browserbase",
       "release": {
         "cli_name": "browserbase-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T23:19:35Z",
+        "source_commit": "a3bb76cfe136f77f0ea4f0f7747005c1c3db8368"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
@@ -26845,6 +26845,12 @@
         "handle": "smoochy",
         "name": "smoochy"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "synology-pp-mcp",
         "transports": [
