@@ -1062,7 +1062,13 @@
         "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
       },
       "printer": "SomSamantray",
-      "printer_name": "Som Samantray"
+      "printer_name": "Som Samantray",
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ]
     },
     {
       "name": "allrecipes",
@@ -11643,9 +11649,9 @@
       "path": "library/health/grants",
       "release": {
         "cli_name": "grants-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-05T09:20:11Z",
-        "source_commit": "586c652e455e90e5819ca354e6fb15af5935bd9f"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T21:26:00Z",
+        "source_commit": "519e12f88e997a8b5d9c0218d7c1dd042e739504"
       },
       "printer": "laci141",
       "printer_name": "laci141",
