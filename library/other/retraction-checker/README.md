@@ -142,12 +142,16 @@ These capabilities aren't available in any other tool for this API.
 ### Retraction intelligence
 - **`check`** — Tell whether a paper (by DOI or PMID) has been retracted, when, why, and where the notice is.
 
+  An expression of concern is reported separately. A failed lookup prints a JSON error verdict and returns a nonzero status.
+
   _Agents citing a paper should verify it is not retracted before relying on it._
 
   ```bash
   retraction-checker-pp-cli check 10.1016/j.micpro.2020.103768 --json
   ```
 - **`scan`** — Batch-check a reading list or .bib file and flag every retracted entry.
+
+  The summary counts editorial concerns separately from retractions and failed lookups.
 
   _Catches retracted citations across a whole manuscript or literature review at once._
 
