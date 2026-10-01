@@ -12492,6 +12492,12 @@
         "handle": "kothari-nikunj",
         "name": "kothari-nikunj"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "hotel-goat-pp-mcp",
         "transports": [
@@ -18768,6 +18774,12 @@
         "handle": "neal-kyle",
         "name": "Kyle Neal"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "openrouter-image-pp-mcp",
         "transports": [
