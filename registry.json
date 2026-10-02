@@ -2081,9 +2081,9 @@
       "path": "library/developer-tools/apple-search-ads",
       "release": {
         "cli_name": "apple-search-ads-pp-cli",
-        "version": "2026.9.3",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T01:31:13Z",
+        "source_commit": "2d99b2440c0a0d7bca93f11851e84a6e03183c6f"
       },
       "printer": "rk-labs-tech",
       "printer_name": "Ryan Kelley",
@@ -15449,9 +15449,9 @@
       "path": "library/marketing/listingview",
       "release": {
         "cli_name": "listingview-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-01T02:58:45Z",
-        "source_commit": "b9919bcc7c214bad576f361557ba39739090f277"
+        "version": "2026.10.2",
+        "released_at": "2026-10-02T01:32:27Z",
+        "source_commit": "7ccd9afb50c5759ecfc7e1945e72a9b47c19221f"
       },
       "printer": "vcolombo",
       "printer_name": "Vincent Colombo",
@@ -23525,7 +23525,17 @@
         "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
       },
       "printer": "SomSamantray",
-      "printer_name": "Som Samantray"
+      "printer_name": "Som Samantray",
+      "creator": {
+        "handle": "SomSamantray",
+        "name": "Som Samantray"
+      },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ]
     },
     {
       "name": "scientific-consensus",
