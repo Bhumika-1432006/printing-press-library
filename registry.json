@@ -1615,9 +1615,9 @@
       "path": "library/other/anac-pl",
       "release": {
         "cli_name": "anac-pl-pp-cli",
-        "version": "2026.9.6",
-        "released_at": "2026-09-19T09:16:02Z",
-        "source_commit": "179d1d5125d9d77b0f419ca315fb31a62457bf4d"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T00:02:45Z",
+        "source_commit": "6b9338c8a9d52ced6daae9a20a6451095562930c"
       },
       "printer": "aborruso",
       "printer_name": "aborruso",
@@ -14615,6 +14615,12 @@
         "handle": "kelvincushman",
         "name": "Kelvin Cushman"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "kie-pp-mcp",
         "transports": [
