@@ -2,6 +2,10 @@
 
 This file is maintained by printing-press-library release automation. Do not hand-edit release sections in normal PRs.
 
+## 2026.10.7 - 2026-10-02
+
+- fix(sarvam): mark local schema mutations as MCP writes (#2231).
+
 ## 2026.10.6 - 2026-10-02
 
 - fix(sarvam): persist resource-scoped response IDs (#2227).
