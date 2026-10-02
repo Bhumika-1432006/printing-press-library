@@ -1,5 +1,8 @@
 # MCP Market CLI
 
+Created by [@SomSamantray](https://github.com/SomSamantray) (Som Samantray).
+Contributors: [@cathrynlavery](https://github.com/cathrynlavery) (Cathryn Lavery).
+
 **Every MCP Market search, leaderboard, and category browse — plus trending deltas, snapshot diffs, and author portfolios no other tool tracks.**
 
 MCP Market has no official CLI today. This one mirrors the public catalog (servers, clients, Agent Skills) locally as you browse it, and because it's stateful across runs, it can answer questions the live website simply cannot: what's trending fastest, what changed since last week, and what one author has shipped across every entity type.
@@ -113,6 +116,8 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
 ```
 
 </details>
+
+For HTTP MCP, set `PP_MCP_HTTP_TOKEN` in the server environment and start `mcpmarket-pp-mcp --transport http --addr 127.0.0.1:7777`. Send the same token in each request's `Authorization: Bearer <token>` header. Keep the token out of command-line arguments. A server exposed beyond the local computer also needs `--tls-cert` and `--tls-key`; plaintext HTTP is limited to a verified loopback listener.
 
 ## Quick Start
 
