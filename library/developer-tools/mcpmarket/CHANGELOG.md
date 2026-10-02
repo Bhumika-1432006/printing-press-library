@@ -2,6 +2,10 @@
 
 This file is maintained by printing-press-library release automation. Do not hand-edit release sections in normal PRs.
 
+## 2026.10.7 - 2026-10-02
+
+- docs(mcpmarket): restore archived spec provenance (#2228).
+
 ## 2026.10.6 - 2026-10-02
 
 - fix(mcpmarket): route version through configured writer (#2225).
