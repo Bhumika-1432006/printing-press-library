@@ -10252,7 +10252,13 @@
       "creator": {
         "handle": "neal-kyle",
         "name": "neal-kyle"
-      }
+      },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ]
     },
     {
       "name": "gisis",
@@ -29300,9 +29306,9 @@
       "path": "library/monitoring/utah-pmn",
       "release": {
         "cli_name": "utah-pmn-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T01:06:55Z",
+        "source_commit": "3821ebe0abdd33312109ef7e7f464e99939f479c"
       },
       "printer": "pgradeff",
       "printer_name": "Paul Gradeff",
