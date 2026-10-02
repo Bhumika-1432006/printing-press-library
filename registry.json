@@ -13992,6 +13992,47 @@
       }
     },
     {
+      "name": "japan-bus-online",
+      "category": "travel",
+      "api": "Japan Bus Online",
+      "description": "Read-only bus routes, dated inventory and source-grounded fares.",
+      "search_terms": [
+        "japan-bus-online",
+        "Japan Bus Online",
+        "japan-bus-online-pp-cli",
+        "Read-only bus routes, dated inventory and source-grounded fares.",
+        "Dated inventory with overnight dates",
+        "bus services",
+        "See service-day dates and inventory uncertainty explicitly.",
+        "Stop-pair party fare evidence",
+        "bus quote",
+        "Read selected-stop Adult/Child fares, one-way party totals and capacity evidence.",
+        "Schedule and stop identity",
+        "bus route",
+        "Read directional timetables and mapped stops."
+      ],
+      "path": "library/travel/japan-bus-online",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "japan-bus-online-pp-mcp",
+        "transports": [
+          "stdio",
+          "http"
+        ],
+        "tool_count": 23,
+        "public_tool_count": 23,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "openapi3"
+      }
+    },
+    {
       "name": "jimmy-johns",
       "category": "food-and-dining",
       "api": "Jimmy John's",
@@ -23579,9 +23620,9 @@
       "path": "library/ai/sarvam",
       "release": {
         "cli_name": "sarvam-pp-cli",
-        "version": "2026.10.9",
-        "released_at": "2026-10-02T02:47:21Z",
-        "source_commit": "c957b1f4bb5109a43bb3d3190dae3cdc436af56e"
+        "version": "2026.10.10",
+        "released_at": "2026-10-02T03:01:09Z",
+        "source_commit": "4a9415d29951d08780fb4cd8a00a7d9887d62dc5"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
@@ -28452,6 +28493,52 @@
           "TOODLEDO_CLIENT_ID",
           "TOODLEDO_CLIENT_SECRET"
         ],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
+      "name": "toyota-rentacar",
+      "category": "travel",
+      "api": "TOYOTA Rent a Car",
+      "description": "Live Japan rental class estimates, distinct shops, and a careful booking handoff.",
+      "search_terms": [
+        "toyota-rentacar",
+        "TOYOTA Rent a Car",
+        "toyota-rentacar-pp-cli",
+        "Live Japan rental class estimates, distinct shops, and a careful booking handoff.",
+        "Identity-safe shop resolution",
+        "shops search",
+        "Resolve distinct Toyota branches and return restrictions.",
+        "Context-checked class estimates",
+        "cars quote",
+        "Compare real dated class offers with explicit price assumptions.",
+        "Option inclusion honesty",
+        "rental options",
+        "Read live option and waiver fees with source units.",
+        "One-way fee and inventory separation",
+        "oneway quote",
+        "Run Toyota’s route surcharge simulator.",
+        "Canonical booking checklist",
+        "booking handoff",
+        "Print a canonical booking link and reusable rental checklist."
+      ],
+      "path": "library/travel/toyota-rentacar",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "toyota-rentacar-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 5,
+        "public_tool_count": 5,
+        "auth_type": "none",
+        "env_vars": [],
         "mcp_ready": "full",
         "spec_format": "internal"
       }
