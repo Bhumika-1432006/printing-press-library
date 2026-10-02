@@ -2371,9 +2371,9 @@
       "path": "library/job-boards/ashby",
       "release": {
         "cli_name": "ashby-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-02T01:20:03Z",
-        "source_commit": "825932d8e8c618b33655f563d78b5b1f81a65362"
+        "version": "2026.10.2",
+        "released_at": "2026-10-02T01:44:38Z",
+        "source_commit": "0d4a6c19a7e50fa00c2cd0f6da53ad73de2fcc07"
       },
       "printer": "klubieniecki",
       "printer_name": "klubieniecki",
@@ -6779,9 +6779,9 @@
       "path": "library/developer-tools/dndbeyond",
       "release": {
         "cli_name": "dndbeyond-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T01:37:36Z",
+        "source_commit": "56c761e850af7310612a07e551ab051daa200ffe"
       },
       "printer": "wirelesstkd",
       "printer_name": "Matthew Martin",
@@ -9415,9 +9415,9 @@
       "path": "library/food-and-dining/flipp",
       "release": {
         "cli_name": "flipp-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-02T01:23:34Z",
-        "source_commit": "f64596a2abbfc766b7be16689f23073f95ef35b5"
+        "version": "2026.10.2",
+        "released_at": "2026-10-02T01:48:11Z",
+        "source_commit": "e1e176b5b7e267b8e284e3a09fa9ed4b371006f2"
       },
       "printer": "mlabrenz",
       "printer_name": "mlabrenz",
@@ -23526,9 +23526,9 @@
       "path": "library/ai/sarvam",
       "release": {
         "cli_name": "sarvam-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-02T01:35:19Z",
-        "source_commit": "b262f081d658a87bd32cb3a01c821c9df5d31757"
+        "version": "2026.10.3",
+        "released_at": "2026-10-02T01:46:59Z",
+        "source_commit": "7c7faba9bff86dd99cf367f603a96692b1794f8e"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
@@ -25675,6 +25675,12 @@
         "handle": "vinnyp",
         "name": "Vinny Pasceri"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "splitwise-pp-mcp",
         "transports": [
