@@ -2397,7 +2397,12 @@
         "public_tool_count": 1,
         "auth_type": "none",
         "env_vars": [
-          "PRINTING_PRESS_CLIENT_PROFILE"
+          "PRINTING_PRESS_CLIENT_PROFILE",
+          "PP_MCP_HTTP_TOKEN"
+        ],
+        "http_auth_type": "bearer_token",
+        "http_auth_env_vars": [
+          "PP_MCP_HTTP_TOKEN"
         ],
         "mcp_ready": "full",
         "spec_format": "openapi3"
@@ -25665,9 +25670,9 @@
       "path": "library/payments/splitwise",
       "release": {
         "cli_name": "splitwise-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T01:51:06Z",
+        "source_commit": "104768725d5791044c1081da6f42124f2e95ebb3"
       },
       "printer": "vinnyp",
       "printer_name": "Vinny Pasceri",
