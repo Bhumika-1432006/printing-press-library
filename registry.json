@@ -6017,6 +6017,10 @@
         {
           "handle": "tmchow",
           "name": "Trevin Chow"
+        },
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
         }
       ],
       "mcp": {
@@ -10243,9 +10247,9 @@
       "path": "library/developer-tools/gfonts",
       "release": {
         "cli_name": "gfonts-pp-cli",
-        "version": "2026.8.1",
-        "released_at": "2026-08-22T09:29:16Z",
-        "source_commit": "e33580be02b5f0a3a47c4145397ce553c6f2bf64"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T01:13:40Z",
+        "source_commit": "cdaf846a5874b6d2d62504bfebf057ef214fb58d"
       },
       "printer": "neal-kyle",
       "printer_name": "neal-kyle",
