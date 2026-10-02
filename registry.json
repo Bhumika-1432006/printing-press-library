@@ -3530,9 +3530,9 @@
       "path": "library/devices/bmw-cardata",
       "release": {
         "cli_name": "bmw-cardata-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T02:46:28Z",
+        "source_commit": "bdbc2014e930ecb94e6d3abb9b3c1f5a258a4088"
       },
       "printer": "jvm",
       "printer_name": "jvm",
