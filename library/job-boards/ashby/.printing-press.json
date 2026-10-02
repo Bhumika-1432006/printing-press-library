@@ -34,6 +34,10 @@
   "auth_env_vars": [
     "PRINTING_PRESS_CLIENT_PROFILE"
   ],
+  "mcp_http_auth_type": "bearer_token",
+  "mcp_http_auth_env_vars": [
+    "PP_MCP_HTTP_TOKEN"
+  ],
   "auth_env_var_specs": [
     {
       "name": "PRINTING_PRESS_CLIENT_PROFILE",
