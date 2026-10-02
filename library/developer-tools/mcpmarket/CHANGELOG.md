@@ -2,6 +2,10 @@
 
 This file is maintained by printing-press-library release automation. Do not hand-edit release sections in normal PRs.
 
+## 2026.10.5 - 2026-10-02
+
+- feat(mcpmarket): opt-in PII rejection for teaching (#2216).
+
 ## 2026.10.4 - 2026-10-02
 
 - fix(mcpmarket): replace scoped snapshots and history dates (#2219).
