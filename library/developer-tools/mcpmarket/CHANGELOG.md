@@ -2,6 +2,10 @@
 
 This file is maintained by printing-press-library release automation. Do not hand-edit release sections in normal PRs.
 
+## 2026.10.8 - 2026-10-02
+
+- docs(mcpmarket): use valid field selectors in recipes (#2229).
+
 ## 2026.10.7 - 2026-10-02
 
 - docs(mcpmarket): restore archived spec provenance (#2228).
