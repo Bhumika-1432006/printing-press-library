@@ -2,17 +2,17 @@
   "schema_version": 1,
   "slug": "ashby",
   "cli_name": "ashby-pp-cli",
-  "version": "2026.10.1",
-  "released_at": "2026-10-02T01:20:03Z",
-  "source_commit": "825932d8e8c618b33655f563d78b5b1f81a65362",
+  "version": "2026.10.2",
+  "released_at": "2026-10-02T01:44:38Z",
+  "source_commit": "0d4a6c19a7e50fa00c2cd0f6da53ad73de2fcc07",
   "printing_press_version": "4.31.1",
   "run_id": "20260824-211633-3511b2d3",
   "changes": [
     {
-      "title": "fix(ashby): validate stored playbooks before recall",
-      "pr": 2198,
-      "url": "https://github.com/mvanhorn/printing-press-library/pull/2198",
-      "commit": "825932d8e8c618b33655f563d78b5b1f81a65362"
+      "title": "fix(ashby): replace complete job snapshots atomically",
+      "pr": 2212,
+      "url": "https://github.com/mvanhorn/printing-press-library/pull/2212",
+      "commit": "0d4a6c19a7e50fa00c2cd0f6da53ad73de2fcc07"
     }
   ]
 }
