@@ -2,6 +2,10 @@
 
 This file is maintained by printing-press-library release automation. Do not hand-edit release sections in normal PRs.
 
+## 2026.10.8 - 2026-10-02
+
+- fix(sarvam): keep streaming exports private (#2230).
+
 ## 2026.10.7 - 2026-10-02
 
 - fix(sarvam): mark local schema mutations as MCP writes (#2231).
