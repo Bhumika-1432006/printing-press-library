@@ -3814,9 +3814,9 @@
       "path": "library/commerce/booksy",
       "release": {
         "cli_name": "booksy-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T00:56:04Z",
+        "source_commit": "e28b485835aa02310482341d7d3c6fd415fe4bc1"
       },
       "printer": "milloni",
       "printer_name": "Max Tomago",
@@ -27790,6 +27790,12 @@
         "handle": "laci141",
         "name": "laci141"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "thelancet-pp-mcp",
         "transports": [
