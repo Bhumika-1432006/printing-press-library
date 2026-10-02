@@ -25427,6 +25427,12 @@
         "handle": "maxswinguy",
         "name": "Maxime Delavergne"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "snipd-pp-mcp",
         "transports": [
@@ -26856,9 +26862,9 @@
       "path": "library/food-and-dining/swiggy",
       "release": {
         "cli_name": "swiggy-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-13T09:37:31Z",
-        "source_commit": "c56a8ba17aa8f6ee0ae9c55fbd749634d209e919"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T00:34:23Z",
+        "source_commit": "33afc2132297390125ff26e4beea7ab9eafbe09c"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
