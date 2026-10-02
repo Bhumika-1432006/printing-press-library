@@ -15471,6 +15471,12 @@
         "handle": "Drummerms",
         "name": "drummerms"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "logitech-docs-pp-mcp",
         "transports": [
@@ -19303,9 +19309,9 @@
       "path": "library/travel/overpass",
       "release": {
         "cli_name": "overpass-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T00:49:01Z",
+        "source_commit": "4b731f22e5ad79a309b54a4abe5f865115cbdfb8"
       },
       "printer": "justinwfu",
       "printer_name": "justinwfu",
