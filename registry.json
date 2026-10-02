@@ -6003,9 +6003,9 @@
       "path": "library/commerce/creativefabrica",
       "release": {
         "cli_name": "creativefabrica-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T01:14:31Z",
+        "source_commit": "3b87adf9969340f0f8db64b931f3eae679f2ed42"
       },
       "printer": "vcolombo",
       "printer_name": "Vincent Colombo",
@@ -25777,6 +25777,12 @@
         "handle": "stellato",
         "name": "Greg Stellato"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "sprocket-pp-mcp",
         "transports": [
