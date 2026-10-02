@@ -1625,6 +1625,12 @@
         "handle": "aborruso",
         "name": "aborruso"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "anac-pl-pp-mcp",
         "transports": [
@@ -1806,9 +1812,9 @@
       "path": "library/other/aol-puglia",
       "release": {
         "cli_name": "aol-puglia-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-01T23:58:28Z",
+        "source_commit": "0c90d943ec3f25528175bb91d90a3fe23d686fda"
       },
       "printer": "aborruso",
       "printer_name": "aborruso",
