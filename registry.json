@@ -6789,6 +6789,12 @@
         "handle": "wirelesstkd",
         "name": "Matthew Martin"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "dndbeyond-pp-mcp",
         "transports": [
@@ -23520,9 +23526,9 @@
       "path": "library/ai/sarvam",
       "release": {
         "cli_name": "sarvam-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T01:35:19Z",
+        "source_commit": "b262f081d658a87bd32cb3a01c821c9df5d31757"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
