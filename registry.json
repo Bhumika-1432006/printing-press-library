@@ -23579,9 +23579,9 @@
       "path": "library/ai/sarvam",
       "release": {
         "cli_name": "sarvam-pp-cli",
-        "version": "2026.10.8",
-        "released_at": "2026-10-02T02:39:31Z",
-        "source_commit": "0228146000c029f96c182b81452741a0aa81a621"
+        "version": "2026.10.9",
+        "released_at": "2026-10-02T02:47:21Z",
+        "source_commit": "c957b1f4bb5109a43bb3d3190dae3cdc436af56e"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
