@@ -14605,9 +14605,9 @@
       "path": "library/ai/kie",
       "release": {
         "cli_name": "kie-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T00:05:52Z",
+        "source_commit": "9c91a243e504f0f4d3e8d9850f168d61dd0983b4"
       },
       "printer": "kelvincushman",
       "printer_name": "Kelvin Cushman",
