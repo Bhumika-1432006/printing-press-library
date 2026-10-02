@@ -4323,6 +4323,16 @@
       },
       "printer": "robertobissanti",
       "printer_name": "Roberto Bissanti",
+      "creator": {
+        "handle": "robertobissanti",
+        "name": "Roberto Bissanti"
+      },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "catasto-pp-mcp",
         "transports": [
@@ -4477,9 +4487,9 @@
       "path": "library/other/cfpb-complaints",
       "release": {
         "cli_name": "cfpb-complaints-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T00:38:40Z",
+        "source_commit": "4619c2ea12dd1b5fe47238116e8b9da334bd0c8c"
       },
       "printer": "Avanderheyde",
       "printer_name": "avanderheyde",
