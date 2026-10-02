@@ -2,17 +2,17 @@
   "schema_version": 1,
   "slug": "ashby",
   "cli_name": "ashby-pp-cli",
-  "version": "2026.10.2",
-  "released_at": "2026-10-02T01:44:38Z",
-  "source_commit": "0d4a6c19a7e50fa00c2cd0f6da53ad73de2fcc07",
+  "version": "2026.10.3",
+  "released_at": "2026-10-02T01:52:28Z",
+  "source_commit": "0e9ba2d63ba15bddc8593f846aef67af06822a10",
   "printing_press_version": "4.31.1",
   "run_id": "20260824-211633-3511b2d3",
   "changes": [
     {
-      "title": "fix(ashby): replace complete job snapshots atomically",
-      "pr": 2212,
-      "url": "https://github.com/mvanhorn/printing-press-library/pull/2212",
-      "commit": "0d4a6c19a7e50fa00c2cd0f6da53ad73de2fcc07"
+      "title": "fix(ashby): authenticate HTTP MCP and verify bind",
+      "pr": 2213,
+      "url": "https://github.com/mvanhorn/printing-press-library/pull/2213",
+      "commit": "0e9ba2d63ba15bddc8593f846aef67af06822a10"
     }
   ]
 }
