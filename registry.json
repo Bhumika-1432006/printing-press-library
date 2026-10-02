@@ -23242,6 +23242,12 @@
         "handle": "amrbody71-commits",
         "name": "Abdelrahman Shaaban"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "rundown-pp-mcp",
         "transports": [
@@ -23730,9 +23736,9 @@
       "path": "library/media-and-entertainment/scryfall",
       "release": {
         "cli_name": "scryfall-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T00:26:51Z",
+        "source_commit": "b43482a2dcb43bde229b5d23d9824877b96d0738"
       },
       "printer": "veltri-23",
       "printer_name": "Hunter Veltri",
