@@ -2,17 +2,17 @@
   "schema_version": 1,
   "slug": "sarvam",
   "cli_name": "sarvam-pp-cli",
-  "version": "2026.10.5",
-  "released_at": "2026-10-02T02:24:38Z",
-  "source_commit": "ba63b13b5fa84cb188b377a25928ebfa63035e22",
+  "version": "2026.10.6",
+  "released_at": "2026-10-02T02:30:28Z",
+  "source_commit": "40914dbab9ade326717dc7e9edd09d5dc14f49c0",
   "printing_press_version": "4.30.2",
   "run_id": "20260814-164825-7ec4499e",
   "changes": [
     {
-      "title": "fix(sarvam): route version through configured writer",
-      "pr": 2226,
-      "url": "https://github.com/mvanhorn/printing-press-library/pull/2226",
-      "commit": "ba63b13b5fa84cb188b377a25928ebfa63035e22"
+      "title": "fix(sarvam): persist resource-scoped response IDs",
+      "pr": 2227,
+      "url": "https://github.com/mvanhorn/printing-press-library/pull/2227",
+      "commit": "40914dbab9ade326717dc7e9edd09d5dc14f49c0"
     }
   ]
 }
