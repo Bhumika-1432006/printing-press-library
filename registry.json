@@ -15805,6 +15805,12 @@
         "handle": "vcolombo",
         "name": "Vincent Colombo"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "makerworld-pp-mcp",
         "transports": [
@@ -24983,9 +24989,9 @@
       "path": "library/commerce/shopper",
       "release": {
         "cli_name": "shopper-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-23T09:42:47Z",
-        "source_commit": "92dfe60ac9e6577753e9dde6bf2072e4139b9279"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T01:28:12Z",
+        "source_commit": "5ec9c56555e7aec26f2369c8a23a10506f11695f"
       },
       "printer": "educrvz",
       "printer_name": "educrvz",
