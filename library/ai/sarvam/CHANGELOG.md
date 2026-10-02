@@ -2,6 +2,10 @@
 
 This file is maintained by printing-press-library release automation. Do not hand-edit release sections in normal PRs.
 
+## 2026.10.9 - 2026-10-02
+
+- fix(sarvam): ship MCPB manifest for desktop bundle (#2232).
+
 ## 2026.10.8 - 2026-10-02
 
 - fix(sarvam): keep streaming exports private (#2230).
