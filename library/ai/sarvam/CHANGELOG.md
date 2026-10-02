@@ -2,6 +2,10 @@
 
 This file is maintained by printing-press-library release automation. Do not hand-edit release sections in normal PRs.
 
+## 2026.10.10 - 2026-10-02
+
+- fix(sarvam): align MCPB auth prompt provenance (#2234).
+
 ## 2026.10.9 - 2026-10-02
 
 - fix(sarvam): ship MCPB manifest for desktop bundle (#2232).
