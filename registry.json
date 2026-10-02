@@ -2371,9 +2371,9 @@
       "path": "library/job-boards/ashby",
       "release": {
         "cli_name": "ashby-pp-cli",
-        "version": "2026.10.2",
-        "released_at": "2026-10-02T01:44:38Z",
-        "source_commit": "0d4a6c19a7e50fa00c2cd0f6da53ad73de2fcc07"
+        "version": "2026.10.3",
+        "released_at": "2026-10-02T01:52:28Z",
+        "source_commit": "0e9ba2d63ba15bddc8593f846aef67af06822a10"
       },
       "printer": "klubieniecki",
       "printer_name": "klubieniecki",
@@ -23073,6 +23073,10 @@
         {
           "handle": "papaonlegs",
           "name": "Farouk Umar"
+        },
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
         }
       ]
     },
