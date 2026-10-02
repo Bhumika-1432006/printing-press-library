@@ -4,6 +4,9 @@
 
 Sarvam AI's official SDKs and MCP server are great for code, but nothing offers offline capability: no local history of translations, TTS generations, transcriptions, or chat threads. sarvam-pp-cli adds a local SQLite store, voice auditioning, conversation resume, batch job retry/report, pronunciation spot-checks, subtitle export, and a doc-ai extraction schema library — all with --json, --dry-run, and typed exit codes for agents and scripts.
 
+Created by [@SomSamantray](https://github.com/SomSamantray) (Som Samantray).
+Contributors: [@cathrynlavery](https://github.com/cathrynlavery) (Cathryn Lavery).
+
 ## Install
 
 The recommended path installs both the `sarvam-pp-cli` binary and the `pp-sarvam` agent skill (Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, and other agents supported by the upstream [`skills`](https://github.com/vercel-labs/skills) CLI) in one shot:
@@ -117,6 +120,8 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
 ```
 
 </details>
+
+For HTTP MCP, set `PP_MCP_HTTP_TOKEN` in the server process environment and run `sarvam-pp-mcp --transport http --addr 127.0.0.1:7777`. Configure the HTTP MCP client to connect to `http://127.0.0.1:7777/mcp` and send `Authorization: Bearer <the-token>` with every request. A non-loopback bind also requires `--tls-cert` and `--tls-key`; use an HTTPS URL for that client. Keep the token out of command arguments.
 
 ## Authentication
 
