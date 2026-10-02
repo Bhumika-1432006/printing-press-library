@@ -3618,9 +3618,9 @@
       "path": "library/productivity/bonusly",
       "release": {
         "cli_name": "bonusly-pp-cli",
-        "version": "2026.9.3",
-        "released_at": "2026-09-18T09:08:45Z",
-        "source_commit": "252cfd068f6c489bd49248f651cc2beb30e44139"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T00:21:51Z",
+        "source_commit": "7dcf246029698892b6fae4a2871bcb16b2eb6483"
       },
       "printer": "enlewof",
       "printer_name": "Allen Lew",
@@ -27570,6 +27570,12 @@
         "handle": "michegz",
         "name": "michegz"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "teslatracker-pp-mcp",
         "transports": [
