@@ -3628,6 +3628,12 @@
         "handle": "enlewof",
         "name": "Allen Lew"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "bonusly-pp-mcp",
         "transports": [
@@ -5631,9 +5637,9 @@
       "path": "library/sales-and-crm/copper",
       "release": {
         "cli_name": "copper-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-01T02:58:45Z",
-        "source_commit": "b9919bcc7c214bad576f361557ba39739090f277"
+        "version": "2026.10.2",
+        "released_at": "2026-10-02T00:15:49Z",
+        "source_commit": "6aa25d5c1f4cf120b2c94d6d6e07a14f8bbebe7c"
       },
       "printer": "kmorebetter",
       "printer_name": "Kerry Morrison",
