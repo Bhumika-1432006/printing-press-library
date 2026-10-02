@@ -16563,6 +16563,12 @@
         "handle": "waterpig0221",
         "name": "waterpig"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "motogp-pp-mcp",
         "transports": [
@@ -27780,9 +27786,9 @@
       "path": "library/developer-tools/thelancet",
       "release": {
         "cli_name": "thelancet-pp-cli",
-        "version": "2026.9.3",
-        "released_at": "2026-09-20T09:12:34Z",
-        "source_commit": "f7a1036f609cc349700557b9bbeacf0ec4cc662d"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T00:57:08Z",
+        "source_commit": "f923408ab31c715b1317386485ef2ba66d262801"
       },
       "printer": "laci141",
       "printer_name": "laci141",
