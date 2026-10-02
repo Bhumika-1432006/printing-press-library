@@ -16017,9 +16017,9 @@
       "path": "library/developer-tools/mcpmarket",
       "release": {
         "cli_name": "mcpmarket-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T02:01:12Z",
+        "source_commit": "f0ffdb0981ee20f93bb50790312a7fcabf0dedf5"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
@@ -20297,6 +20297,12 @@
         "handle": "SomSamantray",
         "name": "Som Samantray"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "pinecone-pp-mcp",
         "transports": [
