@@ -10726,6 +10726,12 @@
         "handle": "dmarketingllm",
         "name": "Derik Parkinson"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "gmail-pp-mcp",
         "transports": [
