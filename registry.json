@@ -15987,11 +15987,13 @@
     {
       "name": "mcpmarket",
       "category": "developer-tools",
-      "api": "mcpmarket",
+      "api": "MCP Market",
       "description": "Every MCP Market search, leaderboard, and skill lookup — plus trending deltas, sync diffs, and author portfolios no other tool tracks.",
       "search_terms": [
         "mcpmarket",
+        "MCP Market",
         "mcpmarket-pp-cli",
+        "Search and browse MCP Market. Compare snapshots, track trends, and view author portfolios.",
         "Trending Delta",
         "trending",
         "See which MCP servers/skills are rising fastest vs. holding steady, computed from your own browse history.",
@@ -16017,9 +16019,9 @@
       "path": "library/developer-tools/mcpmarket",
       "release": {
         "cli_name": "mcpmarket-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-02T02:01:12Z",
-        "source_commit": "f0ffdb0981ee20f93bb50790312a7fcabf0dedf5"
+        "version": "2026.10.5",
+        "released_at": "2026-10-02T02:17:52Z",
+        "source_commit": "141d992da9e3ea6239df4e858ba3950c2dce68cf"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
@@ -16049,7 +16051,8 @@
         "http_auth_env_vars": [
           "PP_MCP_HTTP_TOKEN"
         ],
-        "mcp_ready": "full"
+        "mcp_ready": "full",
+        "spec_format": "internal"
       }
     },
     {
@@ -20287,9 +20290,9 @@
       "path": "library/ai/pinecone",
       "release": {
         "cli_name": "pinecone-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T02:03:39Z",
+        "source_commit": "421e6b5e9771aa7314401103809b283889415cfd"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
@@ -23570,9 +23573,9 @@
       "path": "library/ai/sarvam",
       "release": {
         "cli_name": "sarvam-pp-cli",
-        "version": "2026.10.3",
-        "released_at": "2026-10-02T01:46:59Z",
-        "source_commit": "7c7faba9bff86dd99cf367f603a96692b1794f8e"
+        "version": "2026.10.4",
+        "released_at": "2026-10-02T02:14:07Z",
+        "source_commit": "a4c6ee557ca49f287275f3aeb66e1ab9cd36cdbe"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
