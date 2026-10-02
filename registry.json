@@ -2107,7 +2107,12 @@
         "public_tool_count": 0,
         "auth_type": "bearer_token",
         "env_vars": [
-          "APPLE_SEARCH_ADS_TOKEN"
+          "APPLE_SEARCH_ADS_TOKEN",
+          "PP_MCP_HTTP_TOKEN"
+        ],
+        "http_auth_type": "bearer_token",
+        "http_auth_env_vars": [
+          "PP_MCP_HTTP_TOKEN"
         ],
         "mcp_ready": "full",
         "spec_format": "internal"
@@ -23059,9 +23064,9 @@
       "path": "library/ai/rightbrain",
       "release": {
         "cli_name": "rightbrain-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T01:55:28Z",
+        "source_commit": "f54d1b1d99ed64ae57373a04487f3636f09d2675"
       },
       "printer": "papaonlegs",
       "printer_name": "Farouk Umar",
