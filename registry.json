@@ -3540,6 +3540,12 @@
         "handle": "jvm",
         "name": "jvm"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "bmw-cardata-pp-mcp",
         "transports": [
@@ -16019,9 +16025,9 @@
       "path": "library/developer-tools/mcpmarket",
       "release": {
         "cli_name": "mcpmarket-pp-cli",
-        "version": "2026.10.5",
-        "released_at": "2026-10-02T02:17:52Z",
-        "source_commit": "141d992da9e3ea6239df4e858ba3950c2dce68cf"
+        "version": "2026.10.8",
+        "released_at": "2026-10-02T02:26:54Z",
+        "source_commit": "aeb0d1e772a11951c956e8b4d8b08967508a9bf0"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
@@ -23573,9 +23579,9 @@
       "path": "library/ai/sarvam",
       "release": {
         "cli_name": "sarvam-pp-cli",
-        "version": "2026.10.4",
-        "released_at": "2026-10-02T02:14:07Z",
-        "source_commit": "a4c6ee557ca49f287275f3aeb66e1ab9cd36cdbe"
+        "version": "2026.10.8",
+        "released_at": "2026-10-02T02:39:31Z",
+        "source_commit": "0228146000c029f96c182b81452741a0aa81a621"
       },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
