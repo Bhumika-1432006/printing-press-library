@@ -4487,6 +4487,12 @@
         "handle": "Avanderheyde",
         "name": "avanderheyde"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "cfpb-complaints-pp-mcp",
         "transports": [
@@ -25417,9 +25423,9 @@
       "path": "library/media-and-entertainment/snipd",
       "release": {
         "cli_name": "snipd-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T00:36:54Z",
+        "source_commit": "850aff8ea3f0530daebaf184e67bd2b56519a455"
       },
       "printer": "maxswinguy",
       "printer_name": "Maxime Delavergne",
