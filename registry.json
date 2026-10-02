@@ -14012,6 +14012,12 @@
         "Read directional timetables and mapped stops."
       ],
       "path": "library/travel/japan-bus-online",
+      "release": {
+        "cli_name": "japan-bus-online-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T08:52:35Z",
+        "source_commit": "4b4499acecd81df1c682df9aedff6986d6bfb2f7"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -14057,6 +14063,12 @@
         "Return a bounded destination page with request, byte and elapsed-time metrics."
       ],
       "path": "library/travel/japan-guide",
+      "release": {
+        "cli_name": "japan-guide-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T08:53:48Z",
+        "source_commit": "56e3c91da3597fb3687374be725eb0b658673302"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -15705,6 +15717,48 @@
         "env_vars": [],
         "mcp_ready": "full",
         "spec_format": "internal"
+      }
+    },
+    {
+      "name": "loops",
+      "category": "marketing",
+      "api": "Loops",
+      "description": "Agent-ready Loops CLI for contacts, audiences, campaigns, workflows, events, and transactional email, with team checks and explicit send approval.",
+      "search_terms": [
+        "loops",
+        "loops-pp-cli",
+        "Agent-ready Loops CLI for contacts, audiences, campaigns, workflows, events, and transactional email, with team checks and explicit send approval.",
+        "Exact team and mutation safety",
+        "team verify",
+        "Verify the selected API team before a change, preview writes without private values, and journal send attempts.",
+        "Lifecycle inventory",
+        "audit lifecycle",
+        "Count communication resources without retrieving contact records.",
+        "Campaign preflight",
+        "campaigns preflight",
+        "Check draft status, audience targeting, message presence, and Guardian findings before publication."
+      ],
+      "path": "library/marketing/loops",
+      "printer": "cathrynlavery",
+      "printer_name": "Cathryn Lavery",
+      "creator": {
+        "handle": "cathrynlavery",
+        "name": "Cathryn Lavery"
+      },
+      "mcp": {
+        "binary": "loops-pp-mcp",
+        "transports": [
+          "stdio",
+          "http"
+        ],
+        "tool_count": 68,
+        "public_tool_count": 0,
+        "auth_type": "bearer_token",
+        "env_vars": [
+          "LOOPS_API_KEY"
+        ],
+        "mcp_ready": "partial",
+        "spec_format": "openapi3"
       }
     },
     {
@@ -20378,6 +20432,12 @@
         "Which of your thoughts earned stars and insightful reactions, by tag and week."
       ],
       "path": "library/social-and-messaging/philonet",
+      "release": {
+        "cli_name": "philonet-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T08:53:48Z",
+        "source_commit": "3650c337ca5ef7cd8b302d5797015b39344d9a4a"
+      },
       "printer": "SomSamantray",
       "printer_name": "Som Samantray",
       "creator": {
@@ -25597,6 +25657,12 @@
         "sources"
       ],
       "path": "library/travel/smartex",
+      "release": {
+        "cli_name": "smartex-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T08:53:48Z",
+        "source_commit": "fee2d2bbed6c843a73543169efd63e1c4c9e17a7"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -28671,6 +28737,12 @@
         "Print a canonical booking link and reusable rental checklist."
       ],
       "path": "library/travel/toyota-rentacar",
+      "release": {
+        "cli_name": "toyota-rentacar-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T08:53:48Z",
+        "source_commit": "d13f19e474cb0bbfb305b0d023201afdd44b7f9d"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -31579,6 +31651,12 @@
         "Review live service policy evidence for standard, airport, roundtrip and same-day products."
       ],
       "path": "library/travel/yamato",
+      "release": {
+        "cli_name": "yamato-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T08:53:48Z",
+        "source_commit": "6ff8ad0627c6397f4500a5e0354481dbf12fd9cc"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
