@@ -3824,6 +3824,12 @@
         "handle": "milloni",
         "name": "Max Tomago"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "booksy-pp-mcp",
         "transports": [
@@ -15461,9 +15467,9 @@
       "path": "library/devices/logitech-docs",
       "release": {
         "cli_name": "logitech-docs-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T00:50:17Z",
+        "source_commit": "d5c3c53e5fa6c636c4103acf82b13d159e83884b"
       },
       "printer": "Drummerms",
       "printer_name": "drummerms",
