@@ -15459,6 +15459,12 @@
         "handle": "vcolombo",
         "name": "Vincent Colombo"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "listingview-pp-mcp",
         "transports": [
