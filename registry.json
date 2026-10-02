@@ -10716,9 +10716,9 @@
       "path": "library/productivity/gmail",
       "release": {
         "cli_name": "gmail-pp-cli",
-        "version": "2026.9.1",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T01:02:07Z",
+        "source_commit": "f6f2b4e7a9aae68bae738a40b250a5570078eefb"
       },
       "printer": "dmarketingllm",
       "printer_name": "Derik Parkinson",
@@ -16559,9 +16559,9 @@
       "path": "library/media-and-entertainment/motogp",
       "release": {
         "cli_name": "motogp-pp-cli",
-        "version": "2026.9.2",
-        "released_at": "2026-09-11T09:22:21Z",
-        "source_commit": "81f5764eda401077520268afe74913c0f21f5b7e"
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T01:01:08Z",
+        "source_commit": "15a2f9fc61d547ccc7e8afaec366220a011e06e2"
       },
       "printer": "waterpig0221",
       "printer_name": "waterpig",
@@ -29310,6 +29310,12 @@
         "handle": "pgradeff",
         "name": "Paul Gradeff"
       },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
       "mcp": {
         "binary": "utah-pmn-pp-mcp",
         "transports": [
