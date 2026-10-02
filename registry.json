@@ -2081,9 +2081,9 @@
       "path": "library/developer-tools/apple-search-ads",
       "release": {
         "cli_name": "apple-search-ads-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-02T01:31:13Z",
-        "source_commit": "2d99b2440c0a0d7bca93f11851e84a6e03183c6f"
+        "version": "2026.10.2",
+        "released_at": "2026-10-02T01:57:00Z",
+        "source_commit": "d616ff03c10cc0d57096472bdd5b3c6c37df433c"
       },
       "printer": "rk-labs-tech",
       "printer_name": "Ryan Kelley",
@@ -16026,6 +16026,30 @@
       "creator": {
         "handle": "SomSamantray",
         "name": "Som Samantray"
+      },
+      "contributors": [
+        {
+          "handle": "cathrynlavery",
+          "name": "Cathryn Lavery"
+        }
+      ],
+      "mcp": {
+        "binary": "mcpmarket-pp-mcp",
+        "transports": [
+          "stdio",
+          "http"
+        ],
+        "tool_count": 5,
+        "public_tool_count": 5,
+        "auth_type": "none",
+        "env_vars": [
+          "PP_MCP_HTTP_TOKEN"
+        ],
+        "http_auth_type": "bearer_token",
+        "http_auth_env_vars": [
+          "PP_MCP_HTTP_TOKEN"
+        ],
+        "mcp_ready": "full"
       }
     },
     {
