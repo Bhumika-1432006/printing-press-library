@@ -7251,6 +7251,52 @@
       }
     },
     {
+      "name": "driveplaza",
+      "category": "travel",
+      "api": "Drive Plaza",
+      "description": "Plan expressway journeys with source toll estimates, directional rest stops and official advisories.",
+      "search_terms": [
+        "driveplaza",
+        "Drive Plaza",
+        "driveplaza-pp-cli",
+        "Plan expressway journeys with source toll estimates, directional rest stops and official advisories.",
+        "Assumptions attached to quote",
+        "route",
+        "Keep vehicle, JST schedule and conditional toll assumptions beside route alternatives.",
+        "Bilingual interchange identity",
+        "interchanges",
+        "Resolve English names to stable IDs and source Japanese names.",
+        "Directional facility evidence",
+        "sapa list",
+        "Compare directional stops using source facility availability.",
+        "Advisory uncertainty",
+        "notices",
+        "Read dated traffic notices without mistaking them for active restrictions.",
+        "Restriction and live-map handoffs",
+        "handoff",
+        "Get official construction, ETC-lane and live-traffic URLs."
+      ],
+      "path": "library/travel/driveplaza",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "driveplaza-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 3,
+        "public_tool_count": 3,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
       "name": "drudgereport",
       "category": "media-and-entertainment",
       "api": "Drudge Report",
@@ -15739,6 +15785,12 @@
         "Check draft status, audience targeting, message presence, and Guardian findings before publication."
       ],
       "path": "library/marketing/loops",
+      "release": {
+        "cli_name": "loops-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-02T19:18:45Z",
+        "source_commit": "208781893b2a1077f86862d1eee2ebbb715f642e"
+      },
       "printer": "cathrynlavery",
       "printer_name": "Cathryn Lavery",
       "creator": {
@@ -28798,6 +28850,54 @@
       "creator": {
         "handle": "enlewof",
         "name": "Allen Lew"
+      }
+    },
+    {
+      "name": "traveloka",
+      "category": "travel",
+      "api": "Traveloka",
+      "description": "Research dated flights and hotel stays with source price bases, complete itineraries and comparable quote snapshots.",
+      "search_terms": [
+        "traveloka",
+        "traveloka-pp-cli",
+        "Research dated flights and hotel stays with source price bases, complete itineraries and comparable quote snapshots.",
+        "Observed core guest-session cookie names for generator metadata. The delivered session importer preserves the complete scoped cookie jar and captured operation profiles; these names do not imply other cookies are unnecessary.",
+        "Explicit flight date grid",
+        "flights date-grid",
+        "Compare retrieved trip totals across a bounded list of explicit departure and return dates.",
+        "Explicit hotel stay grid",
+        "hotels date-grid",
+        "Compare source stay totals for one property across equal-length stays with fixed occupancy.",
+        "Flight trade-off frontier",
+        "flights shortlist",
+        "Keep retrieved flight offers that trade price against stops and elapsed time.",
+        "Same-room cancellation price difference",
+        "hotels flexibility",
+        "See the stay-price difference between comparable cancellable and nonrefundable room rates.",
+        "Quote snapshot changes",
+        "quotes diff",
+        "Compare matched-offer price and policy changes between two explicit retrieval snapshots."
+      ],
+      "path": "library/travel/traveloka",
+      "printer": "zjsng",
+      "printer_name": "Jet Sng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "Jet Sng"
+      },
+      "mcp": {
+        "binary": "traveloka-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 8,
+        "public_tool_count": 0,
+        "auth_type": "cookie",
+        "env_vars": [
+          "TRAVELOKA_SESSION_FILE"
+        ],
+        "mcp_ready": "partial",
+        "spec_format": "internal"
       }
     },
     {
