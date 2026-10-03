@@ -1,7 +1,7 @@
 ---
-name: pp-game-goat
-description: "Look up any game, find what to play next, and browse the Steam store from one CLI - RAWG search and ratings, remake-aware title resolution, and IsThereAnyDeal price history."
-author: "Brad Knight"
+name: pp-hello-cycling
+description: "Find compatible HELLO CYCLING pickup and return stations with timestamped counts and published pricing. Trigger phrases: `Find HELLO CYCLING near these coordinates`, `Check return spaces at a HELLO CYCLING station`, `Compare HELLO CYCLING pickup and dropoff options`, `use hello-cycling`, `run hello-cycling`."
+author: "zjsng"
 license: "Apache-2.0"
 argument-hint: "<command> [args] | install cli|mcp"
 allowed-tools: "Read Bash"
@@ -9,248 +9,163 @@ metadata:
   openclaw:
     requires:
       bins:
-        - game-goat-pp-cli
+        - hello-cycling-pp-cli
     install:
       - kind: go
-        bins: [game-goat-pp-cli]
-        module: github.com/mvanhorn/printing-press-library/library/media-and-entertainment/game-goat/cmd/game-goat-pp-cli
+        bins: [hello-cycling-pp-cli]
+        module: github.com/mvanhorn/printing-press-library/library/travel/hello-cycling/cmd/hello-cycling-pp-cli
 ---
 <!-- GENERATED FILE — DO NOT EDIT.
-     This file is a verbatim mirror of library/media-and-entertainment/game-goat/SKILL.md,
+     This file is a verbatim mirror of library/travel/hello-cycling/SKILL.md,
      regenerated post-merge by tools/generate-skills/. Hand-edits here are
      silently overwritten on the next regen. Edit the library/ source instead.
      See the repository agent guide, section "Generated artifacts: registry.json, cli-skills/". -->
 
-# Game GOAT — Printing Press CLI
+# HELLO CYCLING — Printing Press CLI
+
+## Local build status
+
+
+## Station planning contract
+
+Require explicit coordinates for nearby/trip commands; no location permission or geocoding is used. Read `meta` before interpreting counts. Missing counts are null; stale, closed, uninstalled, incompatible and source-missing rows are not available. Default freshness is five minutes. Trip comparison uses an explicit generic GBFS class; current class 2 cannot identify actual city/sports/e-Bike models or special electric-cycle eligibility. Confirm availability, vehicle rules and price in the official app via source rental URLs.
+
+Run `stations sync` before using `--offline` or `stations changes`. A local snapshot preserves timestamps and cannot guarantee current availability. `--snapshot-db` chooses that cache. Regional price rows preserve municipality and model columns, and `not_set` means unknown/unset rather than free. No quote arithmetic, reservation, ride or payment is performed.
 
 ## Prerequisites: Install the CLI
 
-This skill drives the `game-goat-pp-cli` binary. **You must verify the CLI is installed before invoking any command from this skill.** If it is missing, install it first:
+This skill drives the `hello-cycling-pp-cli` binary. **You must verify the CLI is installed before invoking any command from this skill.** If it is missing, install it first:
 
 1. Install via the Printing Press installer. It defaults binaries to `$HOME/.local/bin` on macOS/Linux and `%LOCALAPPDATA%\Programs\PrintingPress\bin` on Windows:
    ```bash
-   npx -y @mvanhorn/printing-press-library install game-goat --cli-only
+   npx -y @mvanhorn/printing-press-library install hello-cycling --cli-only
    ```
-2. Verify: `game-goat-pp-cli --version`
+2. Verify: `hello-cycling-pp-cli --version`
 3. Ensure the reported install directory is on `$PATH` for the agent/runtime that will invoke this skill.
 
 If the `npx` install fails (no Node, offline, etc.), fall back to a direct Go install (requires Go 1.26.6 or newer). This installs into `$GOPATH/bin` (default `$HOME/go/bin`), so add that directory to `$PATH` instead:
 
 ```bash
-go install github.com/mvanhorn/printing-press-library/library/media-and-entertainment/game-goat/cmd/game-goat-pp-cli@latest
+go install github.com/mvanhorn/printing-press-library/library/travel/hello-cycling/cmd/hello-cycling-pp-cli@latest
 ```
 
 If `--version` reports "command not found" after install, the runtime cannot see the binary directory on `$PATH`. Do not proceed with skill commands until verification succeeds.
 
-### What this CLI covers
-- 350,000+ games across 50 platforms via RAWG (Video Games Database) (tags, genres, developers, publishers, creators, Metacritic scores, store links).
-- Keyless Steam enrichment: review scores and player counts joined into rating cards.
-- Remake-aware title resolution: shared names (DOOM 1993 vs 2016, franchise shorthand like "halo") resolve with a notice on stderr and meta.ambiguous in JSON; pin with --year or a RAWG id.
-- One free RAWG API key powers live commands (see Auth Setup); local search over synced data works offline.
-- IsThereAnyDeal historical and current price tracking (needs ITAD_API_KEY): all-time / 1-year / 3-month lows, a dated change log, and per-storefront current prices, localised to a --country currency.
+Search Japanese station names and addresses, rank explicit-coordinate pickup/return choices, and compare compatible trip endpoints. Source timestamps, missing counts, and model-dependent pricing constraints remain attached to every result.
 
-### Terms of Use
-- Free for personal use as long as you attribute RAWG as the source of the data and/or images and add an active
-hyperlink from every page where the data of RAWG is used.
-- Free for commercial use for startups and hobby projects with not more than 100,000 monthly active users or 500,000
-page views per month. If your project is larger than that, email us at [api@rawg.io](mailto:api@rawg.io) for
-commercial terms.
-- No cloning. It would not be cool if you used our API to launch a clone of RAWG. We know it is not always easy
-to say what is a duplicate and what isn't. Drop us a line at [api@rawg.io](mailto:api@rawg.io) if you are in doubt,
-and we will talk it through.
-- You must include an API key with every request. The key can be obtained at https://rawg.io/apidocs.
-If you don’t provide it, we may ban your requests.
+## When to Use This CLI
 
-__[Read more](https://rawg.io/apidocs)__.
+Use for HELLO CYCLING station discovery, observed bike/return-space counts and compatible pickup/dropoff comparison in Japan. Require explicit latitude/longitude for nearby searches. Use source app links to confirm the actual bike, rate and return eligibility.
 
-## When Not to Use This CLI
+## Anti-triggers
 
-Do not activate this CLI for requests that require creating, updating, deleting, publishing, commenting, upvoting, inviting, ordering, sending messages, booking, purchasing, or changing remote state. Also do not use it for game news, esports schedules, purchasing or checkout, or running/emulating games — RAWG (Video Games Database) exposes none of these, and this CLI never buys anything. It does read prices: `price-history` and `prices` pull historical and current storefront prices from IsThereAnyDeal (read-only, requires ITAD_API_KEY). This printed CLI exposes read-only commands against the API for inspection, export, sync, and analysis.
+Do not use this CLI for:
+- Reservations, rides, payments or account changes
+- Location-permission access or geocoding without explicit coordinates
+- Guaranteed availability, model eligibility or a final ride quote
 
 ## Unique Capabilities
 
-These capabilities aren't available in any other tool for this API.
-- **`similar`** — Games like <title>: the seed's own studio first, then its defining gameplay tag (roguelite, metroidvania) found by tag-neighborhood co-occurrence, then a confidence-floored genre join. Every row carries its tier and a reason.
-- **`retention`** — Community completion and drop verdict for one game from RAWG added_by_status counts (needs RAWG_API_KEY).
-- **`price-history`** — Historical price tracking for one game: all-time / 1-year / 3-month lows, the current best storefront price, a dated change log, and a buy-now verdict, localised to a --country currency (needs ITAD_API_KEY).
-- **`prices`** — Current prices across storefronts, cheapest first, with a --deals-only filter and the all-time low for context, localised to a --country currency (needs ITAD_API_KEY).
-- **`steam search`** — Plural keyless search of the Steam store across games, demos, DLC, soundtracks, software, video, mods, and hardware, with store tags, price, release date, platforms, and demo links on every row.
-- **`steam browse`** — Paginated Steam catalog browse filtered by app type, free-only, store tag, and coming-soon/released, localised with `--country`; "every free demo in my region" is one command.
+These workflows combine source observations with explicit planning constraints.
+
+### Station planning
+- **`stations nearby`** — Find nearby pickup or return choices while retaining closed, empty, full, stale and unknown states.
+
+  _Find nearby pickup or return choices while retaining closed, empty, full, stale and unknown states._
+
+  ```bash
+  hello-cycling-pp-cli stations nearby --lat 35.697315 --lon 139.704995 --purpose pickup --vehicle-type 2 --agent
+  ```
+- **`trip compare`** — Compare pickup and dropoff pairs with per-type return capacity and straight-line access distances.
+
+  _Compare pickup and dropoff pairs with per-type return capacity and straight-line access distances._
+
+  ```bash
+  hello-cycling-pp-cli trip compare --from-lat 35.697315 --from-lon 139.704995 --to-lat 35.707252 --to-lon 139.777587 --vehicle-type 2 --agent
+  ```
+- **`stations sync`** — Save a provider snapshot for offline station discovery with original source timestamps.
+
+  _Save a provider snapshot for offline station discovery with original source timestamps._
+
+  ```bash
+  hello-cycling-pp-cli stations sync --agent
+  ```
+- **`stations changes`** — Inspect count and operational changes since an explicitly saved snapshot.
+
+  _Inspect count and operational changes since an explicitly saved snapshot._
+
+  ```bash
+  hello-cycling-pp-cli stations changes --query 新宿 --agent
+  ```
+- **`pricing show`** — Read current source tables including municipal exceptions without asserting a station bike price.
+
+  _Read current source tables including municipal exceptions without asserting a station bike price._
+
+  ```bash
+  hello-cycling-pp-cli pricing show --area tokyo --agent
+  ```
+
+## HTTP Transport
+
+Provider feed and website reads use bounded standard HTTP and require no browser process.
 
 ## Command Reference
 
-**creator-roles** — List and get creator roles
+**feeds** — Inspect the provider-published GBFS discovery and vehicle type metadata.
 
-- `game-goat-pp-cli creator-roles` — Get a list of creator positions (jobs).
+- `hello-cycling-pp-cli feeds discovery` — Get advertised anonymous HELLO CYCLING GBFS feed URLs.
+- `hello-cycling-pp-cli feeds vehicles` — Get generic source vehicle classes without assigning station bike models.
 
-**creators** — List and get creators
-
-- `game-goat-pp-cli creators list` — Get a list of game creators.
-- `game-goat-pp-cli creators read` — Get details of the creator.
-
-**developers** — List and get developers
-
-- `game-goat-pp-cli developers list` — Get a list of game developers.
-- `game-goat-pp-cli developers read` — Get details of the developer.
-
-**games** — List and get games
-
-- `game-goat-pp-cli games list` — Get a list of games.
-- `game-goat-pp-cli games read` — Get details of the game.
-
-**genres** — List and get genres
-
-- `game-goat-pp-cli genres list` — Get a list of video game genres.
-- `game-goat-pp-cli genres read` — Get details of the genre.
-
-**platforms** — List and get platforms
-
-- `game-goat-pp-cli platforms list` — Get a list of video game platforms.
-- `game-goat-pp-cli platforms lists-parents-list` — For instance, for PS2 and PS4 the “parent platform” is PlayStation.
-- `game-goat-pp-cli platforms read` — Get details of the platform.
-
-**publishers** — List and get publishers
-
-- `game-goat-pp-cli publishers list` — Get a list of video game publishers.
-- `game-goat-pp-cli publishers read` — Get details of the publisher.
-
-**stores** — List and get stores
-
-- `game-goat-pp-cli stores list` — Get a list of video game storefronts.
-- `game-goat-pp-cli stores read` — Get details of the store.
-
-**tags** — List and get tags
-
-- `game-goat-pp-cli tags list` — Get a list of tags.
-- `game-goat-pp-cli tags read` — Get details of the tag.
-
-**games — discovery and detail**
-
-- `game-goat-pp-cli games search` — live title search with remake-aware ambiguity notices.
-- `game-goat-pp-cli games get` — full game detail by title or RAWG id.
-- `game-goat-pp-cli games popular` — most-added games feed.
-- `game-goat-pp-cli games top-rated` — highest-rated games feed.
-- `game-goat-pp-cli games upcoming` — releases in the next 90 days.
-- `game-goat-pp-cli discover` — RAWG's filter surface (genres, tags, platforms, stores, dates, ordering, metacritic).
-
-**ratings · retention · series · similar**
-
-- `game-goat-pp-cli ratings <title>` — RAWG + Metacritic + Steam rating card (title or bare RAWG id).
-- `game-goat-pp-cli retention <title>` — community beaten/dropped/playing/yet split with an aspirational-trap verdict (needs RAWG_API_KEY).
-- `game-goat-pp-cli series <title>` — franchise play order by release date, anchor included (title or bare RAWG id).
-- `game-goat-pp-cli similar <title>` — tiered recommendations: same studio (capped), defining gameplay tag, then shared genres; each row carries `tier` and `reason` (title or bare RAWG id).
-
-**prices — IsThereAnyDeal history and storefront prices**
-
-- `game-goat-pp-cli price-history <title>` — all-time / 1-year / 3-month lows, the current best price, a dated change log, and a buy-now verdict; prices localised by `--country` (needs ITAD_API_KEY).
-- `game-goat-pp-cli prices <title>` — current prices across storefronts, cheapest first, with `--deals-only` and `--limit`; localised by `--country` (needs ITAD_API_KEY).
-
-**framework**
-
-- `sync`, `search`, `analytics` — local SQLite mirror and offline search; `tail` polls the live API; `export` streams live API data to a file.
-- `which`, `workflow`, `api`, `agent-context`, `profile`, `feedback`, `doctor` — agent-native plumbing.
-
-
-**steam** — Keyless Steam store catalog: search, app records, filtered browse
-
-- `game-goat-pp-cli steam search <term>` — Search the Steam store catalog for games, demos, DLC, soundtracks, and more.
-- `game-goat-pp-cli steam app <appid|title>` — One full typed Steam store record, including demo links and the review summary.
-- `game-goat-pp-cli steam browse` — Paginated Steam catalog browse with type, free, tag, and release filters.
 
 ### Finding the right command
 
 When you know what you want to do but not which command does it, ask the CLI directly:
 
 ```bash
-game-goat-pp-cli which "<capability in your own words>"
+hello-cycling-pp-cli which "<capability in your own words>"
 ```
 
 `which` resolves a natural-language capability query to the best matching command from this CLI's curated feature index. Exit code `0` means at least one match; exit code `2` means no confident match — fall back to `--help` or use a narrower query. `--json` (and other machine formats) keep that exit-2 contract and write `{"matches":[]}` on stdout so agents can inspect the envelope without treating a miss as success.
 
 ## Recipes
 
-### Games like one you loved
+### Find station IDs
 
 ```bash
-game-goat-pp-cli similar "Megabonk" --json --select results.name,results.tier,results.reason
+hello-cycling-pp-cli stations find --query 新宿 --limit 5 --agent --select results.id,results.name,results.rental_state,results.return_state
 ```
 
-### Play a franchise in order
+Narrow Japanese name/address matches to station identity and observed state.
+
+### Inspect one station
 
 ```bash
-game-goat-pp-cli series "zelda" --json
+hello-cycling-pp-cli stations show --id 5112 --agent
 ```
 
-### Pin a remake when titles collide
+Read counts, per-type dock compatibility and original timestamps.
+
+### Compare both ends
 
 ```bash
-game-goat-pp-cli ratings "resident evil 4" --year 2023 --json
+hello-cycling-pp-cli trip compare --from-lat 35.697315 --from-lon 139.704995 --to-lat 35.707252 --to-lon 139.777587 --vehicle-type 2 --agent
 ```
 
-A pinned `--year` is a hard constraint on the title too: if no game with that exact title was released in that year, the command reports not-found (drop `--year` or pass a RAWG id) rather than resolving a different game from the same year.
+Choose short access distances with compatible snapshot capacity.
 
-### Will people actually finish it?
+### Read published Tokyo prices
 
 ```bash
-game-goat-pp-cli retention "elden ring" --json
+hello-cycling-pp-cli pricing show --area tokyo --agent
 ```
 
-### Is now the cheapest it has ever been?
-
-```bash
-game-goat-pp-cli price-history "elden ring" --json
-```
-
-Historical lows (all-time, 1 year, 3 months), the current best storefront price, and a dated change log. Prices are localised to `--country` (ISO 3166-1 alpha-2; default `ITAD_COUNTRY` or US), so `--country GB` returns GBP. Requires an IsThereAnyDeal key — the `ITAD_API_KEY` env var or one stored via `auth set-token --provider itad`; get a free key at https://isthereanydeal.com/apps/.
-
-### What does it cost where I live?
-
-```bash
-game-goat-pp-cli prices "elden ring" --country GB --deals-only --json
-```
-
-Current price at every storefront, cheapest first, plus the all-time low for context. `--deals-only` keeps just active discounts; `--limit` caps the rows.
-
-### Search the Steam store
-
-```bash
-game-goat-pp-cli steam search "hollow knight" --json --select results.name,results.price,results.release_date
-```
-
-The keyless store search returns typed records: app type, release date, platforms, store tags, price, and the app's own demo links. `--type` takes a comma-separated list (game, demo, dlc, soundtrack, software, video, mod, hardware) and `--limit` goes up to 100. Text search has no second page — Valve's search service ignores an offset — so use `steam browse` when you need to page.
-
-### Every free demo in my region
-
-```bash
-game-goat-pp-cli steam browse --type demo --free --country DE --page 2 --agent
-```
-
-Filtered catalog browse with real pagination: `--type`, `--free`, `--tag <name|tagid>` (repeat it or comma-separate; every tag is required), and `--coming-soon`/`--released`. `meta` carries `total`, `page`, `limit`, and `next_page`. Free-to-play and early access are attributes of a record rather than app types, so `--free` is how you ask for them.
-
-The full Steam data-source note (which endpoints are used, why `STEAM_API_KEY` is not needed, and the bundle limitation) is the "Steam data sources" section of the README.
+Keep Chiyoda and Itabashi exceptions separate.
 
 ## Auth Setup
-Run `game-goat-pp-cli auth setup` to print the URL and steps for getting a key (add `--launch` to open the URL). Then set:
 
-```bash
-export RAWG_API_KEY="<your-key>"
-```
-To persist credentials, use `echo "$TOKEN" | game-goat-pp-cli auth set-token`. Stored secrets live in `credentials.toml` under the data dir, not in `config.toml`.
+No account, API key or location permission is required. Anonymous provider-published GBFS and first-party price pages are read through HTTP. Reserve rides only in the official app.
 
-The `steam` commands need no key at all: they use Valve's keyless store services. `STEAM_API_KEY` is not used anywhere in this CLI; the key-gated Steam Web API (players, achievements, stats) is the separate `steam-web` CLI.
-
-### IsThereAnyDeal price data (optional)
-
-`price-history` and `prices` read from IsThereAnyDeal and need their own free API key, independent of the RAWG key. Store it once (recommended) or export it per shell:
-
-```bash
-echo "$ITAD_API_KEY" | game-goat-pp-cli auth set-token --provider itad   # writes credentials.toml (0600)
-# or: export ITAD_API_KEY="<your-key>"
-```
-
-Create a key at https://isthereanydeal.com/apps/. Prices are returned in the currency of the selected storefront country: pass `--country <ISO-3166-1>` (e.g. `GB`, `DE`) or set `ITAD_COUNTRY` for a default; without either, US/USD is used. A missing key surfaces as exit code 4 with setup guidance, not an upstream error.
-
-Run `game-goat-pp-cli doctor` to verify setup.
+Run `hello-cycling-pp-cli doctor` to verify setup.
 
 ## Agent Mode
 
@@ -267,7 +182,7 @@ Global format flags share one contract on promoted, novel, sync, and `--deliver`
 - **Filterable** — `--select` keeps a subset of fields. Dotted paths descend into nested structures; arrays traverse element-wise. Critical for keeping context small on verbose APIs:
 
   ```bash
-  game-goat-pp-cli creator-roles --agent --select id,name,slug
+  hello-cycling-pp-cli feeds discovery --agent --select last_updated,ttl,version
   ```
 - **Previewable** — `--dry-run` shows the request without sending
 - **Offline-friendly** — sync/search commands can use the local SQLite store when available
@@ -291,28 +206,27 @@ Parse `.results` for data and `.meta.source` to know whether it's live or local.
 
 Agents should treat the CLI's path resolver as part of the runtime contract:
 
-- Use `--home <dir>` for one invocation, or set `GAME_GOAT_HOME=<dir>` to relocate all four path kinds under one root.
-- Use per-kind env vars only when a specific kind must diverge: `GAME_GOAT_CONFIG_DIR`, `GAME_GOAT_DATA_DIR`, `GAME_GOAT_STATE_DIR`, `GAME_GOAT_CACHE_DIR`.
-- Resolution order is per-kind env var, `--home`, `GAME_GOAT_HOME`, XDG (`XDG_CONFIG_HOME`, `XDG_DATA_HOME`, `XDG_STATE_HOME`, `XDG_CACHE_HOME`), then platform defaults.
-- `config` contains settings like `config.toml` and profiles. `data` contains `credentials.toml`, `data.db`, cookies, and auth sidecars. `state` contains persisted queries, jobs, and `teach.log`. `cache` contains regenerable HTTP/cache files.
-- Stored secrets live in `credentials.toml` under the data dir. Existing legacy `config.toml` secrets are read for compatibility and leave `config.toml` on the first auth write.
-- Run `game-goat-pp-cli doctor --fail-on warn` to surface path and credential-location warnings. `agent-context` exposes a schema v4 `paths` block for agents that need the resolved dirs.
+- Use `--home <dir>` for one invocation, or set `HELLO_CYCLING_HOME=<dir>` to relocate all four path kinds under one root.
+- Use per-kind env vars only when a specific kind must diverge: `HELLO_CYCLING_CONFIG_DIR`, `HELLO_CYCLING_DATA_DIR`, `HELLO_CYCLING_STATE_DIR`, `HELLO_CYCLING_CACHE_DIR`.
+- Resolution order is per-kind env var, `--home`, `HELLO_CYCLING_HOME`, XDG (`XDG_CONFIG_HOME`, `XDG_DATA_HOME`, `XDG_STATE_HOME`, `XDG_CACHE_HOME`), then platform defaults.
+- `config` contains JSON settings and saved profiles. `data` contains `data.db`, including the explicit station snapshot and local learning tables. `state` contains runtime state and `teach.log`. `cache` contains regenerable HTTP metadata/cache files.
+- Run `hello-cycling-pp-cli doctor --fail-on warn` to surface path warnings. `agent-context` exposes a schema v4 `paths` block for agents that need the resolved dirs.
 - For MCP, pass relocation through the MCP host config. The MCP binary does not inherit CLI flags:
 
   ```json
   {
     "mcpServers": {
-      "game-goat": {
-        "command": "game-goat-pp-mcp",
+      "hello-cycling": {
+        "command": "hello-cycling-pp-mcp",
         "env": {
-          "GAME_GOAT_HOME": "/srv/game-goat"
+          "HELLO_CYCLING_HOME": "/srv/hello-cycling"
         }
       }
     }
   }
   ```
 
-Fleet precedence: an inherited per-kind env var overrides an explicit `--home` for that kind. Use `GAME_GOAT_HOME` or per-kind vars as durable fleet levers, and use `--home` only for a single invocation. Relocation is not reversible by unsetting env vars; move files manually before clearing `GAME_GOAT_HOME`, or `doctor` will not find credentials left under the former root.
+Fleet precedence: an inherited per-kind env var overrides an explicit `--home` for that kind. Use `HELLO_CYCLING_HOME` or per-kind vars as durable fleet levers, and use `--home` only for a single invocation. Relocation is not reversible by unsetting env vars; move files manually before clearing `HELLO_CYCLING_HOME`, or `doctor` will not find credentials left under the former root.
 
 ## Automatic learning
 
@@ -329,7 +243,7 @@ Quoted `recall "<question>"` breaks on an apostrophe, which is ordinary English.
 # Command substitution on a file only ever yields data — the shell never
 # parses the file's bytes as syntax.
 QUERY=$(cat /path/to/question.txt)
-game-goat-pp-cli recall "$QUERY" --agent
+hello-cycling-pp-cli recall "$QUERY" --agent
 ```
 
 Prefer MCP: pass the question as the tool's query argument. `"$QUERY"` after a file read is argv-safe; putting the question itself in the command text is not.
@@ -354,7 +268,7 @@ The response envelope:
     { "id": 12, "class": "flag_alias | playbook_candidate",
       "summary": "...", "sightings": 3, "last_seen": "...",
       "rationale": "...",
-      "next_action": ["<trial command>", "game-goat-pp-cli learnings confirm 12"] }
+      "next_action": ["<trial command>", "hello-cycling-pp-cli learnings confirm 12"] }
   ],
   "playbook": {
     "query_family": "...",
@@ -393,7 +307,7 @@ if Playbook present:
        for the entity slot tokens. If a step's slot is unresolved, fall back to
        discovery for that step only.
     -> the Playbook's expected_tool_calls is a budget; if you find yourself running
-       materially more, record the divergence via `game-goat-pp-cli playbook amend`
+       materially more, record the divergence via `hello-cycling-pp-cli playbook amend`
        at end-of-session.
 
 elif Notes present (no Playbook):
@@ -419,7 +333,7 @@ else:  // Found == false, no playbook, no notes
 
 Playbook and Notes are orthogonal to the per-resource path. A recall response can carry both a Playbook AND a `Results[]` hit - use both: the Playbook tells you which choreography to run; the resource hits short-circuit specific steps. Default to skipping `mismatches`; pass `--debug-mismatches` only when investigating cold-start surprises.
 
-Candidate judgment details: `learnings confirm <id>` prints the candidate's full payload before materializing it - check that the printed payload matches the behavior you verified. `learnings reject <id>` tombstones the derivation signature so the same candidate does not resurface. The envelope carries only the few candidates worth acting on now; `game-goat-pp-cli learnings candidates` lists the full open set.
+Candidate judgment details: `learnings confirm <id>` prints the candidate's full payload before materializing it - check that the printed payload matches the behavior you verified. `learnings reject <id>` tombstones the derivation signature so the same candidate does not resurface. The envelope carries only the few candidates worth acting on now; `hello-cycling-pp-cli learnings candidates` lists the full open set.
 
 Graceful degradation: if `learnings confirm` is an unknown command, you are driving an older binary - ignore the candidates guidance and follow the rest of the protocol.
 
@@ -431,7 +345,6 @@ Graceful degradation: if `learnings confirm` is an unknown command, you are driv
 - `similar_shape_different_entity:<canonical>` (top-level): a structurally matching row exists but its canonical entity differs from the live query's. Treated as cold start; the warning carries the conflicting canonical as a hint, but the row is NOT promoted into Results.
 - `ambiguous_alias` (top-level): a single query entity resolved to multiple canonicals (e.g., "Cards" → Arizona Cardinals + St. Louis Cardinals). Surface the ambiguity from context before committing to a resource.
 - `candidates_present` (top-level): the envelope carries a `candidates` section. Handle it via the candidates branch in Step 2 before anything else.
-- `lookup_refresh_available` (top-level): an entity in the query has no lookup row yet, but synced data could provide one. Run `game-goat-pp-cli sync` to refresh entity lookups.
 - Top-level `no_learnings_for_query_family`: the table had no rows above the Jaccard floor. Pure cold start.
 
 ### Step 4: `teach &` after finalizing your response - always
@@ -440,7 +353,7 @@ Teaching is unconditional. After resolving a query the store could not answer, b
 
 ```bash
 QUERY=$(cat /path/to/question.txt)
-game-goat-pp-cli teach --query "$QUERY" --resource-type <type> --resource <id1> --resource <id2>
+hello-cycling-pp-cli teach --query "$QUERY" --resource-type <type> --resource <id1> --resource <id2>
 # (append shell `&` to background it)
 ```
 
@@ -455,7 +368,7 @@ You do not need to decide whether a session "deserves" a playbook: a teach on a 
 ```bash
 # Common case: record both the resource learning AND the playbook in one call.
 QUERY=$(cat /path/to/question.txt)
-game-goat-pp-cli teach \
+hello-cycling-pp-cli teach \
   --query "$QUERY" \
   --resource <id> \
   --playbook-file ~/playbooks/<shape>.json \
@@ -464,7 +377,7 @@ game-goat-pp-cli teach \
 
 # Alternate: playbook-only (no resource to record alongside).
 QUERY=$(cat /path/to/question.txt)
-game-goat-pp-cli teach-playbook \
+hello-cycling-pp-cli teach-playbook \
   --query "$QUERY" \
   --playbook-file ~/playbooks/<shape>.json \
   --notes-file ~/playbooks/<shape>-notes.md
@@ -481,7 +394,7 @@ If your debug-protocol response identifies a concrete correction the notes or pl
 ```bash
 QUERY=$(cat /path/to/question.txt)
 NOTE=$(cat /path/to/note.txt)
-game-goat-pp-cli playbook amend \
+hello-cycling-pp-cli playbook amend \
   --query "$QUERY" \
   --add-note "$NOTE"
 # (append shell `&` to background it)
@@ -512,24 +425,24 @@ If a correction is only meaningful with user-specific context, it belongs in a p
 
 ### Measuring the loop
 
-`game-goat-pp-cli learnings stats` reports recall hit rate, teach-to-reuse, playbook resolution rate, and candidate confirm/reject counts from the local `learn_events` table. Rates are null until they have a denominator; everything stays on this machine. Use it to check whether the loop is earning its keep for this CLI.
+`hello-cycling-pp-cli learnings stats` reports recall hit rate, teach-to-reuse, playbook resolution rate, and candidate confirm/reject counts from the local `learn_events` table. Rates are null until they have a denominator; everything stays on this machine. Use it to check whether the loop is earning its keep for this CLI.
 
 ### Disabling learning
 
 - `--no-learn` on a single command short-circuits both `recall` and the `teach` write path. Use for deterministic agent flows or tests that must not be affected by accumulated learnings.
-- `GAME_GOAT_NO_LEARN=true` in the environment globally disables the pipeline.
+- `HELLO_CYCLING_NO_LEARN=true` in the environment globally disables the pipeline.
 
 ## Agent Feedback
 
 When you (or the agent) notice something off about this CLI, record it:
 
 ```
-game-goat-pp-cli feedback "the --since flag is inclusive but docs say exclusive"
-game-goat-pp-cli feedback --stdin < notes.txt
-game-goat-pp-cli feedback list --json --limit 10
+hello-cycling-pp-cli feedback "the --since flag is inclusive but docs say exclusive"
+hello-cycling-pp-cli feedback --stdin < notes.txt
+hello-cycling-pp-cli feedback list --json --limit 10
 ```
 
-Entries are stored locally as `feedback.jsonl` under the resolved data dir. They are never POSTed unless `GAME_GOAT_FEEDBACK_ENDPOINT` is set AND either `--send` is passed or `GAME_GOAT_FEEDBACK_AUTO_SEND=true`. Default behavior is local-only.
+Entries are stored locally as `feedback.jsonl` under the resolved data dir. They are never POSTed unless `HELLO_CYCLING_FEEDBACK_ENDPOINT` is set AND either `--send` is passed or `HELLO_CYCLING_FEEDBACK_AUTO_SEND=true`. Default behavior is local-only.
 
 Write what *surprised* you, not a bug report. Short, specific, one line: that is the part that compounds.
 
@@ -550,11 +463,11 @@ Unknown schemes are refused with a structured error naming the supported set. We
 A profile is a saved set of flag values, reused across invocations. Use it when a scheduled or recurring agent reuses the same saved flags while providing different input each run.
 
 ```
-game-goat-pp-cli profile save briefing --json
-game-goat-pp-cli --profile briefing creator-roles
-game-goat-pp-cli profile list --json
-game-goat-pp-cli profile show briefing
-game-goat-pp-cli profile delete briefing --yes
+hello-cycling-pp-cli profile save briefing --json
+hello-cycling-pp-cli --profile briefing feeds discovery
+hello-cycling-pp-cli profile list --json
+hello-cycling-pp-cli profile show briefing
+hello-cycling-pp-cli profile delete briefing --yes
 ```
 
 Explicit flags always win over profile values; profile values win over defaults. `agent-context` lists all available profiles under `available_profiles` so introspecting agents discover them at runtime.
@@ -566,7 +479,6 @@ Explicit flags always win over profile values; profile values win over defaults.
 | 0 | Success |
 | 2 | Usage error (wrong arguments) |
 | 3 | Resource not found |
-| 4 | Authentication required |
 | 5 | API error (upstream issue) |
 | 7 | Rate limited (wait and retry) |
 | 10 | Config error |
@@ -575,7 +487,7 @@ Explicit flags always win over profile values; profile values win over defaults.
 
 Parse `$ARGUMENTS`:
 
-1. **Empty, `help`, or `--help`** → show `game-goat-pp-cli --help` output
+1. **Empty, `help`, or `--help`** → show `hello-cycling-pp-cli --help` output
 2. **Starts with `install`** → ends with `mcp` → MCP installation; otherwise → see Prerequisites above
 3. **Anything else** → Direct Use (execute as CLI command with `--agent`)
 
@@ -583,21 +495,23 @@ Parse `$ARGUMENTS`:
 
 1. Install the MCP server:
    ```bash
-   go install github.com/mvanhorn/printing-press-library/library/media-and-entertainment/game-goat/cmd/game-goat-pp-mcp@latest
+   go install github.com/mvanhorn/printing-press-library/library/travel/hello-cycling/cmd/hello-cycling-pp-mcp@latest
    ```
 2. Register with Claude Code:
    ```bash
-   claude mcp add game-goat-pp-mcp -- game-goat-pp-mcp
+   claude mcp add hello-cycling-pp-mcp -- hello-cycling-pp-mcp
    ```
 3. Verify: `claude mcp list`
 
 ## Direct Use
 
-1. Check if installed: `which game-goat-pp-cli`
+1. Check if installed: `which hello-cycling-pp-cli`
    If not found, offer to install (see Prerequisites at the top of this skill).
 2. Match the user query to the best command from the Unique Capabilities and Command Reference above.
 3. Execute with the `--agent` flag:
    ```bash
-   game-goat-pp-cli <command> [subcommand] [args] --agent
+   hello-cycling-pp-cli stations show --id 5112 --agent
    ```
-4. If ambiguous, drill into subcommand help: `game-goat-pp-cli <command> --help`.
+4. If ambiguous, drill into subcommand help: `hello-cycling-pp-cli stations show --help`.
+
+Status-feed outages trigger the saved-snapshot fallback in auto mode when it is usable. Explicit live/no-cache discovery retains station identity with unknown counts and source_missing states. Sync and changes reject a missing status feed, preserving the saved baseline. Change inspection evaluates baseline usability at its original observation time and reports freshness/compatibility state transitions even when counts remain equal.

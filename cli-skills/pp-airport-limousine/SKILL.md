@@ -1,7 +1,7 @@
 ---
-name: pp-game-goat
-description: "Look up any game, find what to play next, and browse the Steam store from one CLI - RAWG search and ratings, remake-aware title resolution, and IsThereAnyDeal price history."
-author: "Brad Knight"
+name: pp-airport-limousine
+description: "Plan Tokyo airport buses with exact terminals, dated fares and explicit travel-time uncertainty. Trigger phrases: `Airport Limousine timetable`, `Haneda to Narita bus`, `Limousine bus baggage limits`, `Airport bus current travel time`, `use airport-limousine`, `run airport-limousine`."
+author: "zjsng"
 license: "Apache-2.0"
 argument-hint: "<command> [args] | install cli|mcp"
 allowed-tools: "Read Bash"
@@ -9,248 +9,174 @@ metadata:
   openclaw:
     requires:
       bins:
-        - game-goat-pp-cli
+        - airport-limousine-pp-cli
     install:
       - kind: go
-        bins: [game-goat-pp-cli]
-        module: github.com/mvanhorn/printing-press-library/library/media-and-entertainment/game-goat/cmd/game-goat-pp-cli
+        bins: [airport-limousine-pp-cli]
+        module: github.com/mvanhorn/printing-press-library/library/travel/airport-limousine/cmd/airport-limousine-pp-cli
 ---
 <!-- GENERATED FILE — DO NOT EDIT.
-     This file is a verbatim mirror of library/media-and-entertainment/game-goat/SKILL.md,
+     This file is a verbatim mirror of library/travel/airport-limousine/SKILL.md,
      regenerated post-merge by tools/generate-skills/. Hand-edits here are
      silently overwritten on the next regen. Edit the library/ source instead.
      See the repository agent guide, section "Generated artifacts: registry.json, cli-skills/". -->
 
-# Game GOAT — Printing Press CLI
+# Airport Limousine — Printing Press CLI
 
 ## Prerequisites: Install the CLI
 
-This skill drives the `game-goat-pp-cli` binary. **You must verify the CLI is installed before invoking any command from this skill.** If it is missing, install it first:
+This skill drives the `airport-limousine-pp-cli` binary. **You must verify the CLI is installed before invoking any command from this skill.** If it is missing, install it first:
 
 1. Install via the Printing Press installer. It defaults binaries to `$HOME/.local/bin` on macOS/Linux and `%LOCALAPPDATA%\Programs\PrintingPress\bin` on Windows:
    ```bash
-   npx -y @mvanhorn/printing-press-library install game-goat --cli-only
+   npx -y @mvanhorn/printing-press-library install airport-limousine --cli-only
    ```
-2. Verify: `game-goat-pp-cli --version`
+2. Verify: `airport-limousine-pp-cli --version`
 3. Ensure the reported install directory is on `$PATH` for the agent/runtime that will invoke this skill.
 
 If the `npx` install fails (no Node, offline, etc.), fall back to a direct Go install (requires Go 1.26.6 or newer). This installs into `$GOPATH/bin` (default `$HOME/go/bin`), so add that directory to `$PATH` instead:
 
 ```bash
-go install github.com/mvanhorn/printing-press-library/library/media-and-entertainment/game-goat/cmd/game-goat-pp-cli@latest
+go install github.com/mvanhorn/printing-press-library/library/travel/airport-limousine/cmd/airport-limousine-pp-cli@latest
 ```
 
 If `--version` reports "command not found" after install, the runtime cannot see the binary directory on `$PATH`. Do not proceed with skill commands until verification succeeds.
 
-### What this CLI covers
-- 350,000+ games across 50 platforms via RAWG (Video Games Database) (tags, genres, developers, publishers, creators, Metacritic scores, store links).
-- Keyless Steam enrichment: review scores and player counts joined into rating cards.
-- Remake-aware title resolution: shared names (DOOM 1993 vs 2016, franchise shorthand like "halo") resolve with a notice on stderr and meta.ambiguous in JSON; pin with --year or a RAWG id.
-- One free RAWG API key powers live commands (see Auth Setup); local search over synced data works offline.
-- IsThereAnyDeal historical and current price tracking (needs ITAD_API_KEY): all-time / 1-year / 3-month lows, a dated change log, and per-storefront current prices, localised to a --country currency.
+Find routes and stops, inspect a JST service date, compare current duration evidence and plan party fares. Every result retains the provider source and observation time.
 
-### Terms of Use
-- Free for personal use as long as you attribute RAWG as the source of the data and/or images and add an active
-hyperlink from every page where the data of RAWG is used.
-- Free for commercial use for startups and hobby projects with not more than 100,000 monthly active users or 500,000
-page views per month. If your project is larger than that, email us at [api@rawg.io](mailto:api@rawg.io) for
-commercial terms.
-- No cloning. It would not be cool if you used our API to launch a clone of RAWG. We know it is not always easy
-to say what is a duplicate and what isn't. Drop us a line at [api@rawg.io](mailto:api@rawg.io) if you are in doubt,
-and we will talk it through.
-- You must include an API key with every request. The key can be obtained at https://rawg.io/apidocs.
-If you don’t provide it, we may ban your requests.
+## Airport bus source contract
 
-__[Read more](https://rawg.io/apidocs)__.
+`routes`, `stops`, `timetable`, `travel-times`, `transfers`, `fare`, `conditions` and `handoff` use fresh public provider reads. Use `--data-source auto` or `--data-source live`; these commands reject local mode before making requests. Each invocation permits at most eight provider requests, reads at most 2 MiB per response, uses adaptive pacing, refuses redirects, and follows the configured `--timeout` for the whole command. Rate limiting is a typed error, rather than an empty result.
 
-## When Not to Use This CLI
+Select exact stop IDs: Haneda and Narita terminals, Shinjuku Station and Shinjuku Expressway Bus Terminal remain distinct. Dates default to today in Asia/Tokyo. Timetable output retains raw provider times and absolute `+09:00` times; `day_offset` and `rollover_inferred` expose midnight handling. Route context and station columns appear under `meta.context` and `meta.stations`.
 
-Do not activate this CLI for requests that require creating, updating, deleting, publishing, commenting, upvoting, inviting, ordering, sending messages, booking, purchasing, or changing remote state. Also do not use it for game news, esports schedules, purchasing or checkout, or running/emulating games — RAWG (Video Games Database) exposes none of these, and this CLI never buys anything. It does read prices: `price-history` and `prices` pull historical and current storefront prices from IsThereAnyDeal (read-only, requires ITAD_API_KEY). This printed CLI exposes read-only commands against the API for inspection, export, sync, and analysis.
+Current travel times retain the source JST clock, which has no verified date, and explicitly preserve adjusting, retrieving and unknown values. They are route estimates and do not identify a terminal or guarantee arrival. Schedules and published fares do not establish seat availability. `fare` uses actual published adult/child units for a served stop pair; if units differ across trips, select `--trip-id` from `timetable`. A missing unit remains unknown. Passenger category eligibility and operator-specific rules remain the user's responsibility.
+
+`conditions` retains guide content update dates and links to current baggage notices. Its structured bag values and units survive agent output. `handoff` validates the dated route and prints its canonical timetable page; the user follows reservation links on that page. No command books, pays or changes an account.
+
+## When to Use This CLI
+
+Use for Airport Limousine public route/stop discovery, dated Tokyo airport-bus schedules, published fares and current duration evidence. Choose exact terminal IDs before interpreting times or party fares.
+
+## Anti-triggers
+
+Do not use this CLI for:
+- Seat reservation, payments or account changes.
+- Arrival guarantees, flight-connection guarantees or seat-inventory claims.
+- Other bus operators or multimodal route pricing.
 
 ## Unique Capabilities
 
 These capabilities aren't available in any other tool for this API.
-- **`similar`** — Games like <title>: the seed's own studio first, then its defining gameplay tag (roguelite, metroidvania) found by tag-neighborhood co-occurrence, then a confidence-floored genre join. Every row carries its tier and a reason.
-- **`retention`** — Community completion and drop verdict for one game from RAWG added_by_status counts (needs RAWG_API_KEY).
-- **`price-history`** — Historical price tracking for one game: all-time / 1-year / 3-month lows, the current best storefront price, a dated change log, and a buy-now verdict, localised to a --country currency (needs ITAD_API_KEY).
-- **`prices`** — Current prices across storefronts, cheapest first, with a --deals-only filter and the all-time low for context, localised to a --country currency (needs ITAD_API_KEY).
-- **`steam search`** — Plural keyless search of the Steam store across games, demos, DLC, soundtracks, software, video, mods, and hardware, with store tags, price, release date, platforms, and demo links on every row.
-- **`steam browse`** — Paginated Steam catalog browse filtered by app type, free-only, store tag, and coming-soon/released, localised with `--country`; "every free demo in my region" is one command.
+
+### Airport bus planning
+- **`timetable`** — Plan a service date at exact stops with JST times and midnight rollover.
+
+  _Inspect exact terminal rows and omit seat inventory._
+
+  ```bash
+  airport-limousine-pp-cli timetable --agent
+  ```
+- **`travel-times`** — Compare current and standard duration estimates with explicit unavailable states.
+
+  _Preserve source clock and estimates without guaranteeing arrival._
+
+  ```bash
+  airport-limousine-pp-cli travel-times --agent
+  ```
+- **`transfers`** — Read both airport transfer directions for the same service date.
+
+  _Keep terminal identity and failed fetches distinct._
+
+  ```bash
+  airport-limousine-pp-cli transfers --agent
+  ```
+- **`fare`** — Calculate an adult/child total from the operator fare for a served pair.
+
+  _State passenger-category assumptions and unknown fares._
+
+  ```bash
+  airport-limousine-pp-cli fare --agent
+  ```
+- **`conditions`** — Read concise current provider conditions with source timestamps and notices.
+
+  _Check luggage and child seating before booking._
+
+  ```bash
+  airport-limousine-pp-cli conditions --agent
+  ```
+
+## HTTP Transport
+
+This CLI uses Chrome-compatible HTTP transport for browser-facing endpoints. It does not require a resident browser process for normal API calls.
+
+## Discovery Signals
+
+This CLI was generated with browser-observed traffic context.
+- Capture coverage: 1 API entries from 5 total network entries
+- Protocols: rest_json (75% confidence), html_scrape (55% confidence)
+- Auth signals: none
+- Candidate command ideas: list___data.json — Derived from observed GET /en/timetable/detail/Haneda-Narita/__data.json traffic.
 
 ## Command Reference
 
-**creator-roles** — List and get creator roles
+**pages** — Read canonical operator page links
 
-- `game-goat-pp-cli creator-roles` — Get a list of creator positions (jobs).
+- `airport-limousine-pp-cli pages guide` — Read the provider baggage and boarding guide links
+- `airport-limousine-pp-cli pages routes` — Read canonical route and timetable links
+- `airport-limousine-pp-cli pages stop` — Read a known operator stop page and links
+- `airport-limousine-pp-cli pages timetable` — Read canonical date timetable handoff links
 
-**creators** — List and get creators
-
-- `game-goat-pp-cli creators list` — Get a list of game creators.
-- `game-goat-pp-cli creators read` — Get details of the creator.
-
-**developers** — List and get developers
-
-- `game-goat-pp-cli developers list` — Get a list of game developers.
-- `game-goat-pp-cli developers read` — Get details of the developer.
-
-**games** — List and get games
-
-- `game-goat-pp-cli games list` — Get a list of games.
-- `game-goat-pp-cli games read` — Get details of the game.
-
-**genres** — List and get genres
-
-- `game-goat-pp-cli genres list` — Get a list of video game genres.
-- `game-goat-pp-cli genres read` — Get details of the genre.
-
-**platforms** — List and get platforms
-
-- `game-goat-pp-cli platforms list` — Get a list of video game platforms.
-- `game-goat-pp-cli platforms lists-parents-list` — For instance, for PS2 and PS4 the “parent platform” is PlayStation.
-- `game-goat-pp-cli platforms read` — Get details of the platform.
-
-**publishers** — List and get publishers
-
-- `game-goat-pp-cli publishers list` — Get a list of video game publishers.
-- `game-goat-pp-cli publishers read` — Get details of the publisher.
-
-**stores** — List and get stores
-
-- `game-goat-pp-cli stores list` — Get a list of video game storefronts.
-- `game-goat-pp-cli stores read` — Get details of the store.
-
-**tags** — List and get tags
-
-- `game-goat-pp-cli tags list` — Get a list of tags.
-- `game-goat-pp-cli tags read` — Get details of the tag.
-
-**games — discovery and detail**
-
-- `game-goat-pp-cli games search` — live title search with remake-aware ambiguity notices.
-- `game-goat-pp-cli games get` — full game detail by title or RAWG id.
-- `game-goat-pp-cli games popular` — most-added games feed.
-- `game-goat-pp-cli games top-rated` — highest-rated games feed.
-- `game-goat-pp-cli games upcoming` — releases in the next 90 days.
-- `game-goat-pp-cli discover` — RAWG's filter surface (genres, tags, platforms, stores, dates, ordering, metacritic).
-
-**ratings · retention · series · similar**
-
-- `game-goat-pp-cli ratings <title>` — RAWG + Metacritic + Steam rating card (title or bare RAWG id).
-- `game-goat-pp-cli retention <title>` — community beaten/dropped/playing/yet split with an aspirational-trap verdict (needs RAWG_API_KEY).
-- `game-goat-pp-cli series <title>` — franchise play order by release date, anchor included (title or bare RAWG id).
-- `game-goat-pp-cli similar <title>` — tiered recommendations: same studio (capped), defining gameplay tag, then shared genres; each row carries `tier` and `reason` (title or bare RAWG id).
-
-**prices — IsThereAnyDeal history and storefront prices**
-
-- `game-goat-pp-cli price-history <title>` — all-time / 1-year / 3-month lows, the current best price, a dated change log, and a buy-now verdict; prices localised by `--country` (needs ITAD_API_KEY).
-- `game-goat-pp-cli prices <title>` — current prices across storefronts, cheapest first, with `--deals-only` and `--limit`; localised by `--country` (needs ITAD_API_KEY).
-
-**framework**
-
-- `sync`, `search`, `analytics` — local SQLite mirror and offline search; `tail` polls the live API; `export` streams live API data to a file.
-- `which`, `workflow`, `api`, `agent-context`, `profile`, `feedback`, `doctor` — agent-native plumbing.
-
-
-**steam** — Keyless Steam store catalog: search, app records, filtered browse
-
-- `game-goat-pp-cli steam search <term>` — Search the Steam store catalog for games, demos, DLC, soundtracks, and more.
-- `game-goat-pp-cli steam app <appid|title>` — One full typed Steam store record, including demo links and the review summary.
-- `game-goat-pp-cli steam browse` — Paginated Steam catalog browse with type, free, tag, and release filters.
 
 ### Finding the right command
 
 When you know what you want to do but not which command does it, ask the CLI directly:
 
 ```bash
-game-goat-pp-cli which "<capability in your own words>"
+airport-limousine-pp-cli which "<capability in your own words>"
 ```
 
 `which` resolves a natural-language capability query to the best matching command from this CLI's curated feature index. Exit code `0` means at least one match; exit code `2` means no confident match — fall back to `--help` or use a narrower query. `--json` (and other machine formats) keep that exit-2 contract and write `{"matches":[]}` on stdout so agents can inspect the envelope without treating a miss as success.
 
 ## Recipes
 
-### Games like one you loved
+### Find a stop
 
 ```bash
-game-goat-pp-cli similar "Megabonk" --json --select results.name,results.tier,results.reason
+airport-limousine-pp-cli stops find --query Shinjuku --agent --select results.id,results.name,meta.observed_at
 ```
 
-### Play a franchise in order
+Retain exact stop IDs and source freshness.
+
+### Inspect a terminal
 
 ```bash
-game-goat-pp-cli series "zelda" --json
+airport-limousine-pp-cli stops get HanedaAirportTerminal3 --agent
 ```
 
-### Pin a remake when titles collide
+Read boarding map and provider route handoff.
+
+### Compare transfers
 
 ```bash
-game-goat-pp-cli ratings "resident evil 4" --year 2023 --json
+airport-limousine-pp-cli transfers --agent
 ```
 
-A pinned `--year` is a hard constraint on the title too: if no game with that exact title was released in that year, the command reports not-found (drop `--year` or pass a RAWG id) rather than resolving a different game from the same year.
+Read both directions for today in JST.
 
-### Will people actually finish it?
+### Read luggage conditions
 
 ```bash
-game-goat-pp-cli retention "elden ring" --json
+airport-limousine-pp-cli conditions --topic baggage --agent
 ```
 
-### Is now the cheapest it has ever been?
-
-```bash
-game-goat-pp-cli price-history "elden ring" --json
-```
-
-Historical lows (all-time, 1 year, 3 months), the current best storefront price, and a dated change log. Prices are localised to `--country` (ISO 3166-1 alpha-2; default `ITAD_COUNTRY` or US), so `--country GB` returns GBP. Requires an IsThereAnyDeal key — the `ITAD_API_KEY` env var or one stored via `auth set-token --provider itad`; get a free key at https://isthereanydeal.com/apps/.
-
-### What does it cost where I live?
-
-```bash
-game-goat-pp-cli prices "elden ring" --country GB --deals-only --json
-```
-
-Current price at every storefront, cheapest first, plus the all-time low for context. `--deals-only` keeps just active discounts; `--limit` caps the rows.
-
-### Search the Steam store
-
-```bash
-game-goat-pp-cli steam search "hollow knight" --json --select results.name,results.price,results.release_date
-```
-
-The keyless store search returns typed records: app type, release date, platforms, store tags, price, and the app's own demo links. `--type` takes a comma-separated list (game, demo, dlc, soundtrack, software, video, mod, hardware) and `--limit` goes up to 100. Text search has no second page — Valve's search service ignores an offset — so use `steam browse` when you need to page.
-
-### Every free demo in my region
-
-```bash
-game-goat-pp-cli steam browse --type demo --free --country DE --page 2 --agent
-```
-
-Filtered catalog browse with real pagination: `--type`, `--free`, `--tag <name|tagid>` (repeat it or comma-separate; every tag is required), and `--coming-soon`/`--released`. `meta` carries `total`, `page`, `limit`, and `next_page`. Free-to-play and early access are attributes of a record rather than app types, so `--free` is how you ask for them.
-
-The full Steam data-source note (which endpoints are used, why `STEAM_API_KEY` is not needed, and the bundle limitation) is the "Steam data sources" section of the README.
+Check current operator limits and linked notices.
 
 ## Auth Setup
-Run `game-goat-pp-cli auth setup` to print the URL and steps for getting a key (add `--launch` to open the URL). Then set:
 
-```bash
-export RAWG_API_KEY="<your-key>"
-```
-To persist credentials, use `echo "$TOKEN" | game-goat-pp-cli auth set-token`. Stored secrets live in `credentials.toml` under the data dir, not in `config.toml`.
+Public read-only sources; no login, key or reservation action. Chrome-compatible HTTP runs without a resident browser.
 
-The `steam` commands need no key at all: they use Valve's keyless store services. `STEAM_API_KEY` is not used anywhere in this CLI; the key-gated Steam Web API (players, achievements, stats) is the separate `steam-web` CLI.
-
-### IsThereAnyDeal price data (optional)
-
-`price-history` and `prices` read from IsThereAnyDeal and need their own free API key, independent of the RAWG key. Store it once (recommended) or export it per shell:
-
-```bash
-echo "$ITAD_API_KEY" | game-goat-pp-cli auth set-token --provider itad   # writes credentials.toml (0600)
-# or: export ITAD_API_KEY="<your-key>"
-```
-
-Create a key at https://isthereanydeal.com/apps/. Prices are returned in the currency of the selected storefront country: pass `--country <ISO-3166-1>` (e.g. `GB`, `DE`) or set `ITAD_COUNTRY` for a default; without either, US/USD is used. A missing key surfaces as exit code 4 with setup guidance, not an upstream error.
-
-Run `game-goat-pp-cli doctor` to verify setup.
+Run `airport-limousine-pp-cli doctor` to verify setup.
 
 ## Agent Mode
 
@@ -267,12 +193,12 @@ Global format flags share one contract on promoted, novel, sync, and `--deliver`
 - **Filterable** — `--select` keeps a subset of fields. Dotted paths descend into nested structures; arrays traverse element-wise. Critical for keeping context small on verbose APIs:
 
   ```bash
-  game-goat-pp-cli creator-roles --agent --select id,name,slug
+  airport-limousine-pp-cli pages guide --agent
   ```
 - **Previewable** — `--dry-run` shows the request without sending
 - **Offline-friendly** — sync/search commands can use the local SQLite store when available
 - **Non-interactive** — never prompts, every input is a flag
-- **Read-only** — do not use this CLI for create, update, delete, publish, comment, upvote, invite, order, send, or other mutating requests
+- **Explicit confirmation** — `--agent` does not imply `--yes`; pass `--yes` separately only after the target, arguments, and side effects are clear
 
 ### Response envelope
 
@@ -291,28 +217,28 @@ Parse `.results` for data and `.meta.source` to know whether it's live or local.
 
 Agents should treat the CLI's path resolver as part of the runtime contract:
 
-- Use `--home <dir>` for one invocation, or set `GAME_GOAT_HOME=<dir>` to relocate all four path kinds under one root.
-- Use per-kind env vars only when a specific kind must diverge: `GAME_GOAT_CONFIG_DIR`, `GAME_GOAT_DATA_DIR`, `GAME_GOAT_STATE_DIR`, `GAME_GOAT_CACHE_DIR`.
-- Resolution order is per-kind env var, `--home`, `GAME_GOAT_HOME`, XDG (`XDG_CONFIG_HOME`, `XDG_DATA_HOME`, `XDG_STATE_HOME`, `XDG_CACHE_HOME`), then platform defaults.
+- Use `--home <dir>` for one invocation, or set `AIRPORT_LIMOUSINE_HOME=<dir>` to relocate all four path kinds under one root.
+- Use per-kind env vars only when a specific kind must diverge: `AIRPORT_LIMOUSINE_CONFIG_DIR`, `AIRPORT_LIMOUSINE_DATA_DIR`, `AIRPORT_LIMOUSINE_STATE_DIR`, `AIRPORT_LIMOUSINE_CACHE_DIR`.
+- Resolution order is per-kind env var, `--home`, `AIRPORT_LIMOUSINE_HOME`, XDG (`XDG_CONFIG_HOME`, `XDG_DATA_HOME`, `XDG_STATE_HOME`, `XDG_CACHE_HOME`), then platform defaults.
 - `config` contains settings like `config.toml` and profiles. `data` contains `credentials.toml`, `data.db`, cookies, and auth sidecars. `state` contains persisted queries, jobs, and `teach.log`. `cache` contains regenerable HTTP/cache files.
 - Stored secrets live in `credentials.toml` under the data dir. Existing legacy `config.toml` secrets are read for compatibility and leave `config.toml` on the first auth write.
-- Run `game-goat-pp-cli doctor --fail-on warn` to surface path and credential-location warnings. `agent-context` exposes a schema v4 `paths` block for agents that need the resolved dirs.
+- Run `airport-limousine-pp-cli doctor --fail-on warn` to surface path warnings. `agent-context` exposes a schema v4 `paths` block for agents that need the resolved dirs.
 - For MCP, pass relocation through the MCP host config. The MCP binary does not inherit CLI flags:
 
   ```json
   {
     "mcpServers": {
-      "game-goat": {
-        "command": "game-goat-pp-mcp",
+      "airport-limousine": {
+        "command": "airport-limousine-pp-mcp",
         "env": {
-          "GAME_GOAT_HOME": "/srv/game-goat"
+          "AIRPORT_LIMOUSINE_HOME": "/srv/airport-limousine"
         }
       }
     }
   }
   ```
 
-Fleet precedence: an inherited per-kind env var overrides an explicit `--home` for that kind. Use `GAME_GOAT_HOME` or per-kind vars as durable fleet levers, and use `--home` only for a single invocation. Relocation is not reversible by unsetting env vars; move files manually before clearing `GAME_GOAT_HOME`, or `doctor` will not find credentials left under the former root.
+Fleet precedence: an inherited per-kind env var overrides an explicit `--home` for that kind. Use `AIRPORT_LIMOUSINE_HOME` or per-kind vars as durable fleet levers, and use `--home` only for a single invocation. Relocation is not reversible by unsetting env vars; move files manually before clearing `AIRPORT_LIMOUSINE_HOME`, or `doctor` will not find credentials left under the former root.
 
 ## Automatic learning
 
@@ -329,7 +255,7 @@ Quoted `recall "<question>"` breaks on an apostrophe, which is ordinary English.
 # Command substitution on a file only ever yields data — the shell never
 # parses the file's bytes as syntax.
 QUERY=$(cat /path/to/question.txt)
-game-goat-pp-cli recall "$QUERY" --agent
+airport-limousine-pp-cli recall "$QUERY" --agent
 ```
 
 Prefer MCP: pass the question as the tool's query argument. `"$QUERY"` after a file read is argv-safe; putting the question itself in the command text is not.
@@ -354,7 +280,7 @@ The response envelope:
     { "id": 12, "class": "flag_alias | playbook_candidate",
       "summary": "...", "sightings": 3, "last_seen": "...",
       "rationale": "...",
-      "next_action": ["<trial command>", "game-goat-pp-cli learnings confirm 12"] }
+      "next_action": ["<trial command>", "airport-limousine-pp-cli learnings confirm 12"] }
   ],
   "playbook": {
     "query_family": "...",
@@ -393,7 +319,7 @@ if Playbook present:
        for the entity slot tokens. If a step's slot is unresolved, fall back to
        discovery for that step only.
     -> the Playbook's expected_tool_calls is a budget; if you find yourself running
-       materially more, record the divergence via `game-goat-pp-cli playbook amend`
+       materially more, record the divergence via `airport-limousine-pp-cli playbook amend`
        at end-of-session.
 
 elif Notes present (no Playbook):
@@ -419,7 +345,7 @@ else:  // Found == false, no playbook, no notes
 
 Playbook and Notes are orthogonal to the per-resource path. A recall response can carry both a Playbook AND a `Results[]` hit - use both: the Playbook tells you which choreography to run; the resource hits short-circuit specific steps. Default to skipping `mismatches`; pass `--debug-mismatches` only when investigating cold-start surprises.
 
-Candidate judgment details: `learnings confirm <id>` prints the candidate's full payload before materializing it - check that the printed payload matches the behavior you verified. `learnings reject <id>` tombstones the derivation signature so the same candidate does not resurface. The envelope carries only the few candidates worth acting on now; `game-goat-pp-cli learnings candidates` lists the full open set.
+Candidate judgment details: `learnings confirm <id>` prints the candidate's full payload before materializing it - check that the printed payload matches the behavior you verified. `learnings reject <id>` tombstones the derivation signature so the same candidate does not resurface. The envelope carries only the few candidates worth acting on now; `airport-limousine-pp-cli learnings candidates` lists the full open set.
 
 Graceful degradation: if `learnings confirm` is an unknown command, you are driving an older binary - ignore the candidates guidance and follow the rest of the protocol.
 
@@ -431,7 +357,6 @@ Graceful degradation: if `learnings confirm` is an unknown command, you are driv
 - `similar_shape_different_entity:<canonical>` (top-level): a structurally matching row exists but its canonical entity differs from the live query's. Treated as cold start; the warning carries the conflicting canonical as a hint, but the row is NOT promoted into Results.
 - `ambiguous_alias` (top-level): a single query entity resolved to multiple canonicals (e.g., "Cards" → Arizona Cardinals + St. Louis Cardinals). Surface the ambiguity from context before committing to a resource.
 - `candidates_present` (top-level): the envelope carries a `candidates` section. Handle it via the candidates branch in Step 2 before anything else.
-- `lookup_refresh_available` (top-level): an entity in the query has no lookup row yet, but synced data could provide one. Run `game-goat-pp-cli sync` to refresh entity lookups.
 - Top-level `no_learnings_for_query_family`: the table had no rows above the Jaccard floor. Pure cold start.
 
 ### Step 4: `teach &` after finalizing your response - always
@@ -440,7 +365,7 @@ Teaching is unconditional. After resolving a query the store could not answer, b
 
 ```bash
 QUERY=$(cat /path/to/question.txt)
-game-goat-pp-cli teach --query "$QUERY" --resource-type <type> --resource <id1> --resource <id2>
+airport-limousine-pp-cli teach --query "$QUERY" --resource-type <type> --resource <id1> --resource <id2>
 # (append shell `&` to background it)
 ```
 
@@ -455,7 +380,7 @@ You do not need to decide whether a session "deserves" a playbook: a teach on a 
 ```bash
 # Common case: record both the resource learning AND the playbook in one call.
 QUERY=$(cat /path/to/question.txt)
-game-goat-pp-cli teach \
+airport-limousine-pp-cli teach \
   --query "$QUERY" \
   --resource <id> \
   --playbook-file ~/playbooks/<shape>.json \
@@ -464,7 +389,7 @@ game-goat-pp-cli teach \
 
 # Alternate: playbook-only (no resource to record alongside).
 QUERY=$(cat /path/to/question.txt)
-game-goat-pp-cli teach-playbook \
+airport-limousine-pp-cli teach-playbook \
   --query "$QUERY" \
   --playbook-file ~/playbooks/<shape>.json \
   --notes-file ~/playbooks/<shape>-notes.md
@@ -481,7 +406,7 @@ If your debug-protocol response identifies a concrete correction the notes or pl
 ```bash
 QUERY=$(cat /path/to/question.txt)
 NOTE=$(cat /path/to/note.txt)
-game-goat-pp-cli playbook amend \
+airport-limousine-pp-cli playbook amend \
   --query "$QUERY" \
   --add-note "$NOTE"
 # (append shell `&` to background it)
@@ -512,24 +437,24 @@ If a correction is only meaningful with user-specific context, it belongs in a p
 
 ### Measuring the loop
 
-`game-goat-pp-cli learnings stats` reports recall hit rate, teach-to-reuse, playbook resolution rate, and candidate confirm/reject counts from the local `learn_events` table. Rates are null until they have a denominator; everything stays on this machine. Use it to check whether the loop is earning its keep for this CLI.
+`airport-limousine-pp-cli learnings stats` reports recall hit rate, teach-to-reuse, playbook resolution rate, and candidate confirm/reject counts from the local `learn_events` table. Rates are null until they have a denominator; everything stays on this machine. Use it to check whether the loop is earning its keep for this CLI.
 
 ### Disabling learning
 
 - `--no-learn` on a single command short-circuits both `recall` and the `teach` write path. Use for deterministic agent flows or tests that must not be affected by accumulated learnings.
-- `GAME_GOAT_NO_LEARN=true` in the environment globally disables the pipeline.
+- `AIRPORT_LIMOUSINE_NO_LEARN=true` in the environment globally disables the pipeline.
 
 ## Agent Feedback
 
 When you (or the agent) notice something off about this CLI, record it:
 
 ```
-game-goat-pp-cli feedback "the --since flag is inclusive but docs say exclusive"
-game-goat-pp-cli feedback --stdin < notes.txt
-game-goat-pp-cli feedback list --json --limit 10
+airport-limousine-pp-cli feedback "the --since flag is inclusive but docs say exclusive"
+airport-limousine-pp-cli feedback --stdin < notes.txt
+airport-limousine-pp-cli feedback list --json --limit 10
 ```
 
-Entries are stored locally as `feedback.jsonl` under the resolved data dir. They are never POSTed unless `GAME_GOAT_FEEDBACK_ENDPOINT` is set AND either `--send` is passed or `GAME_GOAT_FEEDBACK_AUTO_SEND=true`. Default behavior is local-only.
+Entries are stored locally as `feedback.jsonl` under the resolved data dir. They are never POSTed unless `AIRPORT_LIMOUSINE_FEEDBACK_ENDPOINT` is set AND either `--send` is passed or `AIRPORT_LIMOUSINE_FEEDBACK_AUTO_SEND=true`. Default behavior is local-only.
 
 Write what *surprised* you, not a bug report. Short, specific, one line: that is the part that compounds.
 
@@ -550,11 +475,11 @@ Unknown schemes are refused with a structured error naming the supported set. We
 A profile is a saved set of flag values, reused across invocations. Use it when a scheduled or recurring agent reuses the same saved flags while providing different input each run.
 
 ```
-game-goat-pp-cli profile save briefing --json
-game-goat-pp-cli --profile briefing creator-roles
-game-goat-pp-cli profile list --json
-game-goat-pp-cli profile show briefing
-game-goat-pp-cli profile delete briefing --yes
+airport-limousine-pp-cli profile save briefing --json
+airport-limousine-pp-cli --profile briefing pages guide
+airport-limousine-pp-cli profile list --json
+airport-limousine-pp-cli profile show briefing
+airport-limousine-pp-cli profile delete briefing --yes
 ```
 
 Explicit flags always win over profile values; profile values win over defaults. `agent-context` lists all available profiles under `available_profiles` so introspecting agents discover them at runtime.
@@ -566,7 +491,6 @@ Explicit flags always win over profile values; profile values win over defaults.
 | 0 | Success |
 | 2 | Usage error (wrong arguments) |
 | 3 | Resource not found |
-| 4 | Authentication required |
 | 5 | API error (upstream issue) |
 | 7 | Rate limited (wait and retry) |
 | 10 | Config error |
@@ -575,7 +499,7 @@ Explicit flags always win over profile values; profile values win over defaults.
 
 Parse `$ARGUMENTS`:
 
-1. **Empty, `help`, or `--help`** → show `game-goat-pp-cli --help` output
+1. **Empty, `help`, or `--help`** → show `airport-limousine-pp-cli --help` output
 2. **Starts with `install`** → ends with `mcp` → MCP installation; otherwise → see Prerequisites above
 3. **Anything else** → Direct Use (execute as CLI command with `--agent`)
 
@@ -583,21 +507,25 @@ Parse `$ARGUMENTS`:
 
 1. Install the MCP server:
    ```bash
-   go install github.com/mvanhorn/printing-press-library/library/media-and-entertainment/game-goat/cmd/game-goat-pp-mcp@latest
+   go install github.com/mvanhorn/printing-press-library/library/travel/airport-limousine/cmd/airport-limousine-pp-mcp@latest
    ```
 2. Register with Claude Code:
    ```bash
-   claude mcp add game-goat-pp-mcp -- game-goat-pp-mcp
+   claude mcp add airport-limousine-pp-mcp -- airport-limousine-pp-mcp
    ```
 3. Verify: `claude mcp list`
 
 ## Direct Use
 
-1. Check if installed: `which game-goat-pp-cli`
+1. Check if installed: `which airport-limousine-pp-cli`
    If not found, offer to install (see Prerequisites at the top of this skill).
 2. Match the user query to the best command from the Unique Capabilities and Command Reference above.
 3. Execute with the `--agent` flag:
    ```bash
-   game-goat-pp-cli <command> [subcommand] [args] --agent
+   airport-limousine-pp-cli <command> [subcommand] [args] --agent
    ```
-4. If ambiguous, drill into subcommand help: `game-goat-pp-cli <command> --help`.
+4. If ambiguous, drill into subcommand help: `airport-limousine-pp-cli <command> --help`.
+
+The four page tools in MCP return bounded canonical titles and links. Embedded page application data, reservation state and seat inventory are omitted. Structured airport planning uses the same read-only commands as the CLI.
+
+Treat general baggage limits as general rules. `conditions --topic baggage` reads the Japanese route exception and returns the Shibuya–Narita LCB count before the English general count, with explicit scope and route IDs.
