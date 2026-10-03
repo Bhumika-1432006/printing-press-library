@@ -13394,6 +13394,51 @@
       }
     },
     {
+      "name": "iko-yo",
+      "category": "travel",
+      "api": "Iko-yo Trip",
+      "description": "Iko-yo Trip: find selected family trips and compare published dates, fees and explicit family facts.",
+      "search_terms": [
+        "iko-yo",
+        "Iko-yo Trip",
+        "iko-yo-pp-cli",
+        "Iko-yo Trip: find selected family trips and compare published dates, fees and explicit family facts.",
+        "Bounded date-window discovery",
+        "trip discover",
+        "Find regional candidates while seeing exactly which listing pages and records were checked.",
+        "Evidence-backed family fact card",
+        "trip inspect",
+        "See published age, indoor, nursing and changing evidence with unknown fields exposed.",
+        "Qualified charge and application comparison",
+        "trip compare",
+        "Compare separate fee statements, payment conditions and explicit application intervals.",
+        "Family-constraint comparison",
+        "Compare selected outings against age, requested amenities and a trip date using supported, excluded and unknown states.",
+        "Offline shortlist with retained coverage",
+        "trip cached",
+        "Search saved family facts with their original observation times and collection coverage."
+      ],
+      "path": "library/travel/iko-yo",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "iko-yo-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 6,
+        "public_tool_count": 6,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
       "name": "ikon",
       "category": "travel",
       "api": "Ikon Pass",
