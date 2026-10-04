@@ -12376,6 +12376,52 @@
       }
     },
     {
+      "name": "halal-gourmet-japan",
+      "category": "travel",
+      "api": "Halal Gourmet Japan",
+      "description": "Compare explicit food and prayer evidence across Japan with source dates and honest unknowns.",
+      "search_terms": [
+        "halal-gourmet-japan",
+        "Halal Gourmet Japan",
+        "halal-gourmet-japan-pp-cli",
+        "Compare explicit food and prayer evidence across Japan with source dates and honest unknowns.",
+        "Selected-place evidence comparison",
+        "plan compare",
+        "Align the source-reported food and prayer facts of selected saved places.",
+        "Explicit condition matcher",
+        "plan match",
+        "See which requested source labels are reported and which need confirmation.",
+        "Missing planning-evidence triage",
+        "plan gaps",
+        "List missing certifier, certificate validity, hours and access evidence.",
+        "Food-and-prayer proximity pairs",
+        "plan pair",
+        "Pair selected restaurants and prayer places by straight-line distance.",
+        "Saved evidence changes",
+        "plan changes",
+        "See factual changes between the latest two successful observations."
+      ],
+      "path": "library/travel/halal-gourmet-japan",
+      "printer": "zjsng",
+      "printer_name": "Jet Sng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "halal-gourmet-japan-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 4,
+        "public_tool_count": 4,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
       "name": "haneda-airport",
       "category": "travel",
       "api": "Haneda Airport",
@@ -26461,6 +26507,51 @@
         "env_vars": [
           "SNIPD_TOKEN"
         ],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
+      "name": "snowjapan",
+      "category": "travel",
+      "api": "SnowJapan",
+      "description": "Compare Japan ski areas with terrain facts, dated reports and explicit historical-season evidence.",
+      "search_terms": [
+        "snowjapan",
+        "snowjapan-pp-cli",
+        "Compare Japan ski areas with terrain facts, dated reports and explicit historical-season evidence.",
+        "Resort tradeoff frontier",
+        "plan frontier",
+        "Show nondominated resort choices for explicitly selected statistics.",
+        "Historical trip-window intersection",
+        "plan windows",
+        "Intersect a past trip window with recorded first/last season spans.",
+        "Municipality option portfolios",
+        "plan towns",
+        "Compare source-defined towns by known resort options and statistical ranges.",
+        "Historical evidence coverage",
+        "plan coverage",
+        "Find listed resorts with missing or ambiguous historical endpoint evidence.",
+        "Saved-fact changes",
+        "plan changes",
+        "See factual field changes between the latest two locally captured observations."
+      ],
+      "path": "library/travel/snowjapan",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "snowjapan-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 5,
+        "public_tool_count": 5,
+        "auth_type": "none",
+        "env_vars": [],
         "mcp_ready": "full",
         "spec_format": "internal"
       }
