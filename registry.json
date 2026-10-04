@@ -12880,7 +12880,7 @@
         "public_tool_count": 0,
         "auth_type": "api_key",
         "env_vars": [
-          "HOSTEX_HOSTEX_ACCESS_TOKEN"
+          "HOSTEX_ACCESS_TOKEN"
         ],
         "mcp_ready": "full",
         "spec_format": "openapi3"
@@ -13419,6 +13419,12 @@
         "Search saved family facts with their original observation times and collection coverage."
       ],
       "path": "library/travel/iko-yo",
+      "release": {
+        "cli_name": "iko-yo-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-03T09:33:06Z",
+        "source_commit": "168a3e6a67e42dbb34b6de4c36ef5002e0d94b9f"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -16887,6 +16893,12 @@
         "Compare two saved snapshot files offline by stable station ID and factual fields, or use an explicit synthetic demo"
       ],
       "path": "library/travel/michi-no-eki",
+      "release": {
+        "cli_name": "michi-no-eki-pp-cli",
+        "version": "2026.10.2",
+        "released_at": "2026-10-04T08:49:57Z",
+        "source_commit": "5c2673940c81928f98e0027a4b1a2393f8412f11"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -28810,7 +28822,7 @@
         "Compare how a journal's topic distribution shifts between two time windows; spot emerging and fading specialties.",
         "Reading List Curation",
         "curate",
-        "Auto-generate ranked reading lists for a topic, sorted by date/citations/relevance, exportable as Markdown or BibTeX.",
+        "Auto-generate ranked reading lists for a topic, sorted by citations, date or per-year (average citations per year since publication; age = years since pub_date, or July 1 of the year if unknown, at least 0.25; local store only), exportable as Markdown or BibTeX.",
         "Citation Visibility Gap",
         "visibility-gap",
         "Find authors whose citation impact is out of step with the prestige of the Lancet journals they publish in."
@@ -31467,6 +31479,50 @@
         ],
         "mcp_ready": "full",
         "spec_format": "openapi3"
+      }
+    },
+    {
+      "name": "wheelog",
+      "category": "travel",
+      "api": "WheeLog",
+      "description": "Find and compare recorded accessibility facts with gaps and conflicting reports visible.",
+      "search_terms": [
+        "wheelog",
+        "wheelog-pp-cli",
+        "Find and compare recorded accessibility facts with gaps and conflicting reports visible.",
+        "Requested-question comparison",
+        "spots compare",
+        "Align requested source question IDs and report supporting, opposing, mixed, unknown and inapplicable evidence.",
+        "Detail-checked discovery",
+        "spots search",
+        "Expand a bounded keyword shortlist into actual detail evidence for requested questions.",
+        "Saved-observation changes",
+        "shortlist changes",
+        "Show exact changes between two allowlisted source observations for selected public places.",
+        "Recheck queue",
+        "shortlist list",
+        "Prioritize old, unknown or conflicting evidence in a saved shortlist with explicit reasons.",
+        "Nearest saved facilities",
+        "Rank saved public facilities by straight-line distance from an explicit origin."
+      ],
+      "path": "library/travel/wheelog",
+      "printer": "zjsng",
+      "printer_name": "Jet Sng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "Jet Sng"
+      },
+      "mcp": {
+        "binary": "wheelog-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 2,
+        "public_tool_count": 2,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
       }
     },
     {
