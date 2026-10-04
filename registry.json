@@ -4348,9 +4348,9 @@
       "path": "library/travel/carstay",
       "release": {
         "cli_name": "carstay-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-03T08:50:22Z",
-        "source_commit": "411e0b1c46f4b428691df11e05cfac4468faf629"
+        "version": "2026.10.2",
+        "released_at": "2026-10-04T08:52:41Z",
+        "source_commit": "9717d3d7d37907a236b660eed6a1b8bd631a04d6"
       },
       "printer": "zjsng",
       "printer_name": "zjsng",
@@ -10343,9 +10343,9 @@
       "path": "library/media-and-entertainment/game-goat",
       "release": {
         "cli_name": "game-goat-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-03T08:50:22Z",
-        "source_commit": "ce18c33b7d9a74c1194ca48656b8eadeab513e66"
+        "version": "2026.10.2",
+        "released_at": "2026-10-04T08:52:41Z",
+        "source_commit": "4a703a00a4e9bb222f4abf2cb35441f7f8095b67"
       },
       "printer": "bleighk",
       "printer_name": "Brad Knight",
@@ -12402,6 +12402,12 @@
         "See factual changes between the latest two successful observations."
       ],
       "path": "library/travel/halal-gourmet-japan",
+      "release": {
+        "cli_name": "halal-gourmet-japan-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-04T08:54:26Z",
+        "source_commit": "2fc3d4dcf2caf51243fa5ed41635509e3ee6a024"
+      },
       "printer": "zjsng",
       "printer_name": "Jet Sng",
       "creator": {
@@ -12873,6 +12879,51 @@
       }
     },
     {
+      "name": "hostelworld",
+      "category": "travel",
+      "api": "Hostelworld",
+      "description": "Compare dated dorm beds and private rooms with explicit quantities, prices and terms.",
+      "search_terms": [
+        "hostelworld",
+        "hostelworld-pp-cli",
+        "Compare dated dorm beds and private rooms with explicit quantities, prices and terms.",
+        "Comparable party costs",
+        "hostels compare",
+        "Compare actual dated dorm beds and private rooms with explicit source units.",
+        "Flexible stay windows",
+        "hostels dates",
+        "Check actual availability for each alternative check-in date.",
+        "Nightly price basis",
+        "hostels offers",
+        "Keep nightly bed, room and occupancy-slot price bases explicit.",
+        "Payment and cancellation evidence",
+        "See rate terms and exact cancellation deadline alongside the price.",
+        "Saved planning evidence",
+        "hostels saved",
+        "Re-read your bounded planning snapshots offline."
+      ],
+      "path": "library/travel/hostelworld",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "hostelworld-pp-mcp",
+        "transports": [
+          "stdio",
+          "http"
+        ],
+        "tool_count": 4,
+        "public_tool_count": 4,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
       "name": "hostex",
       "category": "travel",
       "api": "Hostex",
@@ -12906,9 +12957,9 @@
       "path": "library/travel/hostex",
       "release": {
         "cli_name": "hostex-pp-cli",
-        "version": "2026.10.3",
-        "released_at": "2026-10-03T08:50:22Z",
-        "source_commit": "cf00f9b957d51401bf8ddf03f009978031ec38d3"
+        "version": "2026.10.4",
+        "released_at": "2026-10-04T08:52:41Z",
+        "source_commit": "2388bec609f8943b0fea591c9613421e61e7d2e6"
       },
       "printer": "Bust011r",
       "printer_name": "Bust011r",
@@ -13467,9 +13518,9 @@
       "path": "library/travel/iko-yo",
       "release": {
         "cli_name": "iko-yo-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-03T09:33:06Z",
-        "source_commit": "168a3e6a67e42dbb34b6de4c36ef5002e0d94b9f"
+        "version": "2026.10.2",
+        "released_at": "2026-10-04T08:52:41Z",
+        "source_commit": "cff8c54cbdbb8b640f45b14c3265cb17ddeb4635"
       },
       "printer": "zjsng",
       "printer_name": "zjsng",
@@ -15443,9 +15494,9 @@
       "path": "library/travel/kurumatabi",
       "release": {
         "cli_name": "kurumatabi-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-03T08:50:22Z",
-        "source_commit": "508a67b7f86aef2c901f2addb682adb84922720d"
+        "version": "2026.10.2",
+        "released_at": "2026-10-04T08:52:41Z",
+        "source_commit": "5308314c8a2cf9a11dd3d0e65035a5b1f119394c"
       },
       "printer": "zjsng",
       "printer_name": "zjsng",
@@ -17813,9 +17864,9 @@
       "path": "library/travel/nap-camp",
       "release": {
         "cli_name": "nap-camp-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-03T08:50:22Z",
-        "source_commit": "cb49e7347b20e876eb1e4930f231ae6b2fa4e21a"
+        "version": "2026.10.2",
+        "released_at": "2026-10-04T08:52:41Z",
+        "source_commit": "e868db3351fc099af45ac4e77578fe432209c6b8"
       },
       "printer": "zjsng",
       "printer_name": "zjsng",
@@ -26537,6 +26588,12 @@
         "See factual field changes between the latest two locally captured observations."
       ],
       "path": "library/travel/snowjapan",
+      "release": {
+        "cli_name": "snowjapan-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-04T08:54:26Z",
+        "source_commit": "45613d174d25b7f09827d5afcc21c0fbf0e91886"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -28921,9 +28978,9 @@
       "path": "library/developer-tools/thelancet",
       "release": {
         "cli_name": "thelancet-pp-cli",
-        "version": "2026.10.1",
-        "released_at": "2026-10-02T00:57:08Z",
-        "source_commit": "f923408ab31c715b1317386485ef2ba66d262801"
+        "version": "2026.10.2",
+        "released_at": "2026-10-04T08:54:26Z",
+        "source_commit": "7376d5fc0da12663c1234a0e72e19912516c76d2"
       },
       "printer": "laci141",
       "printer_name": "laci141",
@@ -31597,6 +31654,12 @@
         "Rank saved public facilities by straight-line distance from an explicit origin."
       ],
       "path": "library/travel/wheelog",
+      "release": {
+        "cli_name": "wheelog-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-04T08:54:26Z",
+        "source_commit": "6e0eb2c4bc28cc71e49ce9e454514feb2d900020"
+      },
       "printer": "zjsng",
       "printer_name": "Jet Sng",
       "creator": {
