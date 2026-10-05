@@ -14520,6 +14520,50 @@
       }
     },
     {
+      "name": "japan47go",
+      "category": "travel",
+      "api": "JAPAN47GO",
+      "description": "Find local guides and experiences with published request, fee and participant evidence.",
+      "search_terms": [
+        "japan47go",
+        "japan47go-pp-cli",
+        "Find local guides and experiences with published request, fee and participant evidence.",
+        "Bounded local service discovery",
+        "services discover",
+        "Find Japanese guide and experience candidates with honest page coverage.",
+        "Published request conditions",
+        "services inspect",
+        "Inspect bounded Japanese request, duration, fee and schedule facts.",
+        "Notice and party compatibility",
+        "services compare",
+        "Check a requested date and party against explicit notice and participant rules.",
+        "Qualified fee comparison",
+        "Compare fees without turning expense-based volunteer services into free tours.",
+        "Saved service observations",
+        "services saved",
+        "Revisit saved normalized facts offline with original observation times."
+      ],
+      "path": "library/travel/japan47go",
+      "printer": "zjsng",
+      "printer_name": "zjsng",
+      "creator": {
+        "handle": "zjsng",
+        "name": "zjsng"
+      },
+      "mcp": {
+        "binary": "japan47go-pp-mcp",
+        "transports": [
+          "stdio"
+        ],
+        "tool_count": 4,
+        "public_tool_count": 4,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
+      }
+    },
+    {
       "name": "jimmy-johns",
       "category": "food-and-dining",
       "api": "Jimmy John's",
@@ -28257,6 +28301,12 @@
         "Read saved selected products offline with their original observation times."
       ],
       "path": "library/travel/tabiwa",
+      "release": {
+        "cli_name": "tabiwa-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-05T08:56:47Z",
+        "source_commit": "c7d40106d8c7152e654b42a6f5d7f2204ddd2d9c"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
