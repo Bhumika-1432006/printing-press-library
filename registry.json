@@ -14544,6 +14544,12 @@
         "Revisit saved normalized facts offline with original observation times."
       ],
       "path": "library/travel/japan47go",
+      "release": {
+        "cli_name": "japan47go-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-05T08:57:50Z",
+        "source_commit": "65f5ff4ac6e0dde45ef15628fe7dd61ba2f92307"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -29645,6 +29651,12 @@
         "Read saved normalized evidence without refreshing the source."
       ],
       "path": "library/travel/toretabi",
+      "release": {
+        "cli_name": "toretabi-pp-cli",
+        "version": "2026.10.1",
+        "released_at": "2026-10-05T08:57:50Z",
+        "source_commit": "d31283183bb0ba84883b9ce3745428dc7f809eb2"
+      },
       "printer": "zjsng",
       "printer_name": "zjsng",
       "creator": {
@@ -30247,6 +30259,65 @@
         ],
         "mcp_ready": "full",
         "spec_format": "openapi3"
+      }
+    },
+    {
+      "name": "uber-jobs",
+      "category": "productivity",
+      "api": "Uber Careers",
+      "description": "Every public Uber job posting as one tracker-ready JSON feed with offline history, new-since diffs and a fallback when the careers site refuses",
+      "search_terms": [
+        "uber-jobs",
+        "Uber Careers",
+        "uber-jobs-pp-cli",
+        "Every public Uber job posting as one tracker-ready JSON feed with offline history, new-since diffs and a fallback when the careers site refuses",
+        "New-since per saved search",
+        "new",
+        "See which Uber postings appeared in or closed from a saved search since its last complete scan",
+        "Tracker liveness check",
+        "check",
+        "Report whether each known posting id is still open, closed, never seen or unknown, with the date it closed",
+        "Disqualifier screen with evidence",
+        "screen",
+        "Keep or drop postings by phrases in their description and show the sentence each phrase matched",
+        "Hiring stats with churn",
+        "stats",
+        "Count open, newly posted, opened and closed Uber postings per country, team, subteam or category",
+        "Tracker-ready postings feed",
+        "postings",
+        "List Uber postings for an ISO3 market, newest first, in the single envelope a job tracker parses",
+        "Get one posting by id",
+        "get",
+        "Fetch one Uber posting by its id and exit not-found when the site no longer lists it",
+        "Filter values from the site",
+        "facets",
+        "List the countries, teams, subteams, contract types and work patterns the careers site currently offers",
+        "Save a named search",
+        "save",
+        "Store a named set of filters so new can diff it on every later run",
+        "List and delete saved searches",
+        "searches",
+        "Show every saved search with its filters, baseline size and last advance, or delete one by name"
+      ],
+      "path": "library/productivity/uber-jobs",
+      "printer": "qazmataz",
+      "printer_name": "qazmataz",
+      "creator": {
+        "handle": "qazmataz",
+        "name": "qazmataz"
+      },
+      "mcp": {
+        "binary": "uber-jobs-pp-mcp",
+        "transports": [
+          "stdio",
+          "http"
+        ],
+        "tool_count": 2,
+        "public_tool_count": 2,
+        "auth_type": "none",
+        "env_vars": [],
+        "mcp_ready": "full",
+        "spec_format": "internal"
       }
     },
     {
