@@ -376,8 +376,8 @@ The CLI reads a single env var (`OPENROUTER_API_KEY`); it does not read `OPENROU
 
 ```bash
 # Prerequisite: export OPENROUTER_MANAGEMENT_KEY=<your-management-key>
-OPENROUTER_API_KEY=$OPENROUTER_MANAGEMENT_KEY openrouter-pp-cli keys list --agent
-OPENROUTER_API_KEY=$OPENROUTER_MANAGEMENT_KEY openrouter-pp-cli activity --agent
+OPENROUTER_API_KEY="${OPENROUTER_MANAGEMENT_KEY}" openrouter-pp-cli keys list --agent
+OPENROUTER_API_KEY="${OPENROUTER_MANAGEMENT_KEY}" openrouter-pp-cli activity --agent
 ```
 
 Run `openrouter-pp-cli doctor` to verify setup.
